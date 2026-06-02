@@ -223,3 +223,35 @@ Avoid:
 - duplicated titles/descriptions
 - content available only as images
 - generic headings
+
+## Responsive and Mobile Accessibility Rules
+
+This project must be mobile-first and accessible across devices.
+
+The portfolio should work well on:
+- small mobile screens
+- large mobile screens
+- tablets
+- notebooks
+- desktops
+- keyboard navigation
+- screen readers
+- browser zoom
+- larger system font sizes
+
+Follow responsive web principles:
+- start from the mobile layout first
+- progressively enhance for larger screens
+- avoid fixed widths that break small screens
+- avoid horizontal scrolling
+- use flexible grids and containers
+- use readable font sizes
+- use large enough tap targets
+- keep navigation simple on mobile
+- ensure buttons and links are easy to tap
+- test at 320px width minimum
+- test with browser zoom at 200%
+
+Prefer responsive websites over unnecessary native-app-like complexity.
+
+The site must feel like a professional web experience, not a desktop layout forced into mobile.
