@@ -1,6 +1,13 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="site-header__brand" href="#main-content" aria-label="Gabriel Veras">
+      <img
+        class="site-header__avatar"
+        src="/images/profile-avatar.webp"
+        width="40"
+        height="40"
+        [alt]="content().accessibility.profilePhotoAlt"
+      />
       <span class="site-header__name">{{ content().hero.name }}</span>
       <span class="site-header__role">{{ content().hero.role }}</span>
     </a>
@@ -14,6 +21,9 @@
       }
     </nav>
 
-    <app-language-switcher />
+    <div class="site-header__tools">
+      <app-accessibility-controls />
+      <app-language-switcher />
+    </div>
   </div>
 </header>

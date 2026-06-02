@@ -7,6 +7,13 @@ export const CONTENT_EN: PortfolioContent = {
     primaryNavigationLabel: 'Primary navigation',
     footerNavigationLabel: 'Footer navigation',
     languageSwitcherLabel: 'Select language',
+    portugueseLanguageLabel: 'Switch language to Portuguese',
+    englishLanguageLabel: 'Switch language to English',
+    profilePhotoAlt: 'Professional photo of Gabriel Veras',
+    accessibilityControlsLabel: 'Accessibility controls',
+    decreaseFontSizeLabel: 'Decrease font size',
+    increaseFontSizeLabel: 'Increase font size',
+    highContrastLabel: 'Toggle high contrast',
   },
   seo: {
     title: 'Gabriel Veras | Senior Java Backend Engineer',
@@ -84,6 +91,7 @@ export const CONTENT_EN: PortfolioContent = {
   experience: {
     title: 'Work experience',
     detailsLabel: 'View details',
+    fullHistoryLabel: 'View full history',
     technologiesLabel: 'Technologies',
     items: [
       {
@@ -340,6 +348,7 @@ export const CONTENT_EN: PortfolioContent = {
   },
   courses: {
     title: 'Courses',
+    detailsLabel: 'View courses',
     items: [
       'DevOps Ninja: Docker, Kubernetes and Rancher - Udemy',
       'Web Development with Quarkus - Basic',

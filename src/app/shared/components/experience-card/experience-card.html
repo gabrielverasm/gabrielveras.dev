@@ -1,0 +1,48 @@
+<article class="experience-card" [class.experience-card--featured]="experience().isFeatured">
+  <header class="experience-card__header">
+    <div>
+      <h3>{{ experience().company }}</h3>
+      <p class="experience-card__role">{{ experience().role }}</p>
+    </div>
+    <div class="experience-card__meta">
+      <p>{{ experience().period }}</p>
+      @if (experience().location) {
+        <p>{{ experience().location }}</p>
+      }
+    </div>
+  </header>
+
+  <p class="experience-card__summary">{{ experience().shortSummary }}</p>
+
+  @if (experience().highlights.length) {
+    <ul class="clean-list">
+      @for (highlight of experience().highlights; track highlight) {
+        <li>{{ highlight }}</li>
+      }
+    </ul>
+  }
+
+  <details class="experience-card__details">
+    <summary>{{ detailsLabel() }}</summary>
+    <div class="experience-card__details-content">
+      @if (experience().details.length) {
+        <ul class="clean-list">
+          @for (detail of experience().details; track detail) {
+            <li>{{ detail }}</li>
+          }
+        </ul>
+      }
+
+      @if (experience().technologies; as technologies) {
+        <p class="experience-card__technologies-title">
+          {{ technologiesLabel() }}
+        </p>
+        <ul class="tag-list">
+          @for (technology of technologies; track technology) {
+            <li>{{ technology }}</li>
+          }
+        </ul>
+      }
+    </div>
+  </details>
+</article>

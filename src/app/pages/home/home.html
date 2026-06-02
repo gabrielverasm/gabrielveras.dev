@@ -1,4 +1,11 @@
 <section class="hero" aria-labelledby="hero-title">
+  <img
+    class="hero__avatar"
+    src="/images/profile.webp"
+    width="128"
+    height="128"
+    [alt]="content().accessibility.profilePhotoAlt"
+  />
   <div class="hero__content">
     <p class="hero__eyebrow">{{ content().hero.eyebrow }}</p>
     <h1 id="hero-title">{{ content().hero.name }}</h1>
@@ -49,106 +56,25 @@
 
   <div class="experience-list">
     @for (item of featuredExperience(); track item.company + item.period) {
-      <article class="experience-card experience-card--featured">
-        <header class="experience-card__header">
-          <div>
-            <h3>{{ item.company }}</h3>
-            <p class="experience-card__role">{{ item.role }}</p>
-          </div>
-          <div class="experience-card__meta">
-            <p>{{ item.period }}</p>
-            @if (item.location) {
-              <p>{{ item.location }}</p>
-            }
-          </div>
-        </header>
-
-        <p class="experience-card__summary">{{ item.shortSummary }}</p>
-
-        @if (item.highlights.length) {
-          <ul class="clean-list">
-            @for (highlight of item.highlights; track highlight) {
-              <li>{{ highlight }}</li>
-            }
-          </ul>
-        }
-
-        <details class="experience-card__details">
-          <summary>{{ content().experience.detailsLabel }}</summary>
-          <div class="experience-card__details-content">
-            @if (item.details.length) {
-              <ul class="clean-list">
-                @for (detail of item.details; track detail) {
-                  <li>{{ detail }}</li>
-                }
-              </ul>
-            }
-
-            @if (item.technologies; as technologies) {
-              <p class="experience-card__technologies-title">
-                {{ content().experience.technologiesLabel }}
-              </p>
-              <ul class="tag-list">
-                @for (technology of technologies; track technology) {
-                  <li>{{ technology }}</li>
-                }
-              </ul>
-            }
-          </div>
-        </details>
-      </article>
+      <app-experience-card
+        [experience]="item"
+        [detailsLabel]="content().experience.detailsLabel"
+        [technologiesLabel]="content().experience.technologiesLabel"
+      />
     }
 
-    @for (item of olderExperience(); track item.company + item.period) {
-      <article class="experience-card">
-        <header class="experience-card__header">
-          <div>
-            <h3>{{ item.company }}</h3>
-            <p class="experience-card__role">{{ item.role }}</p>
-          </div>
-          <div class="experience-card__meta">
-            <p>{{ item.period }}</p>
-            @if (item.location) {
-              <p>{{ item.location }}</p>
-            }
-          </div>
-        </header>
-
-        <p class="experience-card__summary">{{ item.shortSummary }}</p>
-
-        @if (item.highlights.length) {
-          <ul class="clean-list">
-            @for (highlight of item.highlights; track highlight) {
-              <li>{{ highlight }}</li>
-            }
-          </ul>
+    <details class="history-disclosure">
+      <summary>{{ content().experience.fullHistoryLabel }}</summary>
+      <div class="history-disclosure__content">
+        @for (item of olderExperience(); track item.company + item.period) {
+          <app-experience-card
+            [experience]="item"
+            [detailsLabel]="content().experience.detailsLabel"
+            [technologiesLabel]="content().experience.technologiesLabel"
+          />
         }
-
-        <details class="experience-card__details">
-          <summary>{{ content().experience.detailsLabel }}</summary>
-          <div class="experience-card__details-content">
-            @if (item.details.length) {
-              <ul class="clean-list">
-                @for (detail of item.details; track detail) {
-                  <li>{{ detail }}</li>
-                }
-              </ul>
-            }
-
-            @if (item.technologies; as technologies) {
-              <p class="experience-card__technologies-title">
-                {{ content().experience.technologiesLabel }}
-              </p>
-              <ul class="tag-list">
-                @for (technology of technologies; track technology) {
-                  <li>{{ technology }}</li>
-                }
-              </ul>
-            }
-          </div>
-        </details>
-      </article>
-    }
+      </div>
+    </details>
   </div>
 </section>
 
@@ -191,11 +117,14 @@
   <div class="section__header">
     <h2 id="courses-title">{{ content().courses.title }}</h2>
   </div>
-  <ul class="simple-list">
-    @for (course of content().courses.items; track course) {
-      <li>{{ course }}</li>
-    }
-  </ul>
+  <details class="compact-disclosure">
+    <summary>{{ content().courses.detailsLabel }}</summary>
+    <ul class="simple-list simple-list--compact">
+      @for (course of content().courses.items; track course) {
+        <li>{{ course }}</li>
+      }
+    </ul>
+  </details>
 </section>
 
 <section class="section" aria-labelledby="languages-title">

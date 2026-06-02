@@ -1,4 +1,4 @@
-.language-switcher {
+.accessibility-controls {
   display: inline-flex;
   gap: 0.125rem;
   padding: 0.125rem;
@@ -7,11 +7,9 @@
   background: var(--color-surface);
 }
 
-.language-switcher__button {
+.accessibility-controls__button {
+  min-width: 2.25rem;
   min-height: 2rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
   padding: 0.25rem 0.45rem;
   border: 0;
   border-radius: 999px;
@@ -19,18 +17,11 @@
   color: var(--color-muted);
   cursor: pointer;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-.language-switcher__button--active {
+.accessibility-controls__button:hover,
+.accessibility-controls__button--active {
   background: var(--color-primary);
-  color: var(--color-primary-contrast);
-}
-
-.language-switcher__button:hover {
-  color: var(--color-text);
-}
-
-.language-switcher__button--active:hover {
   color: var(--color-primary-contrast);
 }

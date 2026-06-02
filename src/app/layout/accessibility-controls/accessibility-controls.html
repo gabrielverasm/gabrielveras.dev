@@ -1,0 +1,32 @@
+<div
+  class="accessibility-controls"
+  role="group"
+  [attr.aria-label]="content().accessibility.accessibilityControlsLabel"
+>
+  <button
+    type="button"
+    class="accessibility-controls__button"
+    [attr.aria-label]="content().accessibility.decreaseFontSizeLabel"
+    (click)="decreaseFontSize()"
+  >
+    A-
+  </button>
+  <button
+    type="button"
+    class="accessibility-controls__button"
+    [attr.aria-label]="content().accessibility.increaseFontSizeLabel"
+    (click)="increaseFontSize()"
+  >
+    A+
+  </button>
+  <button
+    type="button"
+    class="accessibility-controls__button"
+    [class.accessibility-controls__button--active]="isHighContrast()"
+    [attr.aria-label]="content().accessibility.highContrastLabel"
+    [attr.aria-pressed]="isHighContrast()"
+    (click)="toggleHighContrast()"
+  >
+    HC
+  </button>
+</div>

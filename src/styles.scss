@@ -1,17 +1,19 @@
 :root {
   color-scheme: light;
-  --color-background: #f8fafc;
+  --color-background: #f5f7fb;
   --color-surface: #ffffff;
-  --color-border: #d7dee8;
-  --color-primary: #007a78;
+  --color-soft-surface: #eef6fb;
+  --color-border: #d8e1ec;
+  --color-primary: #087ea4;
   --color-primary-contrast: #ffffff;
-  --color-accent: #8a4b12;
-  --color-heading: #111827;
-  --color-text: #1f2937;
-  --color-muted: #526173;
-  --color-link: #005f73;
-  --color-focus: #9a6700;
-  --shadow-soft: 0 1rem 2.5rem rgb(15 23 42 / 0.08);
+  --color-accent: #0e7490;
+  --color-heading: #0f172a;
+  --color-text: #1e293b;
+  --color-muted: #52627a;
+  --color-link: #075985;
+  --color-focus: #b45309;
+  --shadow-soft: 0 0.75rem 2rem rgb(15 23 42 / 0.08);
+  --font-scale: 1;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -22,6 +24,28 @@
   --space-10: 2.5rem;
   --space-12: 3rem;
   --container-max-width: 72rem;
+}
+
+[data-font-scale='compact'] {
+  --font-scale: 0.94;
+}
+
+[data-font-scale='large'] {
+  --font-scale: 1.08;
+}
+
+[data-contrast='high'] {
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-soft-surface: #e0f2fe;
+  --color-border: #0f172a;
+  --color-primary: #005f99;
+  --color-heading: #020617;
+  --color-text: #020617;
+  --color-muted: #1e293b;
+  --color-link: #004b7a;
+  --color-focus: #92400e;
+  --shadow-soft: 0 0 0 1px var(--color-border);
 }
 
 * {
@@ -37,6 +61,7 @@ body {
   margin: 0;
   background: var(--color-background);
   color: var(--color-text);
+  font-size: calc(1rem * var(--font-scale));
   font-family:
     Inter,
     ui-sans-serif,

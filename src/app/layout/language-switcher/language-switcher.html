@@ -7,19 +7,23 @@
     type="button"
     class="language-switcher__button"
     [class.language-switcher__button--active]="currentLanguage() === 'pt-BR'"
+    [attr.aria-label]="content().accessibility.portugueseLanguageLabel"
     [attr.aria-pressed]="currentLanguage() === 'pt-BR'"
     (click)="setPortuguese()"
   >
-    PT
+    <span aria-hidden="true">🇧🇷</span>
+    <span>PT</span>
   </button>
 
   <button
     type="button"
     class="language-switcher__button"
     [class.language-switcher__button--active]="currentLanguage() === 'en'"
+    [attr.aria-label]="content().accessibility.englishLanguageLabel"
     [attr.aria-pressed]="currentLanguage() === 'en'"
     (click)="setEnglish()"
   >
-    EN
+    <span aria-hidden="true">🇺🇸</span>
+    <span>EN</span>
   </button>
 </div>

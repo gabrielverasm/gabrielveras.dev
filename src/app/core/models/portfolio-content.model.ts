@@ -21,6 +21,13 @@ export interface AccessibilityContent {
   readonly primaryNavigationLabel: string;
   readonly footerNavigationLabel: string;
   readonly languageSwitcherLabel: string;
+  readonly portugueseLanguageLabel: string;
+  readonly englishLanguageLabel: string;
+  readonly profilePhotoAlt: string;
+  readonly accessibilityControlsLabel: string;
+  readonly decreaseFontSizeLabel: string;
+  readonly increaseFontSizeLabel: string;
+  readonly highContrastLabel: string;
 }
 
 export interface SeoContent {
@@ -61,6 +68,7 @@ export interface SkillGroup {
 export interface ExperienceContent {
   readonly title: string;
   readonly detailsLabel: string;
+  readonly fullHistoryLabel: string;
   readonly technologiesLabel: string;
   readonly items: readonly ExperienceItem[];
 }
@@ -90,6 +98,7 @@ export interface EducationItem {
 
 export interface CoursesContent {
   readonly title: string;
+  readonly detailsLabel: string;
   readonly items: readonly string[];
 }
 

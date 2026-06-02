@@ -7,6 +7,13 @@ export const CONTENT_PT: PortfolioContent = {
     primaryNavigationLabel: 'Navegação principal',
     footerNavigationLabel: 'Navegação do rodapé',
     languageSwitcherLabel: 'Selecionar idioma',
+    portugueseLanguageLabel: 'Mudar idioma para português',
+    englishLanguageLabel: 'Mudar idioma para inglês',
+    profilePhotoAlt: 'Foto profissional de Gabriel Veras',
+    accessibilityControlsLabel: 'Controles de acessibilidade',
+    decreaseFontSizeLabel: 'Diminuir tamanho da fonte',
+    increaseFontSizeLabel: 'Aumentar tamanho da fonte',
+    highContrastLabel: 'Alternar alto contraste',
   },
   seo: {
     title: 'Gabriel Veras | Analista de Sistemas Sênior Java',
@@ -92,6 +99,7 @@ export const CONTENT_PT: PortfolioContent = {
   experience: {
     title: 'Experiência profissional',
     detailsLabel: 'Ver detalhes',
+    fullHistoryLabel: 'Ver histórico completo',
     technologiesLabel: 'Tecnologias',
     items: [
       {
@@ -347,6 +355,7 @@ export const CONTENT_PT: PortfolioContent = {
   },
   courses: {
     title: 'Cursos',
+    detailsLabel: 'Ver cursos',
     items: [
       'Curso.dev - Felipe Deschamps',
       'Full Cycle 3.0',

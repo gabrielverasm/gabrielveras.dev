@@ -4,10 +4,11 @@ import { Meta, Title } from '@angular/platform-browser';
 
 import { EXTERNAL_LINKS } from '../../core/constants/external-links';
 import { LanguageService } from '../../core/i18n/language.service';
+import { ExperienceCard } from '../../shared/components/experience-card/experience-card';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ExperienceCard],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
