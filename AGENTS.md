@@ -229,6 +229,7 @@ Avoid:
 This project must be mobile-first and accessible across devices.
 
 The portfolio should work well on:
+
 - small mobile screens
 - large mobile screens
 - tablets
@@ -240,6 +241,7 @@ The portfolio should work well on:
 - larger system font sizes
 
 Follow responsive web principles:
+
 - start from the mobile layout first
 - progressively enhance for larger screens
 - avoid fixed widths that break small screens
