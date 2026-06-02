@@ -1,0 +1,389 @@
+import { PortfolioContent } from '../models/portfolio-content.model';
+
+export const CONTENT_PT: PortfolioContent = {
+  language: 'pt-BR',
+  seo: {
+    title: 'Gabriel Veras | Analista de Sistemas Sênior Java',
+    description:
+      'Gabriel Veras é Analista de Sistemas Sênior Java com mais de 8 anos de experiência em APIs REST, microsserviços, Spring Boot, Quarkus, AWS, Kafka e sistemas críticos.',
+  },
+  navigation: [
+    { label: 'Resumo', href: '#summary' },
+    { label: 'Experiência', href: '#experience' },
+    { label: 'Habilidades', href: '#skills' },
+    { label: 'Formação', href: '#education' },
+    { label: 'Contato', href: '#contact' },
+  ],
+  hero: {
+    eyebrow: 'Portfólio profissional',
+    name: 'Gabriel Veras Miranda',
+    role: 'Analista de Sistemas Sênior Java',
+    location: 'Fortaleza, Ceará, Brasil',
+    summary: [
+      'Mais de 8 anos de experiência em desenvolvimento backend com Java, Spring Boot e Quarkus.',
+      'Atuação em APIs REST, microsserviços, integrações legadas, AWS, mensageria, CI/CD e sistemas críticos.',
+    ],
+    primaryActionLabel: 'Ver experiência',
+    secondaryActionLabel: 'Baixar currículo',
+  },
+  about: {
+    title: 'Resumo',
+    paragraphs: [
+      'Analista de Sistemas especializado em desenvolvimento e manutenção de APIs Java, com experiência em Quarkus, Spring, Angular 2+, TDD, JPA, Hibernate e bancos relacionais.',
+      'Experiência em ambientes ágeis, sistemas corporativos, integração entre sistemas, qualidade de código, testes automatizados, desempenho e estabilidade em produção.',
+    ],
+  },
+  skills: {
+    title: 'Habilidades técnicas',
+    groups: [
+      {
+        title: 'Backend Java',
+        items: [
+          'Java 8+',
+          'Spring',
+          'Spring Boot',
+          'Quarkus',
+          'JSF',
+          'APIs REST',
+          'Microsserviços',
+        ],
+      },
+      {
+        title: 'Dados e integração',
+        items: [
+          'JPA',
+          'Hibernate',
+          'PostgreSQL',
+          'MySQL',
+          'Oracle',
+          'Bancos relacionais',
+          'Kafka',
+          'AWS SQS',
+          'AWS S3',
+          'AWS DynamoDB',
+        ],
+      },
+      {
+        title: 'Qualidade e entrega',
+        items: [
+          'Testes automatizados',
+          'JUnit',
+          'TDD',
+          'Docker',
+          'Rancher',
+          'Kubernetes',
+          'CI/CD',
+          'Jenkins',
+          'Argo CD',
+        ],
+      },
+      {
+        title: 'Frontend e ferramentas',
+        items: ['Angular 2+', 'Angular', 'TypeScript', 'JavaScript', 'SASS', 'Git', 'Scrum'],
+      },
+    ],
+  },
+  experience: {
+    title: 'Experiência profissional',
+    items: [
+      {
+        company: 'Stefanini Brasil',
+        role: 'Analista de Sistemas Sênior',
+        period: 'Fevereiro/2024 - Atual',
+        location: 'Fortaleza, Ceará, Brasil',
+        isFeatured: true,
+        shortSummary:
+          'Desenvolvimento e manutenção de APIs Java com Spring Boot para sistemas críticos.',
+        highlights: [
+          'Criação de APIs RESTful e integração com sistemas legados.',
+          'Aplicação de TDD e testes automatizados com JUnit.',
+          'Colaboração com QA em ciclos de SIT e UAT.',
+        ],
+        details: [
+          'Atuação em soluções escaláveis e seguras com foco em confiabilidade, segurança e alta disponibilidade.',
+          'Otimização de operações de banco de dados com JPA, SQL avançado, IBM DB2 e Oracle.',
+          'Participação em ambientes ágeis com Scrum, contribuindo para entregas de alto impacto.',
+        ],
+        technologies: [
+          'Java',
+          'Spring Boot',
+          'APIs REST',
+          'JUnit',
+          'TDD',
+          'JPA',
+          'SQL',
+          'IBM DB2',
+          'Oracle',
+          'Scrum',
+        ],
+      },
+      {
+        company: 'K2 Partnering Solutions',
+        role: 'Analista de Sistemas Sênior',
+        period: 'Outubro/2023 - Março/2024',
+        location: 'Fortaleza, Ceará, Brasil',
+        isFeatured: true,
+        shortSummary:
+          'Desenvolvimento de APIs com Quarkus em arquitetura de microsserviços e integração com AWS.',
+        highlights: [
+          'Integração com AWS SQS, DynamoDB e S3.',
+          'Implementação de TDD e testes automatizados com JUnit.',
+          'Uso de Docker para ambientes de desenvolvimento.',
+        ],
+        details: [
+          'Gerenciamento de filas e mensagens com AWS SQS para suporte a fluxos assíncronos.',
+          'Configuração e deploy de serviços localmente e na nuvem.',
+          'Participação em code reviews, monitoramento, troubleshooting e cerimônias Scrum.',
+        ],
+        technologies: [
+          'Java',
+          'Quarkus',
+          'Microservices',
+          'AWS SQS',
+          'AWS DynamoDB',
+          'AWS S3',
+          'Docker',
+          'Jackson',
+          'JUnit',
+          'TDD',
+          'Scrum',
+        ],
+      },
+      {
+        company: 'Coopersystem',
+        role: 'Analista de Sistemas Sênior',
+        period: 'Dezembro/2021 - Outubro/2023',
+        location: 'Brasília, Distrito Federal, Brasil',
+        isFeatured: true,
+        shortSummary:
+          'Desenvolvimento backend Java em sistemas corporativos, com microsserviços, Kafka e CI/CD.',
+        highlights: [
+          'Liderança técnica em desenvolvimento backend Java.',
+          'Integração de microsserviços com Apache Kafka.',
+          'Manutenção de pipelines com Jenkins, Argo CD e Rancher.',
+        ],
+        details: [
+          'Atuação em projetos para Banco do Brasil e CASSI, com foco em qualidade, arquitetura e manutenibilidade.',
+          'Uso de JUnit para validação contínua de requisitos técnicos e de negócio.',
+          'Uso de JPA e Hibernate para persistência em sistemas corporativos complexos.',
+        ],
+        technologies: [
+          'Java',
+          'Quarkus',
+          'Apache Kafka',
+          'JUnit',
+          'Jenkins',
+          'Argo CD',
+          'Rancher',
+          'JPA',
+          'Hibernate',
+          'Scrum',
+        ],
+      },
+      {
+        company: 'Capgemini',
+        role: 'Analista de Sistemas',
+        period: 'Junho/2021 - Dezembro/2021',
+        location: 'Bahia, Brasil',
+        isFeatured: true,
+        shortSummary:
+          'Desenvolvimento de APIs estratégicas integradas a frontend React Native e banco Oracle.',
+        highlights: [
+          'Desenvolvimento de APIs para consumo por frontend React Native.',
+          'Implementação de testes automatizados com JUnit.',
+          'Apoio a pipelines de CI/CD com Jenkins e Argo CD.',
+        ],
+        details: [
+          'Integração de APIs com banco de dados Oracle para gerenciamento seguro e eficiente de dados.',
+          'Automação de pipelines de desenvolvimento para entregas contínuas.',
+          'Documentação de APIs e processos para facilitar manutenção e evolução.',
+        ],
+        technologies: [
+          'Java',
+          'APIs',
+          'React Native',
+          'JUnit',
+          'Oracle',
+          'Jenkins',
+          'Argo CD',
+          'CI/CD',
+        ],
+      },
+      {
+        company: 'PicBuy',
+        role: 'Analista de Sistemas',
+        period: 'Abril/2021 - Maio/2021',
+        location: 'Fortaleza, Ceará, Brasil',
+        isFeatured: false,
+        shortSummary:
+          'Desenvolvimento de API para plataforma de comércio eletrônico com experiência de compra por imagens.',
+        highlights: [
+          'Desenvolvimento de API com Quarkus, MicroProfile, Kafka e Docker.',
+          'Integração com frontend em Flutter.',
+        ],
+        details: [
+          'Implementação de arquitetura voltada a respostas rápidas e gerenciamento eficiente de recursos.',
+          'Implementação de testes automatizados e testes end-to-end para cenários reais de uso.',
+          'Manutenção proativa para manter a API atualizada, segura e compatível com requisitos em evolução.',
+        ],
+        technologies: [
+          'Quarkus',
+          'MicroProfile',
+          'Kafka',
+          'Docker',
+          'Flutter',
+          'Testes automatizados',
+          'E2E',
+        ],
+      },
+      {
+        company: 'Dell Lead',
+        role: 'Analista de Sistemas',
+        period: 'Maio/2020 - Fevereiro/2021',
+        location: 'Fortaleza, Ceará, Brasil',
+        isFeatured: false,
+        shortSummary:
+          'Desenvolvimento de sistemas web para cursos de educação a distância com foco em acessibilidade.',
+        highlights: [
+          'Construção de backend com Java, Maven, Spring e Hibernate.',
+          'Implementação de interfaces com AngularJS, Angular 7 e SASS.',
+        ],
+        details: [
+          'Criação de sistemas web interativos para experiências educacionais.',
+          'Adoção de padrões nacionais e internacionais de acessibilidade.',
+          'Persistência de dados com JPA e PostgreSQL, uso de JavaScript, NodeJS e Git.',
+        ],
+        technologies: [
+          'Java',
+          'Maven',
+          'Spring',
+          'Hibernate',
+          'AngularJS',
+          'Angular 7',
+          'SASS',
+          'JPA',
+          'PostgreSQL',
+          'JavaScript',
+          'NodeJS',
+          'Git',
+        ],
+      },
+      {
+        company: 'Pague Logo',
+        role: 'Analista de Sistemas',
+        period: 'Junho/2019 - Dezembro/2020',
+        location: 'Fortaleza e Região, Brasil',
+        isFeatured: false,
+        shortSummary:
+          'Desenvolvimento e manutenção de sistema integrado para chamados, credenciamentos e atendimento nível 2.',
+        highlights: [
+          'Criação de módulos para registro, acompanhamento e resolução de chamados.',
+          'Desenvolvimento de funcionalidades para gestão de credenciamentos.',
+        ],
+        details: [
+          'Implementação de ferramentas de rastreamento para transparência nos processos de atendimento.',
+          'Documentação clara para usuários, equipe de suporte e mudanças do sistema.',
+          'Introdução de controles internos para segurança e integridade dos dados.',
+        ],
+      },
+      {
+        company: 'Jardins Distribuidora de Cereais e Representações LTDA',
+        role: 'Engenheiro de Software',
+        period: 'Junho/2018 - Setembro/2019',
+        location: 'Fortaleza e Região, Brasil',
+        isFeatured: false,
+        shortSummary:
+          'Desenvolvimento, manutenção e integração de sistemas para obras, finanças e gestão de mercadorias.',
+        highlights: [
+          'Desenvolvimento de módulos para controle interno de obras.',
+          'Integração de ferramentas financeiras e de gestão de mercadorias.',
+        ],
+        details: [
+          'Automação de processos financeiros para reduzir erros e melhorar a visão operacional.',
+          'Implementação de sistemas para controlar o ciclo de vida das mercadorias.',
+          'Suporte contínuo e atualizações adaptativas para necessidades operacionais.',
+        ],
+      },
+      {
+        company: 'Prefeitura Municipal de Fortaleza',
+        role: 'Analista de Sistemas',
+        period: 'Julho/2017 - Abril/2018',
+        location: 'HDEAM - Hospital Distrital Doutor Evandro Ayres de Moura',
+        isFeatured: false,
+        shortSummary:
+          'Concepção e desenvolvimento de aplicação web para controle gerencial de estoque hospitalar.',
+        highlights: ['Desenvolvimento com JSF e Primefaces.', 'Hospedagem em infraestrutura AWS.'],
+        details: [
+          'Implementação de funcionalidades para controle eficiente de estoque.',
+          'Integração de alertas automatizados por e-mail para quantidades críticas.',
+          'Criação de interface personalizada para as necessidades do usuário final.',
+        ],
+        technologies: ['JSF', 'Primefaces', 'AWS', 'E-mail'],
+      },
+    ],
+  },
+  education: {
+    title: 'Formação',
+    items: [
+      {
+        title: 'MBA - Arquitetura Full Cycle',
+        institution: 'Full Cycle',
+        statusOrYear: '2024 - 2025',
+      },
+      {
+        title: 'Análise e Desenvolvimento de Sistemas',
+        institution: 'Universidade Estácio de Sá',
+        statusOrYear: '2010 - 2015',
+      },
+    ],
+  },
+  courses: {
+    title: 'Cursos',
+    items: [
+      'Curso.dev - Felipe Deschamps',
+      'Full Cycle 3.0',
+      'Confraria Dev',
+      'DevOps Ninja: Docker, Kubernetes e Rancher - Udemy',
+      'Desenvolvimento Web com Quarkus - Básico',
+      'Angular 9 - Essencial',
+      'Angular 9 + Spring Boot 2.2: Fullstack Completo e Atualizado',
+      'TDD - Automated Testing with Java - TriadWorks',
+      'Java Programmer Training - Evolution Institute',
+    ],
+  },
+  languages: {
+    title: 'Idiomas',
+    items: [
+      { name: 'Português', level: 'Nativo ou bilíngue' },
+      { name: 'Inglês', level: 'Profissional' },
+    ],
+  },
+  projects: {
+    title: 'Projetos em breve',
+    intro:
+      'Projetos públicos serão adicionados quando estiverem prontos para demonstrar código, arquitetura e decisão técnica com qualidade.',
+    items: [
+      {
+        title: 'API backend Java',
+        statusLabel: 'Planejado',
+        description:
+          'Projeto planejado para demonstrar APIs REST, testes automatizados e práticas backend.',
+      },
+      {
+        title: 'Integração cloud',
+        statusLabel: 'Planejado',
+        description: 'Projeto planejado para demonstrar integração com mensageria e serviços AWS.',
+      },
+    ],
+  },
+  contact: {
+    title: 'Contato',
+    intro:
+      'Disponível para conversas profissionais sobre oportunidades em engenharia backend Java.',
+    emailLabel: 'Enviar e-mail',
+    linkedinLabel: 'Ver LinkedIn',
+    githubLabel: 'Ver GitHub',
+    resumePtLabel: 'Currículo em português indisponível no momento',
+    resumeEnLabel: 'Currículo em inglês indisponível no momento',
+  },
+} as const;

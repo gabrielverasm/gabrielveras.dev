@@ -1,0 +1,379 @@
+import { PortfolioContent } from '../models/portfolio-content.model';
+
+export const CONTENT_EN: PortfolioContent = {
+  language: 'en',
+  seo: {
+    title: 'Gabriel Veras | Senior Java Backend Engineer',
+    description:
+      'Gabriel Veras is a Senior Software Engineer with 8+ years of Java backend experience in REST APIs, microservices, Spring Boot, Quarkus, AWS, Kafka and enterprise systems.',
+  },
+  navigation: [
+    { label: 'Summary', href: '#summary' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Education', href: '#education' },
+    { label: 'Contact', href: '#contact' },
+  ],
+  hero: {
+    eyebrow: 'Professional portfolio',
+    name: 'Gabriel Veras',
+    role: 'Senior Java Backend Engineer',
+    location: 'Fortaleza, Ceará, Brazil',
+    summary: [
+      'Senior Software Engineer with strong experience in backend development using Java, Spring Boot and Quarkus.',
+      'Focused on scalable and secure REST APIs, microservices, legacy integrations, AWS, Docker and enterprise-grade systems.',
+    ],
+    primaryActionLabel: 'View experience',
+    secondaryActionLabel: 'Download resume',
+  },
+  about: {
+    title: 'Summary',
+    paragraphs: [
+      'Senior Software Engineer specialized in Java backend development, Spring Boot, Quarkus, microservices architectures and legacy system integration.',
+      'Hands-on experience with AWS SQS, DynamoDB and S3, containerized environments using Docker, agile teams and reliable production-critical systems.',
+    ],
+  },
+  skills: {
+    title: 'Hard skills',
+    groups: [
+      {
+        title: 'Java backend',
+        items: ['Java 8+', 'Spring', 'Spring Boot', 'Quarkus', 'JSF', 'REST APIs', 'Microservices'],
+      },
+      {
+        title: 'Data and integration',
+        items: [
+          'JPA',
+          'Hibernate',
+          'PostgreSQL',
+          'MySQL',
+          'Oracle',
+          'Relational Databases',
+          'Kafka',
+          'AWS SQS',
+          'AWS S3',
+          'AWS DynamoDB',
+        ],
+      },
+      {
+        title: 'Quality and delivery',
+        items: [
+          'Automated Tests',
+          'JUnit',
+          'TDD',
+          'Docker',
+          'Rancher',
+          'Kubernetes',
+          'CI/CD',
+          'Jenkins',
+          'Argo CD',
+        ],
+      },
+      {
+        title: 'Frontend and tools',
+        items: ['Angular 2+', 'Angular', 'TypeScript', 'JavaScript', 'SASS', 'Git', 'Scrum'],
+      },
+    ],
+  },
+  experience: {
+    title: 'Work experience',
+    items: [
+      {
+        company: 'Stefanini Brasil',
+        role: 'Software Engineer',
+        period: 'February 2024 - Present',
+        location: 'Fortaleza, Ceará, Brazil',
+        isFeatured: true,
+        shortSummary:
+          'Designed and maintained scalable backend APIs using Spring Boot for mission-critical systems.',
+        highlights: [
+          'Developed RESTful services and integrated complex legacy systems.',
+          'Applied TDD practices and automated tests with JUnit.',
+          'Collaborated with QA teams during SIT and UAT phases.',
+        ],
+        details: [
+          'Built enterprise-grade backend APIs with focus on reliability, security and high availability.',
+          'Optimized database operations using JPA and advanced SQL with IBM DB2 and Oracle.',
+          'Worked in agile Scrum environments, contributing to high-impact solution delivery.',
+        ],
+        technologies: [
+          'Java',
+          'Spring Boot',
+          'REST APIs',
+          'JUnit',
+          'TDD',
+          'JPA',
+          'SQL',
+          'IBM DB2',
+          'Oracle',
+          'Scrum',
+        ],
+      },
+      {
+        company: 'K2 Partnering Solutions',
+        role: 'Software Engineer',
+        period: 'October 2023 - March 2024',
+        location: 'Fortaleza, Ceará, Brazil',
+        isFeatured: true,
+        shortSummary:
+          'Designed and maintained backend APIs using Quarkus in a microservices architecture.',
+        highlights: [
+          'Integrated AWS services such as SQS, DynamoDB and S3.',
+          'Implemented TDD and automated tests using JUnit.',
+          'Built and ran containerized development environments using Docker.',
+        ],
+        details: [
+          'Managed messaging and queue-based workflows with AWS SQS.',
+          'Participated in code reviews, monitoring and troubleshooting in production-like environments.',
+          'Worked in agile teams using Scrum and collaborated with cross-functional stakeholders.',
+        ],
+        technologies: [
+          'Java',
+          'Quarkus',
+          'Microservices',
+          'AWS SQS',
+          'AWS DynamoDB',
+          'AWS S3',
+          'Docker',
+          'JUnit',
+          'TDD',
+          'Scrum',
+        ],
+      },
+      {
+        company: 'Coopersystem',
+        role: 'Software Engineer',
+        period: 'December 2021 - October 2023',
+        location: 'Brasília, Distrito Federal, Brazil',
+        isFeatured: true,
+        shortSummary:
+          'Designed and maintained enterprise-grade Java backend systems with microservices and Kafka.',
+        highlights: [
+          'Integrated services using Apache Kafka for asynchronous and resilient communication.',
+          'Implemented automated tests with JUnit.',
+          'Contributed to CI/CD pipelines using Jenkins, Argo CD and Rancher.',
+        ],
+        details: [
+          'Worked on enterprise systems with focus on reliability, maintainability and code quality.',
+          'Used JPA and Hibernate as persistence solutions in complex enterprise systems.',
+          'Participated in code reviews and technical discussions to improve architecture and maintainability.',
+        ],
+        technologies: [
+          'Java',
+          'Apache Kafka',
+          'JUnit',
+          'Jenkins',
+          'Argo CD',
+          'Rancher',
+          'JPA',
+          'Hibernate',
+          'Scrum',
+        ],
+      },
+      {
+        company: 'Capgemini',
+        role: 'Software Engineer',
+        period: 'June 2021 - December 2021',
+        location: 'Bahia, Brazil',
+        isFeatured: true,
+        shortSummary:
+          'Developed strategic APIs consumed by a React Native frontend and integrated with Oracle.',
+        highlights: [
+          'Developed backend APIs for efficient React Native frontend consumption.',
+          'Implemented automated tests using JUnit.',
+          'Supported CI/CD processes using Jenkins and Argo CD.',
+        ],
+        details: [
+          'Integrated APIs with an Oracle database for secure and efficient data management.',
+          'Automated development pipelines to support continuous delivery and reduce errors.',
+          'Created API and process documentation to support transparency and future maintenance.',
+        ],
+        technologies: [
+          'Java',
+          'APIs',
+          'React Native',
+          'JUnit',
+          'Oracle',
+          'Jenkins',
+          'Argo CD',
+          'CI/CD',
+        ],
+      },
+      {
+        company: 'PicBuy',
+        role: 'Software Engineer',
+        period: 'April 2021 - May 2021',
+        location: 'Fortaleza, Ceará, Brazil',
+        isFeatured: false,
+        shortSummary:
+          'Developed an API for an e-commerce platform focused on shopping experiences through images.',
+        highlights: [
+          'Built an API using Quarkus, MicroProfile, Kafka and Docker.',
+          'Integrated the API with a frontend built with Flutter.',
+        ],
+        details: [
+          'Implemented an architecture focused on fast responses and effective resource management.',
+          'Implemented automated and end-to-end tests to simulate real usage scenarios.',
+          'Supported proactive maintenance to keep the API updated, secure and aligned with evolving requirements.',
+        ],
+        technologies: [
+          'Quarkus',
+          'MicroProfile',
+          'Kafka',
+          'Docker',
+          'Flutter',
+          'Automated Tests',
+          'E2E',
+        ],
+      },
+      {
+        company: 'Dell Lead',
+        role: 'Software Engineer',
+        period: 'May 2020 - February 2021',
+        location: 'Fortaleza, Ceará, Brazil',
+        isFeatured: false,
+        shortSummary:
+          'Developed interactive web systems for distance education courses with accessibility requirements.',
+        highlights: [
+          'Built backend services using Java, Maven, Spring and Hibernate.',
+          'Implemented interfaces with AngularJS, Angular 7 and SASS.',
+        ],
+        details: [
+          'Implemented tools following national and international accessibility standards.',
+          'Used JPA and PostgreSQL for data persistence.',
+          'Worked with JavaScript, NodeJS and Git for interactivity, server-side execution and source control.',
+        ],
+        technologies: [
+          'Java',
+          'Maven',
+          'Spring',
+          'Hibernate',
+          'AngularJS',
+          'Angular 7',
+          'SASS',
+          'JPA',
+          'PostgreSQL',
+          'JavaScript',
+          'NodeJS',
+          'Git',
+        ],
+      },
+      {
+        company: 'Pague Logo',
+        role: 'Software Engineer',
+        period: 'June 2019 - December 2020',
+        location: 'Fortaleza region, Brazil',
+        isFeatured: false,
+        shortSummary:
+          'Developed and maintained an integrated system for tickets, accreditations and level 2 support.',
+        highlights: [
+          'Built modules for recording, monitoring and resolving tickets.',
+          'Developed workflows for accreditation management.',
+        ],
+        details: [
+          'Implemented tracking tools to provide transparency across service processes.',
+          'Created clear documentation for users, support teams and system changes.',
+          'Introduced internal controls to support data security and integrity.',
+        ],
+      },
+      {
+        company: 'Jardins Distribuidora de Cereais e Representações LTDA',
+        role: 'Software Engineer',
+        period: 'June 2018 - September 2019',
+        location: 'Fortaleza region, Brazil',
+        isFeatured: false,
+        shortSummary:
+          'Developed, maintained and integrated systems for construction control, finance and merchandise management.',
+        highlights: [
+          'Built modules for internal construction control.',
+          'Integrated financial and merchandise management tools.',
+        ],
+        details: [
+          'Automated financial processes to reduce errors and provide a real-time business view.',
+          'Implemented systems to control the life cycle of goods from acquisition to distribution.',
+          'Provided continuous support and adaptive updates for changing operational needs.',
+        ],
+      },
+      {
+        company: 'Prefeitura Municipal de Fortaleza',
+        role: 'Software Engineer',
+        period: 'July 2017 - April 2018',
+        location: 'HDEAM - Hospital Distrital Doutor Evandro Ayres de Moura',
+        isFeatured: false,
+        shortSummary:
+          'Designed and developed a web application for management inventory control in a hospital context.',
+        highlights: [
+          'Developed a web application using JSF and Primefaces.',
+          'Hosted the application on AWS infrastructure.',
+        ],
+        details: [
+          'Implemented features for efficient management inventory control.',
+          'Integrated automated email alerts for critical stock quantities.',
+          'Designed an interface tailored to end-user needs.',
+        ],
+        technologies: ['JSF', 'Primefaces', 'AWS', 'Email'],
+      },
+    ],
+  },
+  education: {
+    title: 'Education',
+    items: [
+      {
+        title: 'MBA in Full Cycle Architecture',
+        institution: 'Full Cycle',
+        statusOrYear: '2024 - 2025',
+      },
+      {
+        title: 'Graduate Degree in Systems Analysis and Development',
+        institution: 'Estácio University',
+        statusOrYear: '2010 - 2015',
+      },
+    ],
+  },
+  courses: {
+    title: 'Courses',
+    items: [
+      'DevOps Ninja: Docker, Kubernetes and Rancher - Udemy',
+      'Web Development with Quarkus - Basic',
+      'Angular 9 - Essencial',
+      'Angular 9 + Spring Boot 2.2: Fullstack',
+      'TDD - Automated Testing with Java - TriadWorks',
+      'Java Programmer Training - Evolution Institute',
+    ],
+  },
+  languages: {
+    title: 'Languages',
+    items: [
+      { name: 'Portuguese', level: 'Native or Bilingual' },
+      { name: 'English', level: 'Professional Working' },
+    ],
+  },
+  projects: {
+    title: 'Projects coming soon',
+    intro:
+      'Public projects will be added when they are ready to demonstrate code quality, architecture and technical decision-making.',
+    items: [
+      {
+        title: 'Java backend API',
+        statusLabel: 'Planned',
+        description:
+          'Planned project to demonstrate REST APIs, automated tests and backend practices.',
+      },
+      {
+        title: 'Cloud integration',
+        statusLabel: 'Planned',
+        description:
+          'Planned project to demonstrate messaging workflows and AWS service integration.',
+      },
+    ],
+  },
+  contact: {
+    title: 'Contact',
+    intro: 'Available for professional conversations about remote Java backend opportunities.',
+    emailLabel: 'Send email',
+    linkedinLabel: 'View LinkedIn',
+    githubLabel: 'View GitHub',
+    resumePtLabel: 'Portuguese resume currently unavailable',
+    resumeEnLabel: 'English resume currently unavailable',
+  },
+} as const;
