@@ -1,1 +1,270 @@
-<p>home works!</p>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__content">
+    <p class="hero__eyebrow">{{ content().hero.eyebrow }}</p>
+    <h1 id="hero-title">{{ content().hero.name }}</h1>
+    <p class="hero__role">{{ content().hero.role }}</p>
+    <p class="hero__location">{{ content().hero.location }}</p>
+
+    <div class="hero__summary">
+      @for (paragraph of content().hero.summary; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+
+    <div class="hero__actions">
+      <a class="button button--primary" href="#experience">
+        {{ content().hero.primaryActionLabel }}
+      </a>
+      @if (externalLinks.resumes.ptBr.href || externalLinks.resumes.en.href) {
+        @if (externalLinks.resumes.ptBr.href; as resumePtHref) {
+          <a class="button button--secondary" [href]="resumePtHref">
+            {{ content().contact.resumePtLabel }}
+          </a>
+        }
+        @if (externalLinks.resumes.en.href; as resumeEnHref) {
+          <a class="button button--secondary" [href]="resumeEnHref">
+            {{ content().contact.resumeEnLabel }}
+          </a>
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<section id="summary" class="section" aria-labelledby="summary-title">
+  <div class="section__header">
+    <h2 id="summary-title">{{ content().about.title }}</h2>
+  </div>
+  <div class="prose">
+    @for (paragraph of content().about.paragraphs; track paragraph) {
+      <p>{{ paragraph }}</p>
+    }
+  </div>
+</section>
+
+<section id="experience" class="section" aria-labelledby="experience-title">
+  <div class="section__header">
+    <h2 id="experience-title">{{ content().experience.title }}</h2>
+  </div>
+
+  <div class="experience-list">
+    @for (item of featuredExperience(); track item.company + item.period) {
+      <article class="experience-card experience-card--featured">
+        <header class="experience-card__header">
+          <div>
+            <h3>{{ item.company }}</h3>
+            <p class="experience-card__role">{{ item.role }}</p>
+          </div>
+          <div class="experience-card__meta">
+            <p>{{ item.period }}</p>
+            @if (item.location) {
+              <p>{{ item.location }}</p>
+            }
+          </div>
+        </header>
+
+        <p class="experience-card__summary">{{ item.shortSummary }}</p>
+
+        @if (item.highlights.length) {
+          <ul class="clean-list">
+            @for (highlight of item.highlights; track highlight) {
+              <li>{{ highlight }}</li>
+            }
+          </ul>
+        }
+
+        <details class="experience-card__details">
+          <summary>{{ content().experience.detailsLabel }}</summary>
+          <div class="experience-card__details-content">
+            @if (item.details.length) {
+              <ul class="clean-list">
+                @for (detail of item.details; track detail) {
+                  <li>{{ detail }}</li>
+                }
+              </ul>
+            }
+
+            @if (item.technologies; as technologies) {
+              <p class="experience-card__technologies-title">
+                {{ content().experience.technologiesLabel }}
+              </p>
+              <ul class="tag-list">
+                @for (technology of technologies; track technology) {
+                  <li>{{ technology }}</li>
+                }
+              </ul>
+            }
+          </div>
+        </details>
+      </article>
+    }
+
+    @for (item of olderExperience(); track item.company + item.period) {
+      <article class="experience-card">
+        <header class="experience-card__header">
+          <div>
+            <h3>{{ item.company }}</h3>
+            <p class="experience-card__role">{{ item.role }}</p>
+          </div>
+          <div class="experience-card__meta">
+            <p>{{ item.period }}</p>
+            @if (item.location) {
+              <p>{{ item.location }}</p>
+            }
+          </div>
+        </header>
+
+        <p class="experience-card__summary">{{ item.shortSummary }}</p>
+
+        @if (item.highlights.length) {
+          <ul class="clean-list">
+            @for (highlight of item.highlights; track highlight) {
+              <li>{{ highlight }}</li>
+            }
+          </ul>
+        }
+
+        <details class="experience-card__details">
+          <summary>{{ content().experience.detailsLabel }}</summary>
+          <div class="experience-card__details-content">
+            @if (item.details.length) {
+              <ul class="clean-list">
+                @for (detail of item.details; track detail) {
+                  <li>{{ detail }}</li>
+                }
+              </ul>
+            }
+
+            @if (item.technologies; as technologies) {
+              <p class="experience-card__technologies-title">
+                {{ content().experience.technologiesLabel }}
+              </p>
+              <ul class="tag-list">
+                @for (technology of technologies; track technology) {
+                  <li>{{ technology }}</li>
+                }
+              </ul>
+            }
+          </div>
+        </details>
+      </article>
+    }
+  </div>
+</section>
+
+<section id="skills" class="section" aria-labelledby="skills-title">
+  <div class="section__header">
+    <h2 id="skills-title">{{ content().skills.title }}</h2>
+  </div>
+  <div class="grid-list">
+    @for (group of content().skills.groups; track group.title) {
+      <article class="info-block">
+        <h3>{{ group.title }}</h3>
+        <ul class="tag-list">
+          @for (item of group.items; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>
+
+<section id="education" class="section" aria-labelledby="education-title">
+  <div class="section__header">
+    <h2 id="education-title">{{ content().education.title }}</h2>
+  </div>
+  <div class="grid-list">
+    @for (item of content().education.items; track item.title) {
+      <article class="info-block">
+        <h3>{{ item.title }}</h3>
+        @if (item.institution) {
+          <p>{{ item.institution }}</p>
+        }
+        <p>{{ item.statusOrYear }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section" aria-labelledby="courses-title">
+  <div class="section__header">
+    <h2 id="courses-title">{{ content().courses.title }}</h2>
+  </div>
+  <ul class="simple-list">
+    @for (course of content().courses.items; track course) {
+      <li>{{ course }}</li>
+    }
+  </ul>
+</section>
+
+<section class="section" aria-labelledby="languages-title">
+  <div class="section__header">
+    <h2 id="languages-title">{{ content().languages.title }}</h2>
+  </div>
+  <div class="grid-list grid-list--compact">
+    @for (language of content().languages.items; track language.name) {
+      <article class="info-block">
+        <h3>{{ language.name }}</h3>
+        <p>{{ language.level }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section" aria-labelledby="projects-title">
+  <div class="section__header">
+    <h2 id="projects-title">{{ content().projects.title }}</h2>
+    <p>{{ content().projects.intro }}</p>
+  </div>
+  <div class="grid-list">
+    @for (project of content().projects.items; track project.title) {
+      <article class="info-block">
+        <p class="status-label">{{ project.statusLabel }}</p>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section id="contact" class="section contact-section" aria-labelledby="contact-title">
+  <div class="section__header">
+    <h2 id="contact-title">{{ content().contact.title }}</h2>
+    <p>{{ content().contact.intro }}</p>
+  </div>
+
+  <address class="contact-list">
+    <a class="contact-link" [href]="externalLinks.email.href">
+      {{ content().contact.emailLabel }}
+    </a>
+    <a
+      class="contact-link"
+      [href]="externalLinks.linkedin.href"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      {{ content().contact.linkedinLabel }}
+    </a>
+    @if (externalLinks.github.href) {
+      <a
+        class="contact-link"
+        [href]="externalLinks.github.href"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {{ content().contact.githubLabel }}
+      </a>
+    }
+    @if (externalLinks.resumes.ptBr.href; as resumePtHref) {
+      <a class="contact-link" [href]="resumePtHref">
+        {{ content().contact.resumePtLabel }}
+      </a>
+    }
+    @if (externalLinks.resumes.en.href; as resumeEnHref) {
+      <a class="contact-link" [href]="resumeEnHref">
+        {{ content().contact.resumeEnLabel }}
+      </a>
+    }
+  </address>
+</section>

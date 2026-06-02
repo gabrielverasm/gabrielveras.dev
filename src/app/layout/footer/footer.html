@@ -1,1 +1,28 @@
-<p>footer works!</p>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__intro">
+      <p class="site-footer__name">{{ content().hero.name }}</p>
+      <p>{{ content().contact.intro }}</p>
+    </div>
+
+    <nav class="site-footer__nav" [attr.aria-label]="content().accessibility.footerNavigationLabel">
+      @for (item of content().navigation; track item.href) {
+        <a [href]="item.href">{{ item.label }}</a>
+      }
+    </nav>
+
+    <address class="site-footer__contact">
+      <a [href]="externalLinks.email.href">{{ content().contact.emailLabel }}</a>
+      <a [href]="externalLinks.linkedin.href" rel="noopener noreferrer" target="_blank">
+        {{ content().contact.linkedinLabel }}
+      </a>
+      @if (externalLinks.github.href) {
+        <a [href]="externalLinks.github.href" rel="noopener noreferrer" target="_blank">
+          {{ content().contact.githubLabel }}
+        </a>
+      }
+    </address>
+
+    <p class="site-footer__copyright">© {{ currentYear }} {{ content().hero.name }}</p>
+  </div>
+</footer>

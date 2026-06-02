@@ -2,6 +2,12 @@ import { PortfolioContent } from '../models/portfolio-content.model';
 
 export const CONTENT_EN: PortfolioContent = {
   language: 'en',
+  accessibility: {
+    skipLinkLabel: 'Skip to main content',
+    primaryNavigationLabel: 'Primary navigation',
+    footerNavigationLabel: 'Footer navigation',
+    languageSwitcherLabel: 'Select language',
+  },
   seo: {
     title: 'Gabriel Veras | Senior Java Backend Engineer',
     description:
@@ -77,6 +83,8 @@ export const CONTENT_EN: PortfolioContent = {
   },
   experience: {
     title: 'Work experience',
+    detailsLabel: 'View details',
+    technologiesLabel: 'Technologies',
     items: [
       {
         company: 'Stefanini Brasil',

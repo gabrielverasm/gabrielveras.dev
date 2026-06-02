@@ -1,1 +1,25 @@
-<p>language-switcher works!</p>
+<div
+  class="language-switcher"
+  role="group"
+  [attr.aria-label]="content().accessibility.languageSwitcherLabel"
+>
+  <button
+    type="button"
+    class="language-switcher__button"
+    [class.language-switcher__button--active]="currentLanguage() === 'pt-BR'"
+    [attr.aria-pressed]="currentLanguage() === 'pt-BR'"
+    (click)="setPortuguese()"
+  >
+    PT
+  </button>
+
+  <button
+    type="button"
+    class="language-switcher__button"
+    [class.language-switcher__button--active]="currentLanguage() === 'en'"
+    [attr.aria-pressed]="currentLanguage() === 'en'"
+    (click)="setEnglish()"
+  >
+    EN
+  </button>
+</div>

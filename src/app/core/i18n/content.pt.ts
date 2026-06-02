@@ -2,6 +2,12 @@ import { PortfolioContent } from '../models/portfolio-content.model';
 
 export const CONTENT_PT: PortfolioContent = {
   language: 'pt-BR',
+  accessibility: {
+    skipLinkLabel: 'Pular para o conteúdo principal',
+    primaryNavigationLabel: 'Navegação principal',
+    footerNavigationLabel: 'Navegação do rodapé',
+    languageSwitcherLabel: 'Selecionar idioma',
+  },
   seo: {
     title: 'Gabriel Veras | Analista de Sistemas Sênior Java',
     description:
@@ -85,6 +91,8 @@ export const CONTENT_PT: PortfolioContent = {
   },
   experience: {
     title: 'Experiência profissional',
+    detailsLabel: 'Ver detalhes',
+    technologiesLabel: 'Tecnologias',
     items: [
       {
         company: 'Stefanini Brasil',

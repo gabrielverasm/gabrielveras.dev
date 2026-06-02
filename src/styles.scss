@@ -1,18 +1,25 @@
 :root {
-  color-scheme: dark;
-  --color-background: #0f172a;
-  --color-surface: #111827;
-  --color-primary: #06b6d4;
-  --color-accent: #f97316;
-  --color-text: #e5e7eb;
-  --color-muted: #94a3b8;
-  --color-focus: #facc15;
+  color-scheme: light;
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-border: #d7dee8;
+  --color-primary: #007a78;
+  --color-primary-contrast: #ffffff;
+  --color-accent: #8a4b12;
+  --color-heading: #111827;
+  --color-text: #1f2937;
+  --color-muted: #526173;
+  --color-link: #005f73;
+  --color-focus: #9a6700;
+  --shadow-soft: 0 1rem 2.5rem rgb(15 23 42 / 0.08);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
+  --space-5: 1.25rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
+  --space-10: 2.5rem;
   --space-12: 3rem;
   --container-max-width: 72rem;
 }
@@ -43,7 +50,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--color-link);
 }
 
 a:focus-visible,
@@ -73,7 +80,7 @@ select {
   transform: translateY(-200%);
   border-radius: 0.5rem;
   background: var(--color-focus);
-  color: #111827;
+  color: #ffffff;
   font-weight: 700;
   text-decoration: none;
 }

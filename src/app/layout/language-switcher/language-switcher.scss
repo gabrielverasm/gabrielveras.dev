@@ -1,0 +1,33 @@
+.language-switcher {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+}
+
+.language-switcher__button {
+  min-width: 2.75rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.language-switcher__button--active {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.language-switcher__button:hover {
+  color: var(--color-text);
+}
+
+.language-switcher__button--active:hover {
+  color: var(--color-primary-contrast);
+}

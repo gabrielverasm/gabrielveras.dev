@@ -1,1 +1,19 @@
-<p>header works!</p>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="#main-content" aria-label="Gabriel Veras">
+      <span class="site-header__name">{{ content().hero.name }}</span>
+      <span class="site-header__role">{{ content().hero.role }}</span>
+    </a>
+
+    <nav
+      class="site-header__nav"
+      [attr.aria-label]="content().accessibility.primaryNavigationLabel"
+    >
+      @for (item of content().navigation; track item.href) {
+        <a class="site-header__link" [href]="item.href">{{ item.label }}</a>
+      }
+    </nav>
+
+    <app-language-switcher />
+  </div>
+</header>

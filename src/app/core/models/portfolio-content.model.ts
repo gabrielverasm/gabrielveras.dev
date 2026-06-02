@@ -2,6 +2,7 @@ export type PortfolioLanguage = 'pt-BR' | 'en';
 
 export interface PortfolioContent {
   readonly language: PortfolioLanguage;
+  readonly accessibility: AccessibilityContent;
   readonly seo: SeoContent;
   readonly navigation: readonly NavigationItem[];
   readonly hero: HeroContent;
@@ -13,6 +14,13 @@ export interface PortfolioContent {
   readonly languages: LanguagesContent;
   readonly projects: ProjectsContent;
   readonly contact: ContactContent;
+}
+
+export interface AccessibilityContent {
+  readonly skipLinkLabel: string;
+  readonly primaryNavigationLabel: string;
+  readonly footerNavigationLabel: string;
+  readonly languageSwitcherLabel: string;
 }
 
 export interface SeoContent {
@@ -52,6 +60,8 @@ export interface SkillGroup {
 
 export interface ExperienceContent {
   readonly title: string;
+  readonly detailsLabel: string;
+  readonly technologiesLabel: string;
   readonly items: readonly ExperienceItem[];
 }
 
