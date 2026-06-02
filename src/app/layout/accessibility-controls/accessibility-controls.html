@@ -3,30 +3,47 @@
   role="group"
   [attr.aria-label]="content().accessibility.accessibilityControlsLabel"
 >
+  <span class="accessibility-controls__font-group">
+    <button
+      type="button"
+      class="accessibility-controls__button accessibility-controls__button--font"
+      [attr.aria-label]="content().accessibility.decreaseFontSizeLabel"
+      [disabled]="!canDecreaseFontSize()"
+      (click)="decreaseFontSize()"
+    >
+      {{ content().accessibility.decreaseFontSizeShortLabel }}
+    </button>
+    <button
+      type="button"
+      class="accessibility-controls__button accessibility-controls__button--font-reset"
+      [attr.aria-label]="content().accessibility.resetFontSizeLabel"
+      [disabled]="!canResetFontSize()"
+      (click)="resetFontSize()"
+    >
+      {{ content().accessibility.resetFontSizeShortLabel }}
+    </button>
+    <button
+      type="button"
+      class="accessibility-controls__button accessibility-controls__button--font"
+      [attr.aria-label]="content().accessibility.increaseFontSizeLabel"
+      [disabled]="!canIncreaseFontSize()"
+      (click)="increaseFontSize()"
+    >
+      {{ content().accessibility.increaseFontSizeShortLabel }}
+    </button>
+  </span>
   <button
     type="button"
-    class="accessibility-controls__button"
-    [attr.aria-label]="content().accessibility.decreaseFontSizeLabel"
-    (click)="decreaseFontSize()"
-  >
-    A-
-  </button>
-  <button
-    type="button"
-    class="accessibility-controls__button"
-    [attr.aria-label]="content().accessibility.increaseFontSizeLabel"
-    (click)="increaseFontSize()"
-  >
-    A+
-  </button>
-  <button
-    type="button"
-    class="accessibility-controls__button"
+    class="accessibility-controls__button accessibility-controls__button--contrast"
     [class.accessibility-controls__button--active]="isHighContrast()"
-    [attr.aria-label]="content().accessibility.highContrastLabel"
+    [attr.aria-label]="
+      isHighContrast()
+        ? content().accessibility.disableHighContrastLabel
+        : content().accessibility.enableHighContrastLabel
+    "
     [attr.aria-pressed]="isHighContrast()"
     (click)="toggleHighContrast()"
   >
-    HC
+    {{ content().accessibility.highContrastLabel }}
   </button>
 </div>

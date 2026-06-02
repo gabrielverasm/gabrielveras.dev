@@ -26,14 +26,6 @@
   --container-max-width: 72rem;
 }
 
-[data-font-scale='compact'] {
-  --font-scale: 0.94;
-}
-
-[data-font-scale='large'] {
-  --font-scale: 1.08;
-}
-
 [data-contrast='high'] {
   --color-background: #ffffff;
   --color-surface: #ffffff;
@@ -46,6 +38,46 @@
   --color-link: #004b7a;
   --color-focus: #92400e;
   --shadow-soft: 0 0 0 1px var(--color-border);
+}
+
+[data-font-level='-5'] {
+  --font-scale: 0.88;
+}
+
+[data-font-level='-4'] {
+  --font-scale: 0.9;
+}
+
+[data-font-level='-3'] {
+  --font-scale: 0.92;
+}
+
+[data-font-level='-2'] {
+  --font-scale: 0.94;
+}
+
+[data-font-level='-1'] {
+  --font-scale: 0.97;
+}
+
+[data-font-level='1'] {
+  --font-scale: 1.03;
+}
+
+[data-font-level='2'] {
+  --font-scale: 1.06;
+}
+
+[data-font-level='3'] {
+  --font-scale: 1.09;
+}
+
+[data-font-level='4'] {
+  --font-scale: 1.12;
+}
+
+[data-font-level='5'] {
+  --font-scale: 1.15;
 }
 
 * {

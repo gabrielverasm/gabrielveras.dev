@@ -14,6 +14,9 @@ export class AccessibilityControls {
 
   readonly content = inject(LanguageService).content;
   readonly isHighContrast = this.preferences.isHighContrast;
+  readonly canDecreaseFontSize = () => this.preferences.canDecreaseFontSize();
+  readonly canIncreaseFontSize = () => this.preferences.canIncreaseFontSize();
+  readonly canResetFontSize = () => this.preferences.canResetFontSize();
 
   decreaseFontSize(): void {
     this.preferences.decreaseFontSize();
@@ -21,6 +24,10 @@ export class AccessibilityControls {
 
   increaseFontSize(): void {
     this.preferences.increaseFontSize();
+  }
+
+  resetFontSize(): void {
+    this.preferences.resetFontSize();
   }
 
   toggleHighContrast(): void {

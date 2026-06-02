@@ -21,13 +21,26 @@ export interface AccessibilityContent {
   readonly primaryNavigationLabel: string;
   readonly footerNavigationLabel: string;
   readonly languageSwitcherLabel: string;
+  readonly languageSwitcherVisibleLabel: string;
   readonly portugueseLanguageLabel: string;
+  readonly portugueseLanguageShortLabel: string;
   readonly englishLanguageLabel: string;
+  readonly englishLanguageShortLabel: string;
+  readonly settingsLabel: string;
+  readonly settingsButtonLabel: string;
+  readonly settingsPanelLabel: string;
   readonly profilePhotoAlt: string;
   readonly accessibilityControlsLabel: string;
   readonly decreaseFontSizeLabel: string;
+  readonly decreaseFontSizeShortLabel: string;
   readonly increaseFontSizeLabel: string;
+  readonly increaseFontSizeShortLabel: string;
+  readonly resetFontSizeLabel: string;
+  readonly resetFontSizeShortLabel: string;
   readonly highContrastLabel: string;
+  readonly enableHighContrastLabel: string;
+  readonly disableHighContrastLabel: string;
+  readonly backToTopLabel: string;
 }
 
 export interface SeoContent {

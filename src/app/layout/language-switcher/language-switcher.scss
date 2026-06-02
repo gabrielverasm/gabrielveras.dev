@@ -1,5 +1,7 @@
 .language-switcher {
   display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.125rem;
   padding: 0.125rem;
   border: 1px solid var(--color-border);
@@ -7,19 +9,36 @@
   background: var(--color-surface);
 }
 
+.language-switcher__label {
+  padding: 0 0.35rem;
+  color: var(--color-muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.8rem;
+}
+
 .language-switcher__button {
-  min-height: 2rem;
+  min-height: 1.8rem;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.25rem 0.45rem;
+  padding: 0.2rem 0.45rem;
   border: 0;
   border-radius: 999px;
   background: transparent;
   color: var(--color-muted);
   cursor: pointer;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 700;
+  white-space: nowrap;
+}
+
+.language-switcher__flag {
+  width: 1.25rem;
+  height: 0.85rem;
+  flex: 0 0 auto;
+  border-radius: 0.15rem;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-text) 18%, transparent);
 }
 
 .language-switcher__button--active {
@@ -33,4 +52,26 @@
 
 .language-switcher__button--active:hover {
   color: var(--color-primary-contrast);
+}
+
+:host-context([data-contrast='high']) .language-switcher {
+  border-color: var(--color-text);
+  background: var(--color-surface);
+}
+
+:host-context([data-contrast='high']) .language-switcher__button {
+  border: 1px solid transparent;
+  color: var(--color-text);
+}
+
+:host-context([data-contrast='high']) .language-switcher__button:hover,
+:host-context([data-contrast='high']) .language-switcher__button:focus-visible,
+:host-context([data-contrast='high']) .language-switcher__button--active {
+  border-color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-surface);
+}
+
+:host-context([data-contrast='high']) .language-switcher__flag {
+  box-shadow: 0 0 0 1px var(--color-text);
 }

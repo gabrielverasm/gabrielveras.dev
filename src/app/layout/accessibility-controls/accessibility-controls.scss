@@ -1,5 +1,13 @@
 .accessibility-controls {
   display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.125rem;
+  border-radius: 0.5rem;
+}
+
+.accessibility-controls__font-group {
+  display: inline-flex;
   gap: 0.125rem;
   padding: 0.125rem;
   border: 1px solid var(--color-border);
@@ -8,20 +16,65 @@
 }
 
 .accessibility-controls__button {
-  min-width: 2.25rem;
-  min-height: 2rem;
-  padding: 0.25rem 0.45rem;
-  border: 0;
+  min-height: 1.7rem;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid transparent;
   border-radius: 999px;
   background: transparent;
   color: var(--color-muted);
   cursor: pointer;
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 800;
+  line-height: 1.2;
+}
+
+.accessibility-controls__button--contrast {
+  margin-left: var(--space-1);
+  border-color: color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
+  background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+  color: var(--color-link);
+}
+
+@media (max-width: 36rem) {
+  .accessibility-controls {
+    flex-wrap: wrap;
+  }
 }
 
 .accessibility-controls__button:hover,
-.accessibility-controls__button--active {
+.accessibility-controls__button:focus-visible {
   background: var(--color-primary);
   color: var(--color-primary-contrast);
+}
+
+.accessibility-controls__button--active {
+  border-color: #fde047;
+  background: #111827;
+  color: #fde047;
+  box-shadow: 0 0 0 2px color-mix(in srgb, #fde047 36%, transparent);
+}
+
+.accessibility-controls__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+:host-context([data-contrast='high']) .accessibility-controls {
+  background: transparent;
+}
+
+:host-context([data-contrast='high']) .accessibility-controls__font-group {
+  border-color: var(--color-text);
+}
+
+:host-context([data-contrast='high']) .accessibility-controls__button {
+  color: var(--color-text);
+}
+
+:host-context([data-contrast='high']) .accessibility-controls__button:hover,
+:host-context([data-contrast='high']) .accessibility-controls__button:focus-visible,
+:host-context([data-contrast='high']) .accessibility-controls__button--active {
+  border-color: #fde047;
+  background: #111827;
+  color: #fde047;
 }
