@@ -350,12 +350,12 @@ export const CONTENT_EN: PortfolioContent = {
     title: 'Courses',
     detailsLabel: 'View courses',
     items: [
-      'DevOps Ninja: Docker, Kubernetes and Rancher - Udemy',
-      'Web Development with Quarkus - Basic',
-      'Angular 9 - Essencial',
-      'Angular 9 + Spring Boot 2.2: Fullstack',
-      'TDD - Automated Testing with Java - TriadWorks',
-      'Java Programmer Training - Evolution Institute',
+      { label: 'DevOps Ninja: Docker, Kubernetes and Rancher - Udemy' },
+      { label: 'Web Development with Quarkus - Basic' },
+      { label: 'Angular 9 - Essencial' },
+      { label: 'Angular 9 + Spring Boot 2.2: Fullstack' },
+      { label: 'TDD - Automated Testing with Java - TriadWorks' },
+      { label: 'Java Programmer Training - Evolution Institute' },
     ],
   },
   languages: {

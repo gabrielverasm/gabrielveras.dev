@@ -120,8 +120,16 @@
   <details class="compact-disclosure">
     <summary>{{ content().courses.detailsLabel }}</summary>
     <ul class="simple-list simple-list--compact">
-      @for (course of content().courses.items; track course) {
-        <li>{{ course }}</li>
+      @for (course of content().courses.items; track course.label) {
+        <li>
+          @if (course.url) {
+            <a [href]="course.url" rel="noopener noreferrer" target="_blank">
+              {{ course.label }}
+            </a>
+          } @else {
+            {{ course.label }}
+          }
+        </li>
       }
     </ul>
   </details>

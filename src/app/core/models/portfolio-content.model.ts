@@ -99,7 +99,12 @@ export interface EducationItem {
 export interface CoursesContent {
   readonly title: string;
   readonly detailsLabel: string;
-  readonly items: readonly string[];
+  readonly items: readonly CourseItem[];
+}
+
+export interface CourseItem {
+  readonly label: string;
+  readonly url?: string;
 }
 
 export interface LanguagesContent {
