@@ -3,8 +3,8 @@
   right: var(--space-4);
   bottom: var(--space-4);
   z-index: 25;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: calc(2.75rem * var(--font-scale));
+  height: calc(2.75rem * var(--font-scale));
   border: 1px solid var(--color-border);
   border-radius: 50%;
   background: var(--color-surface);
@@ -14,8 +14,8 @@
 }
 
 .back-to-top svg {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: calc(1.35rem * var(--font-scale));
+  height: calc(1.35rem * var(--font-scale));
   display: block;
   margin: auto;
   fill: currentColor;
@@ -43,7 +43,5 @@
   .back-to-top {
     right: var(--space-3);
     bottom: var(--space-3);
-    width: 2.5rem;
-    height: 2.5rem;
   }
 }

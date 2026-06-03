@@ -30,7 +30,15 @@ export interface AccessibilityContent {
   readonly settingsButtonLabel: string;
   readonly settingsPanelLabel: string;
   readonly profilePhotoAlt: string;
+  readonly openProfilePhotoLabel: string;
+  readonly closeProfilePhotoLabel: string;
+  readonly heroMetricsLabel: string;
   readonly accessibilityControlsLabel: string;
+  readonly themeToggleLabel: string;
+  readonly enableLightThemeLabel: string;
+  readonly enableDarkThemeLabel: string;
+  readonly darkThemeShortLabel: string;
+  readonly lightThemeShortLabel: string;
   readonly decreaseFontSizeLabel: string;
   readonly decreaseFontSizeShortLabel: string;
   readonly increaseFontSizeLabel: string;
@@ -59,24 +67,68 @@ export interface HeroContent {
   readonly role: string;
   readonly location: string;
   readonly summary: readonly string[];
+  readonly metrics: readonly HeroMetric[];
   readonly primaryActionLabel: string;
   readonly secondaryActionLabel: string;
 }
 
+export interface HeroMetric {
+  readonly value: string;
+  readonly label: string;
+  readonly iconKind: HeroMetricIconKind;
+}
+
+export type HeroMetricIconKind = 'aws' | 'experience' | 'java' | 'microservices';
+
 export interface AboutContent {
   readonly title: string;
   readonly paragraphs: readonly string[];
+  readonly highlights: readonly string[];
 }
 
 export interface SkillsContent {
   readonly title: string;
+  readonly featuredTitle: string;
+  readonly groupsTitle: string;
+  readonly featuredTechnologies: readonly FeaturedTechnology[];
   readonly groups: readonly SkillGroup[];
+}
+
+export interface FeaturedTechnology {
+  readonly name: string;
+  readonly category: string;
+  readonly iconKind: TechnologyIconKind;
 }
 
 export interface SkillGroup {
   readonly title: string;
+  readonly description?: string;
+  readonly iconKind?: SkillGroupIconKind;
   readonly items: readonly string[];
 }
+
+export type SkillGroupIconKind = 'backend' | 'cloud' | 'data' | 'delivery' | 'frontend';
+
+export type TechnologyIconKind =
+  | 'angular'
+  | 'argo'
+  | 'aws'
+  | 'cicd'
+  | 'docker'
+  | 'git'
+  | 'java'
+  | 'javascript'
+  | 'jenkins'
+  | 'junit'
+  | 'kafka'
+  | 'kubernetes'
+  | 'mysql'
+  | 'oracle'
+  | 'postgresql'
+  | 'quarkus'
+  | 'rancher'
+  | 'spring'
+  | 'typescript';
 
 export interface ExperienceContent {
   readonly title: string;
@@ -107,6 +159,9 @@ export interface EducationItem {
   readonly title: string;
   readonly institution?: string;
   readonly statusOrYear: string;
+  readonly url?: string;
+  readonly logoLabel?: string;
+  readonly logoKind?: 'full-cycle' | 'estacio';
 }
 
 export interface CoursesContent {
@@ -145,6 +200,7 @@ export interface PlannedProjectItem {
 export interface ContactContent {
   readonly title: string;
   readonly intro: string;
+  readonly footerText: string;
   readonly emailLabel: string;
   readonly linkedinLabel: string;
   readonly githubLabel: string;
