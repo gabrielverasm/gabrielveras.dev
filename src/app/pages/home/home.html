@@ -114,31 +114,6 @@
   </div>
 }
 
-<section id="summary" class="section section--summary" aria-labelledby="summary-title">
-  <div class="section__header">
-    <h2 id="summary-title">{{ content().about.title }}</h2>
-  </div>
-  <div class="prose">
-    <div class="prose__text">
-      @for (paragraph of content().about.paragraphs; track paragraph) {
-        <p>{{ paragraph }}</p>
-      }
-    </div>
-    <ul class="about-highlights">
-      @for (highlight of content().about.highlights; track highlight) {
-        <li>
-          <span aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false">
-              <path d="m6.5 12.5 3.2 3.2 7.8-8.4" />
-            </svg>
-          </span>
-          {{ highlight }}
-        </li>
-      }
-    </ul>
-  </div>
-</section>
-
 <section id="experience" class="section" aria-labelledby="experience-title">
   <div class="section__header">
     <h2 id="experience-title">{{ content().experience.title }}</h2>
@@ -155,10 +130,13 @@
 
     <details class="history-disclosure">
       <summary>
-        {{ content().experience.fullHistoryLabel }}
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M9 6l6 6-6 6" />
-        </svg>
+        <span class="history-disclosure__marker" aria-hidden="true"></span>
+        <span class="history-disclosure__label">
+          {{ content().experience.fullHistoryLabel }}
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </span>
       </summary>
       <div class="history-disclosure__content">
         @for (item of olderExperience(); track item.company + item.period) {
@@ -177,33 +155,25 @@
   <div class="section__header">
     <h2 id="skills-title">{{ content().skills.title }}</h2>
   </div>
-  <div class="tech-stack" aria-labelledby="skills-featured-title">
-    <h3 id="skills-featured-title">{{ content().skills.featuredTitle }}</h3>
-    <ul class="tech-stack__list">
-      @for (technology of content().skills.featuredTechnologies; track technology.name) {
-        <li class="tech-card">
-          <span class="tech-card__icon" aria-hidden="true">
-            <app-portfolio-icon [kind]="technology.iconKind" />
-          </span>
-          <span class="tech-card__text">
-            <strong>{{ technology.name }}</strong>
-            <span>{{ technology.category }}</span>
-          </span>
-        </li>
-      }
-    </ul>
-  </div>
 
-  <div class="section__subheader">
-    <h3>{{ content().skills.groupsTitle }}</h3>
-  </div>
-
-  <div class="grid-list grid-list--skills">
-    @for (group of content().skills.groups; track group.title) {
-      <article class="skill-card">
+  <div class="skill-showcase">
+    @if (featuredSkillGroup(); as group) {
+      <article class="skill-card skill-card--featured">
+        <div class="skill-card__visual" aria-hidden="true">
+          <span class="skill-card__orbit"></span>
+          <span class="skill-card__orbit-dot"></span>
+          <span class="skill-card__orbit-code">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="m8 8-4 4 4 4" />
+              <path d="m16 8 4 4-4 4" />
+              <path d="m14 5-4 14" />
+            </svg>
+          </span>
+        </div>
+        <p class="skill-card__badge">{{ content().skills.featuredLabel }}</p>
         <div class="skill-card__header">
           <span class="skill-card__icon" aria-hidden="true">
-            <app-portfolio-icon [kind]="group.iconKind ?? 'frontend'" />
+            <app-portfolio-icon [kind]="group.iconKind ?? 'backend'" />
           </span>
           <div>
             <h3>{{ group.title }}</h3>
@@ -212,6 +182,14 @@
             }
           </div>
         </div>
+        <dl class="skill-card__metrics">
+          @for (metric of learningMetrics(); track metric.value + metric.label) {
+            <div>
+              <dt>{{ metric.value }}</dt>
+              <dd>{{ metric.label }}</dd>
+            </div>
+          }
+        </dl>
         <ul class="skill-chip-list">
           @for (item of group.items; track item) {
             @let iconKind = technologyIconKind(item);
@@ -225,8 +203,52 @@
             </li>
           }
         </ul>
+        <div class="skill-card__learning">
+          <span class="skill-card__learning-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path
+                d="m12 3 1.9 5.7L20 10l-4.7 3.7L16.8 20 12 16.6 7.2 20l1.5-6.3L4 10l6.1-1.3L12 3Z"
+              />
+            </svg>
+          </span>
+          <div>
+            <h4>{{ content().skills.learning.title }}</h4>
+            <p>{{ content().skills.learning.text }}</p>
+          </div>
+        </div>
       </article>
     }
+
+    <div class="skill-showcase__secondary">
+      @for (group of supportingSkillGroups(); track group.title) {
+        <article class="skill-card skill-card--compact">
+          <div class="skill-card__header">
+            <span class="skill-card__icon" aria-hidden="true">
+              <app-portfolio-icon [kind]="group.iconKind ?? 'frontend'" />
+            </span>
+            <div>
+              <h3>{{ group.title }}</h3>
+              @if (group.description) {
+                <p>{{ group.description }}</p>
+              }
+            </div>
+          </div>
+          <ul class="skill-chip-list">
+            @for (item of group.items; track item) {
+              @let iconKind = technologyIconKind(item);
+              <li class="skill-chip" [class.skill-chip--with-icon]="iconKind !== null">
+                @if (iconKind) {
+                  <span class="tech-icon" aria-hidden="true">
+                    <app-portfolio-icon [kind]="iconKind" />
+                  </span>
+                }
+                <span>{{ item }}</span>
+              </li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
   </div>
 </section>
 
@@ -283,7 +305,7 @@
   </div>
   <details class="compact-disclosure">
     <summary>{{ content().courses.detailsLabel }}</summary>
-    <ul class="simple-list simple-list--compact">
+    <ul class="course-list">
       @for (course of content().courses.items; track course.label) {
         <li>
           @if (course.url) {
@@ -305,9 +327,24 @@
   </div>
   <div class="grid-list grid-list--compact">
     @for (language of content().languages.items; track language.name) {
-      <article class="info-block">
-        <h3>{{ language.name }}</h3>
-        <p>{{ language.level }}</p>
+      <article class="info-block language-card">
+        <img
+          class="language-flag"
+          [src]="
+            language.name === 'Português' || language.name === 'Portuguese'
+              ? 'images/flags/br.svg'
+              : 'images/flags/us.svg'
+          "
+          width="61"
+          height="40"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+        <div>
+          <h3>{{ language.name }}</h3>
+          <p>{{ language.level }}</p>
+        </div>
       </article>
     }
   </div>

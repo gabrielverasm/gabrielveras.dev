@@ -1,6 +1,6 @@
 {
   "name": "gabrielveras.dev",
-  "version": "0.0.0",
+  "version": "2.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,6 +11,10 @@
     "format": "prettier --write \"src/**/*.{ts,html,scss,json}\" \"*.{json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\" \"*.{json,md}\"",
     "quality": "npm run lint && npm run format:check && npm run build",
+    "sync:version": "node scripts/sync-version.mjs",
+    "prestart": "npm run sync:version",
+    "prebuild": "npm run sync:version",
+    "prequality": "npm run sync:version",
     "prepare": "husky"
   },
   "private": true,
