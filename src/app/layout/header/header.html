@@ -1,7 +1,13 @@
-<header class="site-header">
+<header class="site-header" [class.site-header--compact]="isCompact()">
   <div class="site-header__inner">
     <div class="site-header__top-row">
-      <a class="site-header__brand" href="#main-content" aria-label="Gabriel Veras">
+      <a
+        class="site-header__brand"
+        href="#main-content"
+        aria-label="Gabriel Veras"
+        [attr.aria-hidden]="isCompact() ? null : 'true'"
+        [attr.tabindex]="isCompact() ? null : -1"
+      >
         <img
           class="site-header__avatar"
           src="images/profile-avatar.webp"
@@ -13,53 +19,51 @@
         <span class="site-header__role">{{ content().hero.role }}</span>
       </a>
 
-      <div class="site-header__right">
-        <nav
-          class="site-header__nav"
-          [attr.aria-label]="content().accessibility.primaryNavigationLabel"
+      <nav
+        class="site-header__nav"
+        [attr.aria-label]="content().accessibility.primaryNavigationLabel"
+      >
+        @for (item of content().navigation; track item.href) {
+          <a class="site-header__link" [href]="item.href">{{ item.label }}</a>
+        }
+      </nav>
+
+      <div class="site-header__settings">
+        <button
+          type="button"
+          class="site-header__settings-button"
+          aria-controls="header-settings-panel"
+          [attr.aria-expanded]="isSettingsOpen()"
+          [attr.aria-label]="content().accessibility.settingsButtonLabel"
+          (click)="toggleSettings()"
         >
-          @for (item of content().navigation; track item.href) {
-            <a class="site-header__link" [href]="item.href">{{ item.label }}</a>
-          }
-        </nav>
-
-        <div class="site-header__settings">
-          <button
-            type="button"
-            class="site-header__settings-button"
-            aria-controls="header-settings-panel"
-            [attr.aria-expanded]="isSettingsOpen()"
-            [attr.aria-label]="content().accessibility.settingsButtonLabel"
-            (click)="toggleSettings()"
+          <svg
+            class="site-header__settings-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
           >
-            <svg
-              class="site-header__settings-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <circle cx="12" cy="12" r="3.1" />
-              <path
-                d="M9.7 4.15a2.35 2.35 0 0 1 4.6 0 2.35 2.35 0 0 0 3.34 1.93 2.35 2.35 0 0 1 2.3 3.98 2.35 2.35 0 0 0 0 3.88 2.35 2.35 0 0 1-2.3 3.98 2.35 2.35 0 0 0-3.34 1.93 2.35 2.35 0 0 1-4.6 0 2.35 2.35 0 0 0-3.34-1.93 2.35 2.35 0 0 1-2.3-3.98 2.35 2.35 0 0 0 0-3.88 2.35 2.35 0 0 1 2.3-3.98A2.35 2.35 0 0 0 9.7 4.15Z"
-              />
-            </svg>
-            <span class="site-header__settings-text">
-              {{ content().accessibility.settingsLabel }}
-            </span>
-          </button>
+            <circle cx="12" cy="12" r="3.1" />
+            <path
+              d="M9.7 4.15a2.35 2.35 0 0 1 4.6 0 2.35 2.35 0 0 0 3.34 1.93 2.35 2.35 0 0 1 2.3 3.98 2.35 2.35 0 0 0 0 3.88 2.35 2.35 0 0 1-2.3 3.98 2.35 2.35 0 0 0-3.34 1.93 2.35 2.35 0 0 1-4.6 0 2.35 2.35 0 0 0-3.34-1.93 2.35 2.35 0 0 1-2.3-3.98 2.35 2.35 0 0 0 0-3.88 2.35 2.35 0 0 1 2.3-3.98A2.35 2.35 0 0 0 9.7 4.15Z"
+            />
+          </svg>
+          <span class="site-header__settings-text">
+            {{ content().accessibility.settingsLabel }}
+          </span>
+        </button>
 
-          @if (isSettingsOpen()) {
-            <div
-              id="header-settings-panel"
-              class="site-header__settings-panel"
-              role="dialog"
-              [attr.aria-label]="content().accessibility.settingsPanelLabel"
-            >
-              <app-accessibility-controls />
-              <app-language-switcher />
-            </div>
-          }
-        </div>
+        @if (isSettingsOpen()) {
+          <div
+            id="header-settings-panel"
+            class="site-header__settings-panel"
+            role="dialog"
+            [attr.aria-label]="content().accessibility.settingsPanelLabel"
+          >
+            <app-accessibility-controls />
+            <app-language-switcher />
+          </div>
+        }
       </div>
     </div>
   </div>

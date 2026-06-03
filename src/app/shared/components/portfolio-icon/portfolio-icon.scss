@@ -1,0 +1,71 @@
+:host {
+  display: inline-grid;
+  line-height: 0;
+}
+
+.portfolio-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-grid;
+  place-items: center;
+  color: var(--color-primary);
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.portfolio-icon--java,
+.portfolio-icon--jenkins,
+.portfolio-icon--oracle {
+  color: #fb6d3a;
+}
+
+.portfolio-icon--spring,
+.portfolio-icon--junit {
+  color: #55d37a;
+}
+
+.portfolio-icon--aws {
+  color: #fbbf24;
+}
+
+.portfolio-icon--quarkus,
+.portfolio-icon--kafka,
+.portfolio-icon--argo,
+.portfolio-icon--rancher {
+  color: #a78bfa;
+}
+
+.portfolio-icon--docker,
+.portfolio-icon--kubernetes,
+.portfolio-icon--postgresql,
+.portfolio-icon--typescript,
+.portfolio-icon--cloud,
+.portfolio-icon--microservices {
+  color: #38bdf8;
+}
+
+.portfolio-icon--angular {
+  color: #f43f5e;
+}
+
+.portfolio-icon--javascript {
+  color: #fde047;
+}
+
+.portfolio-icon--git,
+.portfolio-icon--mysql,
+.portfolio-icon--cicd {
+  color: #fb923c;
+}
+
+:host-context([data-contrast='high']) .portfolio-icon {
+  color: currentColor;
+}

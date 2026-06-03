@@ -1,15 +1,9 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <div class="site-footer__intro">
-      <p class="site-footer__name">{{ content().hero.name }}</p>
-      <p>{{ content().contact.intro }}</p>
+    <div class="site-footer__brand">
+      <strong>{{ content().hero.name }}</strong>
+      <p>{{ content().hero.role }}</p>
     </div>
-
-    <nav class="site-footer__nav" [attr.aria-label]="content().accessibility.footerNavigationLabel">
-      @for (item of content().navigation; track item.href) {
-        <a [href]="item.href">{{ item.label }}</a>
-      }
-    </nav>
 
     <p class="site-footer__copyright">© {{ currentYear }} {{ content().hero.name }}</p>
   </div>

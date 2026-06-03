@@ -15,6 +15,11 @@ export class Header {
 
   readonly content = inject(LanguageService).content;
   readonly isSettingsOpen = signal(false);
+  readonly isCompact = signal(false);
+
+  constructor() {
+    this.updateHeaderState();
+  }
 
   toggleSettings(): void {
     this.isSettingsOpen.update((isOpen) => !isOpen);
@@ -36,5 +41,14 @@ export class Header {
   @HostListener('document:keydown.escape')
   onEscape(): void {
     this.closeSettings();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.updateHeaderState();
+  }
+
+  private updateHeaderState(): void {
+    this.isCompact.set(globalThis.scrollY > 96);
   }
 }

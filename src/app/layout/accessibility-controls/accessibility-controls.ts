@@ -13,10 +13,15 @@ export class AccessibilityControls {
   private readonly preferences = inject(AccessibilityPreferencesService);
 
   readonly content = inject(LanguageService).content;
+  readonly currentTheme = this.preferences.currentTheme;
   readonly isHighContrast = this.preferences.isHighContrast;
   readonly canDecreaseFontSize = () => this.preferences.canDecreaseFontSize();
   readonly canIncreaseFontSize = () => this.preferences.canIncreaseFontSize();
   readonly canResetFontSize = () => this.preferences.canResetFontSize();
+
+  toggleTheme(): void {
+    this.preferences.toggleTheme();
+  }
 
   decreaseFontSize(): void {
     this.preferences.decreaseFontSize();
