@@ -1,10 +1,13 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { effect, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 
-const MIN_FONT_LEVEL = -5;
-const DEFAULT_FONT_LEVEL = 0;
-const MAX_FONT_LEVEL = 5;
+export type ColorTheme = 'dark' | 'light';
 
+const MIN_FONT_LEVEL = -8;
+const DEFAULT_FONT_LEVEL = 0;
+const MAX_FONT_LEVEL = 8;
+
+const THEME_KEY = 'portfolio.theme';
 const FONT_SCALE_KEY = 'portfolio.fontScale';
 const HIGH_CONTRAST_KEY = 'portfolio.highContrast';
 
@@ -14,22 +17,36 @@ const HIGH_CONTRAST_KEY = 'portfolio.highContrast';
 export class AccessibilityPreferencesService {
   private readonly document = inject(DOCUMENT);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly theme = signal<ColorTheme>(this.readTheme());
   private readonly fontLevel = signal<number>(this.readFontLevel());
   private readonly highContrast = signal<boolean>(this.readBoolean(HIGH_CONTRAST_KEY));
 
+  readonly currentTheme = this.theme.asReadonly();
   readonly currentFontLevel = this.fontLevel.asReadonly();
   readonly isHighContrast = this.highContrast.asReadonly();
 
   constructor() {
     effect(() => {
+      const theme = this.theme();
       const level = this.fontLevel();
       const contrast = this.highContrast();
 
+      this.document.documentElement.dataset['theme'] = theme;
       this.document.documentElement.dataset['fontLevel'] = String(level);
       this.document.documentElement.dataset['contrast'] = contrast ? 'high' : 'default';
+      this.document.documentElement.style.colorScheme = contrast ? 'light' : theme;
+      this.writeStorage(THEME_KEY, theme);
       this.writeStorage(FONT_SCALE_KEY, String(level));
       this.writeStorage(HIGH_CONTRAST_KEY, String(contrast));
     });
+  }
+
+  setTheme(theme: ColorTheme): void {
+    this.theme.set(theme);
+  }
+
+  toggleTheme(): void {
+    this.theme.update((theme) => (theme === 'dark' ? 'light' : 'dark'));
   }
 
   decreaseFontSize(): void {
@@ -58,6 +75,24 @@ export class AccessibilityPreferencesService {
 
   toggleHighContrast(): void {
     this.highContrast.update((enabled) => !enabled);
+  }
+
+  private readTheme(): ColorTheme {
+    const stored = this.readStorage(THEME_KEY);
+
+    if (stored === 'dark' || stored === 'light') {
+      return stored;
+    }
+
+    if (!this.isBrowser) {
+      return 'dark';
+    }
+
+    try {
+      return globalThis.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    } catch {
+      return 'dark';
+    }
   }
 
   private readFontLevel(): number {

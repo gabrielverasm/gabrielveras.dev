@@ -3,6 +3,33 @@
   role="group"
   [attr.aria-label]="content().accessibility.accessibilityControlsLabel"
 >
+  <button
+    type="button"
+    class="accessibility-controls__button accessibility-controls__button--theme"
+    [attr.aria-label]="
+      currentTheme() === 'dark'
+        ? content().accessibility.enableLightThemeLabel
+        : content().accessibility.enableDarkThemeLabel
+    "
+    [attr.aria-pressed]="currentTheme() === 'dark'"
+    (click)="toggleTheme()"
+  >
+    @if (currentTheme() === 'dark') {
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path
+          d="M12 3.25V5.5M12 18.5v2.25M5.8 5.8l1.6 1.6m9.2 9.2 1.6 1.6M3.25 12H5.5m13 0h2.25M5.8 18.2l1.6-1.6m9.2-9.2 1.6-1.6"
+        />
+        <circle cx="12" cy="12" r="4.2" />
+      </svg>
+      <span>{{ content().accessibility.lightThemeShortLabel }}</span>
+    } @else {
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M20 14.4A7.6 7.6 0 0 1 9.6 4 8.4 8.4 0 1 0 20 14.4Z" />
+      </svg>
+      <span>{{ content().accessibility.darkThemeShortLabel }}</span>
+    }
+  </button>
+
   <span class="accessibility-controls__font-group">
     <button
       type="button"

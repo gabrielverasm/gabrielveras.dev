@@ -1,11 +1,4 @@
 <section class="hero" aria-labelledby="hero-title">
-  <img
-    class="hero__avatar"
-    src="images/profile.webp"
-    width="128"
-    height="128"
-    [alt]="content().accessibility.profilePhotoAlt"
-  />
   <div class="hero__content">
     <p class="hero__eyebrow">{{ content().hero.eyebrow }}</p>
     <h1 id="hero-title">{{ content().hero.name }}</h1>
@@ -20,32 +13,129 @@
 
     <div class="hero__actions">
       <a class="button button--primary" href="#experience">
-        {{ content().hero.primaryActionLabel }}
+        <span>{{ content().hero.primaryActionLabel }}</span>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </a>
+      <a
+        class="button button--secondary"
+        [href]="externalLinks.github.href"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            d="M15 21v-3.5a4.2 4.2 0 0 0-1.1-3c3.7-.4 6.6-1.8 6.6-7a5.5 5.5 0 0 0-1.5-3.9 5.1 5.1 0 0 0-.2-3.1s-1.3-.4-4.1 1.5a14.1 14.1 0 0 0-7.4 0C4.5.1 3.2.5 3.2.5A5.1 5.1 0 0 0 3 3.6a5.5 5.5 0 0 0-1.5 3.9c0 5.2 2.9 6.6 6.6 7a4.2 4.2 0 0 0-1.1 3V21"
+          />
+          <path d="M7 18c-2.8.8-2.8-1.4-4-1.8" />
+        </svg>
+        <span>{{ content().contact.githubLabel }}</span>
       </a>
       @if (externalLinks.resumes.ptBr.href || externalLinks.resumes.en.href) {
         @if (externalLinks.resumes.ptBr.href; as resumePtHref) {
           <a class="button button--secondary" [href]="resumePtHref">
-            {{ content().contact.resumePtLabel }}
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+            </svg>
+            <span>{{ content().contact.resumePtLabel }}</span>
           </a>
         }
         @if (externalLinks.resumes.en.href; as resumeEnHref) {
           <a class="button button--secondary" [href]="resumeEnHref">
-            {{ content().contact.resumeEnLabel }}
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+            </svg>
+            <span>{{ content().contact.resumeEnLabel }}</span>
           </a>
         }
       }
     </div>
   </div>
+
+  <div class="hero__media">
+    <button
+      type="button"
+      class="hero__photo-button"
+      [attr.aria-label]="content().accessibility.openProfilePhotoLabel"
+      (click)="openProfilePreview()"
+    >
+      <img
+        class="hero__avatar"
+        src="images/profile.webp"
+        width="320"
+        height="320"
+        [alt]="content().accessibility.profilePhotoAlt"
+      />
+    </button>
+  </div>
+
+  <ul class="hero__metrics" [attr.aria-label]="content().accessibility.heroMetricsLabel">
+    @for (metric of content().hero.metrics; track metric.value + metric.label) {
+      <li>
+        <span class="hero__metric-icon" aria-hidden="true">
+          <app-portfolio-icon [kind]="metric.iconKind" />
+        </span>
+        <span>
+          <strong>{{ metric.value }}</strong>
+          <span>{{ metric.label }}</span>
+        </span>
+      </li>
+    }
+  </ul>
 </section>
 
-<section id="summary" class="section" aria-labelledby="summary-title">
+@if (isProfilePreviewOpen()) {
+  <div
+    class="photo-modal"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="content().accessibility.profilePhotoAlt"
+  >
+    <button
+      type="button"
+      class="photo-modal__backdrop"
+      [attr.aria-label]="content().accessibility.closeProfilePhotoLabel"
+      (click)="closeProfilePreview()"
+    ></button>
+    <div class="photo-modal__content">
+      <button
+        type="button"
+        class="photo-modal__close"
+        [attr.aria-label]="content().accessibility.closeProfilePhotoLabel"
+        (click)="closeProfilePreview()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </button>
+      <img src="images/profile.webp" [alt]="content().accessibility.profilePhotoAlt" />
+    </div>
+  </div>
+}
+
+<section id="summary" class="section section--summary" aria-labelledby="summary-title">
   <div class="section__header">
     <h2 id="summary-title">{{ content().about.title }}</h2>
   </div>
   <div class="prose">
-    @for (paragraph of content().about.paragraphs; track paragraph) {
-      <p>{{ paragraph }}</p>
-    }
+    <div class="prose__text">
+      @for (paragraph of content().about.paragraphs; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+    <ul class="about-highlights">
+      @for (highlight of content().about.highlights; track highlight) {
+        <li>
+          <span aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="m6.5 12.5 3.2 3.2 7.8-8.4" />
+            </svg>
+          </span>
+          {{ highlight }}
+        </li>
+      }
+    </ul>
   </div>
 </section>
 
@@ -64,7 +154,12 @@
     }
 
     <details class="history-disclosure">
-      <summary>{{ content().experience.fullHistoryLabel }}</summary>
+      <summary>
+        {{ content().experience.fullHistoryLabel }}
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M9 6l6 6-6 6" />
+        </svg>
+      </summary>
       <div class="history-disclosure__content">
         @for (item of olderExperience(); track item.company + item.period) {
           <app-experience-card
@@ -82,13 +177,52 @@
   <div class="section__header">
     <h2 id="skills-title">{{ content().skills.title }}</h2>
   </div>
-  <div class="grid-list">
+  <div class="tech-stack" aria-labelledby="skills-featured-title">
+    <h3 id="skills-featured-title">{{ content().skills.featuredTitle }}</h3>
+    <ul class="tech-stack__list">
+      @for (technology of content().skills.featuredTechnologies; track technology.name) {
+        <li class="tech-card">
+          <span class="tech-card__icon" aria-hidden="true">
+            <app-portfolio-icon [kind]="technology.iconKind" />
+          </span>
+          <span class="tech-card__text">
+            <strong>{{ technology.name }}</strong>
+            <span>{{ technology.category }}</span>
+          </span>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <div class="section__subheader">
+    <h3>{{ content().skills.groupsTitle }}</h3>
+  </div>
+
+  <div class="grid-list grid-list--skills">
     @for (group of content().skills.groups; track group.title) {
-      <article class="info-block">
-        <h3>{{ group.title }}</h3>
-        <ul class="tag-list">
+      <article class="skill-card">
+        <div class="skill-card__header">
+          <span class="skill-card__icon" aria-hidden="true">
+            <app-portfolio-icon [kind]="group.iconKind ?? 'frontend'" />
+          </span>
+          <div>
+            <h3>{{ group.title }}</h3>
+            @if (group.description) {
+              <p>{{ group.description }}</p>
+            }
+          </div>
+        </div>
+        <ul class="skill-chip-list">
           @for (item of group.items; track item) {
-            <li>{{ item }}</li>
+            @let iconKind = technologyIconKind(item);
+            <li class="skill-chip" [class.skill-chip--with-icon]="iconKind !== null">
+              @if (iconKind) {
+                <span class="tech-icon" aria-hidden="true">
+                  <app-portfolio-icon [kind]="iconKind" />
+                </span>
+              }
+              <span>{{ item }}</span>
+            </li>
           }
         </ul>
       </article>
@@ -102,12 +236,42 @@
   </div>
   <div class="grid-list">
     @for (item of content().education.items; track item.title) {
-      <article class="info-block">
-        <h3>{{ item.title }}</h3>
-        @if (item.institution) {
-          <p>{{ item.institution }}</p>
-        }
-        <p>{{ item.statusOrYear }}</p>
+      <article class="info-block education-card">
+        <span
+          class="education-card__logo"
+          [class.education-card__logo--full-cycle]="item.logoKind === 'full-cycle'"
+          [class.education-card__logo--estacio]="item.logoKind === 'estacio'"
+          aria-hidden="true"
+        >
+          @if (item.logoKind === 'full-cycle') {
+            <svg viewBox="0 0 40 40" focusable="false">
+              <path d="M20 4a16 16 0 1 1-14.4 9" />
+              <path d="M7 6v7h7" />
+            </svg>
+            <strong>{{ item.logoLabel }}</strong>
+          } @else {
+            <svg viewBox="0 0 40 40" focusable="false">
+              <path d="m20 8 15 8-15 8-15-8 15-8Z" />
+              <path d="M11 20v7c4.8 3 13.2 3 18 0v-7" />
+            </svg>
+            <strong>{{ item.logoLabel }}</strong>
+          }
+        </span>
+        <div>
+          <h3>
+            @if (item.url) {
+              <a [href]="item.url" rel="noopener noreferrer" target="_blank">
+                {{ item.title }}
+              </a>
+            } @else {
+              {{ item.title }}
+            }
+          </h3>
+          @if (item.institution) {
+            <p>{{ item.institution }}</p>
+          }
+          <p>{{ item.statusOrYear }}</p>
+        </div>
       </article>
     }
   </div>
@@ -149,14 +313,14 @@
   </div>
 </section>
 
-<section class="section" aria-labelledby="projects-title">
+<section class="section section--projects" aria-labelledby="projects-title">
   <div class="section__header">
     <h2 id="projects-title">{{ content().projects.title }}</h2>
     <p>{{ content().projects.intro }}</p>
   </div>
-  <div class="grid-list">
+  <div class="grid-list grid-list--projects">
     @for (project of content().projects.items; track project.title) {
-      <article class="info-block">
+      <article class="info-block project-card">
         <p class="status-label">{{ project.statusLabel }}</p>
         <h3>{{ project.title }}</h3>
         <p>{{ project.description }}</p>
@@ -166,42 +330,67 @@
 </section>
 
 <section id="contact" class="section contact-section" aria-labelledby="contact-title">
-  <div class="section__header">
-    <h2 id="contact-title">{{ content().contact.title }}</h2>
-    <p>{{ content().contact.intro }}</p>
-  </div>
+  <div class="contact-panel">
+    <div class="section__header">
+      <h2 id="contact-title">{{ content().contact.title }}</h2>
+      <p>{{ content().contact.intro }}</p>
+    </div>
 
-  <address class="contact-list">
-    <a class="contact-link" [href]="externalLinks.email.href">
-      {{ content().contact.emailLabel }}
-    </a>
-    <a
-      class="contact-link"
-      [href]="externalLinks.linkedin.href"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      {{ content().contact.linkedinLabel }}
-    </a>
-    @if (externalLinks.github.href) {
+    <address class="contact-list">
+      <a class="contact-link contact-link--primary" [href]="externalLinks.email.href">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 6h16v12H4z" />
+          <path d="m4 7 8 6 8-6" />
+        </svg>
+        <span>{{ content().contact.emailLabel }}</span>
+      </a>
       <a
         class="contact-link"
-        [href]="externalLinks.github.href"
+        [href]="externalLinks.linkedin.href"
         rel="noopener noreferrer"
         target="_blank"
       >
-        {{ content().contact.githubLabel }}
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 4h16v16H4z" />
+          <path d="M8 11v5" />
+          <path d="M8 8.2v.1" />
+          <path d="M12 16v-5" />
+          <path d="M12 13.2c0-1.4.9-2.4 2.3-2.4s2.2 1 2.2 2.6V16" />
+        </svg>
+        <span>{{ content().contact.linkedinLabel }}</span>
       </a>
-    }
-    @if (externalLinks.resumes.ptBr.href; as resumePtHref) {
-      <a class="contact-link" [href]="resumePtHref">
-        {{ content().contact.resumePtLabel }}
-      </a>
-    }
-    @if (externalLinks.resumes.en.href; as resumeEnHref) {
-      <a class="contact-link" [href]="resumeEnHref">
-        {{ content().contact.resumeEnLabel }}
-      </a>
-    }
-  </address>
+      @if (externalLinks.github.href) {
+        <a
+          class="contact-link"
+          [href]="externalLinks.github.href"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              d="M15 21v-3.5a4.2 4.2 0 0 0-1.1-3c3.7-.4 6.6-1.8 6.6-7a5.5 5.5 0 0 0-1.5-3.9 5.1 5.1 0 0 0-.2-3.1s-1.3-.4-4.1 1.5a14.1 14.1 0 0 0-7.4 0C4.5.1 3.2.5 3.2.5A5.1 5.1 0 0 0 3 3.6a5.5 5.5 0 0 0-1.5 3.9c0 5.2 2.9 6.6 6.6 7a4.2 4.2 0 0 0-1.1 3V21"
+            />
+            <path d="M7 18c-2.8.8-2.8-1.4-4-1.8" />
+          </svg>
+          <span>{{ content().contact.githubLabel }}</span>
+        </a>
+      }
+      @if (externalLinks.resumes.ptBr.href; as resumePtHref) {
+        <a class="contact-link" [href]="resumePtHref">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+          </svg>
+          <span>{{ content().contact.resumePtLabel }}</span>
+        </a>
+      }
+      @if (externalLinks.resumes.en.href; as resumeEnHref) {
+        <a class="contact-link" [href]="resumeEnHref">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+          </svg>
+          <span>{{ content().contact.resumeEnLabel }}</span>
+        </a>
+      }
+    </address>
+  </div>
 </section>
