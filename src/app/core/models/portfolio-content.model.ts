@@ -78,7 +78,14 @@ export interface HeroMetric {
   readonly iconKind: HeroMetricIconKind;
 }
 
-export type HeroMetricIconKind = 'aws' | 'experience' | 'java' | 'microservices';
+export type HeroMetricIconKind =
+  | 'aws'
+  | 'backend'
+  | 'delivery'
+  | 'experience'
+  | 'java'
+  | 'microservices'
+  | 'quarkus';
 
 export interface AboutContent {
   readonly title: string;
@@ -88,10 +95,24 @@ export interface AboutContent {
 
 export interface SkillsContent {
   readonly title: string;
+  readonly featuredLabel: string;
   readonly featuredTitle: string;
   readonly groupsTitle: string;
   readonly featuredTechnologies: readonly FeaturedTechnology[];
+  readonly learning: LearningContent;
   readonly groups: readonly SkillGroup[];
+}
+
+export interface LearningContent {
+  readonly title: string;
+  readonly text: string;
+  readonly metricLabels: LearningMetricLabels;
+}
+
+export interface LearningMetricLabels {
+  readonly experience: string;
+  readonly technicalAreas: string;
+  readonly listedTechnologies: string;
 }
 
 export interface FeaturedTechnology {

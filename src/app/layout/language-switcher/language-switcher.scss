@@ -33,12 +33,12 @@
   white-space: nowrap;
 }
 
-.language-switcher__flag {
-  width: calc(1.25rem * var(--font-scale));
-  height: calc(0.85rem * var(--font-scale));
+.language-switcher .language-flag {
+  --flag-width: calc(1.24rem * var(--font-scale));
+  --flag-height: calc(0.82rem * var(--font-scale));
+
   flex: 0 0 auto;
   border-radius: 0.15rem;
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-text) 18%, transparent);
 }
 
 .language-switcher__button--active {
@@ -72,6 +72,6 @@
   color: var(--color-surface);
 }
 
-:host-context([data-contrast='high']) .language-switcher__flag {
+:host-context([data-contrast='high']) .language-switcher .language-flag {
   box-shadow: 0 0 0 1px var(--color-text);
 }

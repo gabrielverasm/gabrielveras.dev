@@ -42,7 +42,6 @@ export const CONTENT_EN: PortfolioContent = {
       'Gabriel Veras is a Senior Software Engineer with 8+ years of Java backend experience in REST APIs, microservices, Spring Boot, Quarkus, AWS, Kafka and enterprise systems.',
   },
   navigation: [
-    { label: 'Summary', href: '#summary' },
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Education', href: '#education' },
@@ -54,33 +53,33 @@ export const CONTENT_EN: PortfolioContent = {
     role: 'Senior Java Backend Engineer',
     location: 'Fortaleza, Ceará, Brazil',
     summary: [
-      'Senior Software Engineer with strong experience in backend development using Java, Spring Boot and Quarkus.',
-      'Focused on scalable and secure REST APIs, microservices, legacy integrations, AWS, Docker and enterprise-grade systems.',
+      'Senior Software Engineer specialized in Java backend development, Spring Boot, Quarkus, microservices architectures and legacy system integration.',
+      'Hands-on experience with AWS SQS, DynamoDB and S3, containerized environments using Docker, agile teams and reliable production-critical systems.',
     ],
     metrics: [
-      { value: '8+', label: 'years of experience', iconKind: 'experience' },
-      { value: 'Java', label: 'Spring Boot and Quarkus', iconKind: 'java' },
-      { value: 'Microservices', label: 'REST APIs and integrations', iconKind: 'microservices' },
-      { value: 'AWS', label: 'cloud and messaging', iconKind: 'aws' },
+      { value: '8+ years', label: 'Java backend', iconKind: 'experience' },
+      { value: 'Java & Spring', label: 'Enterprise APIs', iconKind: 'java' },
+      { value: 'Quarkus', label: 'Microservices', iconKind: 'quarkus' },
+      { value: 'AWS & Messaging', label: 'Cloud integrations', iconKind: 'aws' },
+      { value: 'Quality', label: 'TDD, JUnit and CI/CD', iconKind: 'delivery' },
+      { value: 'Critical systems', label: 'Legacy and production', iconKind: 'backend' },
     ],
     primaryActionLabel: 'View experience',
     secondaryActionLabel: 'Download resume',
   },
   about: {
-    title: 'Summary',
-    paragraphs: [
-      'Senior Software Engineer specialized in Java backend development, Spring Boot, Quarkus, microservices architectures and legacy system integration.',
-      'Hands-on experience with AWS SQS, DynamoDB and S3, containerized environments using Docker, agile teams and reliable production-critical systems.',
-    ],
+    title: 'Strengths',
+    paragraphs: [],
     highlights: [
-      'Clean Architecture and SOLID',
+      'Clean architecture and SOLID',
       'RESTful APIs and microservices',
       'Performance and scalability',
-      'Agile technical collaboration',
+      'Agile and technical collaboration',
     ],
   },
   skills: {
-    title: 'Hard skills',
+    title: 'Technical skills',
+    featuredLabel: 'Featured',
     featuredTitle: 'Core stack',
     groupsTitle: 'Capabilities by area',
     featuredTechnologies: [
@@ -94,10 +93,20 @@ export const CONTENT_EN: PortfolioContent = {
       { name: 'PostgreSQL', category: 'Data', iconKind: 'postgresql' },
       { name: 'Angular', category: 'Frontend', iconKind: 'angular' },
     ],
+    learning: {
+      title: 'Always learning',
+      text: 'Continuous improvement, technical practice and knowledge sharing.',
+      metricLabels: {
+        experience: 'years of experience',
+        technicalAreas: 'technical areas',
+        listedTechnologies: 'listed technologies',
+      },
+    },
     groups: [
       {
         title: 'Backend',
-        description: 'APIs, services and backend architecture for enterprise systems.',
+        description:
+          'APIs, services and backend architecture for scalable, secure and high-performance enterprise systems.',
         iconKind: 'backend',
         items: ['Java 8+', 'Spring', 'Spring Boot', 'Quarkus', 'JSF', 'REST APIs', 'Microservices'],
       },
@@ -131,7 +140,7 @@ export const CONTENT_EN: PortfolioContent = {
       },
       {
         title: 'Frontend and tools',
-        description: 'Interfaces, technical collaboration and daily engineering tools.',
+        description: 'Interfaces, technical collaboration and day-to-day tools.',
         iconKind: 'frontend',
         items: ['Angular 2+', 'Angular', 'TypeScript', 'JavaScript', 'SASS', 'Git', 'Scrum'],
       },
@@ -405,10 +414,19 @@ export const CONTENT_EN: PortfolioContent = {
     title: 'Courses',
     detailsLabel: 'View courses',
     items: [
-      { label: 'DevOps Ninja: Docker, Kubernetes and Rancher - Udemy' },
-      { label: 'Web Development with Quarkus - Basic' },
-      { label: 'Angular 9 - Essencial' },
-      { label: 'Angular 9 + Spring Boot 2.2: Fullstack' },
+      {
+        label: 'DevOps Ninja: Docker, Kubernetes and Rancher - Udemy',
+        url: 'https://www.udemy.com/course/devops-mao-na-massa-docker-kubernetes-rancher/?srsltid=AfmBOooZeN1ud8FqRha0akipF-SlE7Bp0oI4T7K4ktAX6LZOzuhb8WPD&couponCode=MT260602G3',
+      },
+      {
+        label: 'Web Development with Quarkus - Basic',
+        url: 'https://www.udemy.com/course/des-web-quarkus-basico/?src=sac&kw=Desenvolvimento+Web+com+Quarkus+-+B%C3%A1sico',
+      },
+      { label: 'Angular 9 - Essencial', url: 'https://www.udemy.com/course/angular-9-essencial/' },
+      {
+        label: 'Angular 9 + Spring Boot 2.2: Fullstack',
+        url: 'https://www.udemy.com/course/full-stack-angular9-spring-boot/?couponCode=MT260602G3',
+      },
       { label: 'TDD - Automated Testing with Java - TriadWorks' },
       { label: 'Java Programmer Training - Evolution Institute' },
     ],
