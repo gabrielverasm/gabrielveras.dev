@@ -1,0 +1,52 @@
+:host {
+  display: block;
+}
+
+.section--projects {
+  padding-top: var(--space-8);
+}
+
+.section__header {
+  margin-bottom: var(--space-8);
+}
+
+h3 {
+  max-width: 24rem;
+  margin: 0;
+  color: var(--color-heading);
+  font-size: calc(1.05rem * var(--font-scale));
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.grid-list--projects {
+  gap: var(--space-5);
+}
+
+.project-card {
+  min-height: 13rem;
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.project-card .status-label {
+  width: fit-content;
+  margin: 0 0 var(--space-1);
+  padding: 0 0 0 var(--space-2);
+  border: 0;
+  border-left: 2px solid var(--color-primary);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: calc(0.74rem * var(--font-scale));
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+@media (min-width: 44rem) {
+  .grid-list--projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

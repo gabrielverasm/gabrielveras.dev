@@ -1,0 +1,22 @@
+<section id="skills" class="section" aria-labelledby="skills-title">
+  <div class="section__header">
+    <h2 id="skills-title">{{ content().skills.title }}</h2>
+  </div>
+
+  <div class="skill-showcase">
+    @if (featuredSkillGroup(); as group) {
+      <app-featured-skill-card
+        [group]="group"
+        [featuredLabel]="content().skills.featuredLabel"
+        [learning]="content().skills.learning"
+        [metrics]="learningMetrics()"
+      />
+    }
+
+    <div class="skill-showcase__secondary">
+      @for (group of supportingSkillGroups(); track group.title; let index = $index) {
+        <app-skill-group-card [group]="group" [accent]="skillCardAccent(index)" />
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<dl class="skill-card__metrics">
+  @for (metric of metrics(); track metric.value + metric.label) {
+    <div>
+      <dt>{{ metric.value }}</dt>
+      <dd>{{ metric.label }}</dd>
+    </div>
+  }
+</dl>

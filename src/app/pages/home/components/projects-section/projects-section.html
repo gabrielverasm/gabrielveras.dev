@@ -1,0 +1,15 @@
+<section class="section section--projects" aria-labelledby="projects-title">
+  <div class="section__header">
+    <h2 id="projects-title">{{ content().projects.title }}</h2>
+    <p>{{ content().projects.intro }}</p>
+  </div>
+  <div class="grid-list grid-list--projects">
+    @for (project of content().projects.items; track project.title) {
+      <article class="info-block project-card">
+        <p class="status-label">{{ project.statusLabel }}</p>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+      </article>
+    }
+  </div>
+</section>

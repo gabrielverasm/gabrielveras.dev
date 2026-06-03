@@ -1,0 +1,96 @@
+:host {
+  display: none;
+}
+
+.skill-card__visual {
+  position: relative;
+  z-index: 0;
+  width: min(10.5rem, 100%);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  align-self: center;
+  opacity: 0.68;
+  pointer-events: none;
+}
+
+.skill-card__visual::before,
+.skill-card__visual::after,
+.skill-card__orbit {
+  content: '';
+  position: absolute;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 42%, transparent);
+  border-radius: 50%;
+}
+
+.skill-card__visual::before {
+  inset: 10%;
+}
+
+.skill-card__visual::after {
+  inset: 26%;
+}
+
+.skill-card__orbit {
+  inset: 0;
+  opacity: 0.42;
+}
+
+.skill-card__orbit-dot {
+  position: absolute;
+  top: 24%;
+  right: 14%;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow:
+    -4rem 1.5rem 0 color-mix(in srgb, var(--color-primary) 82%, transparent),
+    -1.2rem 5rem 0 color-mix(in srgb, var(--color-primary) 72%, transparent);
+}
+
+.skill-card__orbit-code {
+  width: 4.7rem;
+  height: 4.7rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 44%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-elevated) 72%, transparent);
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+.skill-card__orbit-code svg {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+:host-context([data-contrast='high']) {
+  display: none;
+}
+
+@media (min-width: 44rem) {
+  :host {
+    display: block;
+  }
+}
+
+@media (max-width: 63.99rem) {
+  :host {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: min(9rem, 32vw);
+  }
+
+  .skill-card__visual {
+    opacity: 0.24;
+  }
+}

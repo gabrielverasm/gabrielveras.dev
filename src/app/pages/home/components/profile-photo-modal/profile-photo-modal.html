@@ -1,0 +1,26 @@
+<div
+  class="photo-modal"
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-label]="content().accessibility.profilePhotoAlt"
+>
+  <button
+    type="button"
+    class="photo-modal__backdrop"
+    [attr.aria-label]="content().accessibility.closeProfilePhotoLabel"
+    (click)="closeModal.emit()"
+  ></button>
+  <div class="photo-modal__content">
+    <button
+      type="button"
+      class="photo-modal__close"
+      [attr.aria-label]="content().accessibility.closeProfilePhotoLabel"
+      (click)="closeModal.emit()"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="m6 6 12 12M18 6 6 18" />
+      </svg>
+    </button>
+    <img src="images/profile.webp" [alt]="content().accessibility.profilePhotoAlt" />
+  </div>
+</div>

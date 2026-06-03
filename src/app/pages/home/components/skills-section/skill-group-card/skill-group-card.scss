@@ -1,0 +1,101 @@
+:host {
+  display: block;
+}
+
+.skill-card {
+  position: relative;
+  min-width: 0;
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+  padding: var(--space-5);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
+  border-radius: 1rem;
+  background:
+    radial-gradient(
+      circle at 80% 12%,
+      color-mix(in srgb, var(--color-primary) 12%, transparent),
+      transparent 36%
+    ),
+    color-mix(in srgb, var(--color-surface) 88%, transparent);
+}
+
+.skill-card::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: currentColor;
+  color: var(--color-primary);
+}
+
+.skill-card--purple::after,
+.skill-card--purple .skill-card__icon {
+  color: #a78bfa;
+}
+
+.skill-card--green::after,
+.skill-card--green .skill-card__icon {
+  color: #55d37a;
+}
+
+.skill-card--yellow::after,
+.skill-card--yellow .skill-card__icon {
+  color: #fbbf24;
+}
+
+.skill-card__header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.skill-card__header p {
+  max-width: 26rem;
+  margin: var(--space-2) 0 0;
+  color: var(--color-muted);
+  font-size: calc(0.92rem * var(--font-scale));
+  line-height: 1.6;
+}
+
+h3 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: calc(1.05rem * var(--font-scale));
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.skill-card__icon,
+.tech-icon {
+  display: grid;
+  place-items: center;
+}
+
+.skill-card__icon {
+  width: 2.55rem;
+  height: 2.55rem;
+  border: 1px solid color-mix(in srgb, currentColor 28%, var(--color-border));
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, currentColor 11%, var(--color-elevated));
+  color: var(--color-primary);
+  font-size: calc(1.24rem * var(--font-scale));
+}
+
+:host-context([data-theme='light']) .skill-card,
+:host-context([data-contrast='high']) .skill-card {
+  background: var(--color-surface);
+}
+
+:host-context([data-contrast='high']) .skill-card {
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+:host-context([data-contrast='high']) .skill-card::after {
+  display: none;
+}

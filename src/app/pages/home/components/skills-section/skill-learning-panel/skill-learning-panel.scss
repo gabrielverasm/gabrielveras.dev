@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+.skill-card__learning {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: center;
+  margin-top: var(--space-2);
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.skill-card__learning h4,
+.skill-card__learning p {
+  margin: 0;
+}
+
+.skill-card__learning h4 {
+  color: var(--color-heading);
+  font-size: calc(0.95rem * var(--font-scale));
+  line-height: 1.2;
+}
+
+.skill-card__learning p {
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+  font-size: calc(0.82rem * var(--font-scale));
+  line-height: 1.35;
+}
+
+.skill-card__learning-icon {
+  width: calc(2.2rem * var(--font-scale));
+  height: calc(2.2rem * var(--font-scale));
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
+  border-radius: 0.7rem;
+  background: color-mix(in srgb, var(--color-primary) 11%, var(--color-elevated));
+  color: var(--color-primary);
+  font-size: calc(1.05rem * var(--font-scale));
+}
+
+.skill-card__learning-icon svg {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+:host-context([data-theme='light']) .skill-card__learning,
+:host-context([data-contrast='high']) .skill-card__learning {
+  background: var(--color-surface);
+}
+
+:host-context([data-contrast='high']) .skill-card__learning {
+  border-color: var(--color-border);
+  box-shadow: none;
+}

@@ -1,0 +1,188 @@
+:host {
+  display: block;
+}
+
+.hero {
+  width: min(100%, var(--container-max-width));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-4) var(--space-6);
+}
+
+.hero__content {
+  max-width: 54rem;
+}
+
+.hero__eyebrow {
+  width: fit-content;
+  margin: 0 0 var(--space-4);
+  padding: 0.35rem 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 36%, var(--color-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-link);
+  font-size: calc(0.78rem * var(--font-scale));
+  font-weight: 800;
+}
+
+h1,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  max-width: 24ch;
+  margin: 0;
+  color: var(--color-heading);
+  font-size: clamp(2em, 1.35em + 1.8vw, 2.95em);
+  line-height: 1.06;
+}
+
+.hero__role {
+  margin: var(--space-3) 0 0;
+  color: var(--color-text);
+  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.45rem);
+  font-weight: 800;
+}
+
+.hero__location {
+  width: fit-content;
+  margin: var(--space-2) 0 0;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.hero__summary {
+  max-width: 48rem;
+  margin-top: var(--space-4);
+  color: var(--color-muted);
+  font-size: calc(1rem * var(--font-scale));
+  line-height: 1.55;
+}
+
+.hero__summary p {
+  margin: var(--space-2) 0 0;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.hero__media {
+  position: relative;
+  display: grid;
+  min-height: min(22rem, 82vw);
+  place-items: center;
+  isolation: isolate;
+}
+
+.hero__media::before,
+.hero__media::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.hero__media::before {
+  width: min(18rem, 72vw);
+  height: min(18rem, 72vw);
+  border-radius: 34% 66% 54% 46% / 45% 38% 62% 55%;
+  background:
+    radial-gradient(
+      circle at 72% 18%,
+      color-mix(in srgb, var(--color-primary) 22%, transparent),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 20% 82%,
+      color-mix(in srgb, var(--color-accent) 18%, transparent),
+      transparent 34%
+    );
+  opacity: 0.45;
+  filter: blur(1.25rem);
+}
+
+.hero__media::after {
+  width: min(19rem, 76vw);
+  height: min(19rem, 76vw);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
+  border-radius: 50%;
+  opacity: 0.18;
+  transform: translate(1rem, 0.5rem);
+}
+
+.hero__photo-button {
+  position: relative;
+  display: block;
+  width: min(330px, 100%);
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 32px;
+  background: transparent;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  cursor: zoom-in;
+}
+
+.hero__avatar {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center top;
+}
+
+:host-context([data-theme='light']) .hero__photo-button {
+  background: #ffffff;
+  box-shadow:
+    0 1.25rem 2.5rem rgb(15 23 42 / 0.12),
+    0 0 0 0.55rem color-mix(in srgb, var(--color-primary) 7%, transparent);
+}
+
+:host-context([data-contrast='high']) .hero__media::before,
+:host-context([data-contrast='high']) .hero__media::after {
+  display: none;
+}
+
+:host-context([data-contrast='high']) .hero__photo-button {
+  border: 2px solid var(--color-text);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 44rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1.3fr) minmax(13rem, 0.5fr);
+    align-items: start;
+  }
+
+  .hero__media {
+    padding-top: var(--space-5);
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero {
+    padding-right: var(--space-6);
+    padding-left: var(--space-6);
+  }
+}
+
+@media (max-width: 34rem) {
+  .hero__photo-button {
+    width: min(16.5rem, 78vw);
+    border-radius: 1.6rem;
+  }
+}

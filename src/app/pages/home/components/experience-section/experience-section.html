@@ -1,0 +1,36 @@
+<section id="experience" class="section" aria-labelledby="experience-title">
+  <div class="section__header">
+    <h2 id="experience-title">{{ content().experience.title }}</h2>
+  </div>
+
+  <div class="experience-list">
+    @for (item of featuredExperience(); track item.company + item.period) {
+      <app-experience-card
+        [experience]="item"
+        [detailsLabel]="content().experience.detailsLabel"
+        [technologiesLabel]="content().experience.technologiesLabel"
+      />
+    }
+
+    <details class="history-disclosure">
+      <summary>
+        <span class="history-disclosure__marker" aria-hidden="true"></span>
+        <span class="history-disclosure__label">
+          {{ content().experience.fullHistoryLabel }}
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </span>
+      </summary>
+      <div class="history-disclosure__content">
+        @for (item of olderExperience(); track item.company + item.period) {
+          <app-experience-card
+            [experience]="item"
+            [detailsLabel]="content().experience.detailsLabel"
+            [technologiesLabel]="content().experience.technologiesLabel"
+          />
+        }
+      </div>
+    </details>
+  </div>
+</section>
