@@ -1,26 +1,11 @@
 <span class="portfolio-icon portfolio-icon--{{ kind() }}">
   @switch (kind()) {
-    @case ('experience') {
-      <svg viewBox="0 0 24 24" focusable="false">
-        <path d="M7 3v3M17 3v3M4.5 8.5h15" />
-        <path d="M5 5h14v15H5z" />
-        <path d="m8 14 2.2 2.2L15.5 11" />
-      </svg>
-    }
     @case ('java') {
       <svg viewBox="0 0 24 24" focusable="false">
         <path d="M9 18c-1.2 0-2 .5-2 1.1 0 .8 2.2 1.4 5 1.4s5-.6 5-1.4c0-.5-.7-.9-1.8-1.1" />
         <path d="M9 15c.9.5 5.1.5 6 0" />
         <path d="M10 4c2 1.7-1.5 3.2.2 5" />
         <path d="M14 4c2.2 1.8-1.6 3.5.4 5.4" />
-      </svg>
-    }
-    @case ('microservices') {
-      <svg viewBox="0 0 24 24" focusable="false">
-        <circle cx="6" cy="7" r="2.2" />
-        <circle cx="17" cy="12" r="2.2" />
-        <circle cx="7" cy="18" r="2.2" />
-        <path d="M8 8.2 15 11M8.9 17 15 13" />
       </svg>
     }
     @case ('backend') {

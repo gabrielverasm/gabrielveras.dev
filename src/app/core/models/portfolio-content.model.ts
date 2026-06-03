@@ -6,7 +6,6 @@ export interface PortfolioContent {
   readonly seo: SeoContent;
   readonly navigation: readonly NavigationItem[];
   readonly hero: HeroContent;
-  readonly about: AboutContent;
   readonly skills: SkillsContent;
   readonly experience: ExperienceContent;
   readonly education: EducationContent;
@@ -19,7 +18,6 @@ export interface PortfolioContent {
 export interface AccessibilityContent {
   readonly skipLinkLabel: string;
   readonly primaryNavigationLabel: string;
-  readonly footerNavigationLabel: string;
   readonly languageSwitcherLabel: string;
   readonly languageSwitcherVisibleLabel: string;
   readonly portugueseLanguageLabel: string;
@@ -32,7 +30,6 @@ export interface AccessibilityContent {
   readonly profilePhotoAlt: string;
   readonly openProfilePhotoLabel: string;
   readonly closeProfilePhotoLabel: string;
-  readonly heroMetricsLabel: string;
   readonly accessibilityControlsLabel: string;
   readonly themeToggleLabel: string;
   readonly enableLightThemeLabel: string;
@@ -67,38 +64,12 @@ export interface HeroContent {
   readonly role: string;
   readonly location: string;
   readonly summary: readonly string[];
-  readonly metrics: readonly HeroMetric[];
   readonly primaryActionLabel: string;
-  readonly secondaryActionLabel: string;
-}
-
-export interface HeroMetric {
-  readonly value: string;
-  readonly label: string;
-  readonly iconKind: HeroMetricIconKind;
-}
-
-export type HeroMetricIconKind =
-  | 'aws'
-  | 'backend'
-  | 'delivery'
-  | 'experience'
-  | 'java'
-  | 'microservices'
-  | 'quarkus';
-
-export interface AboutContent {
-  readonly title: string;
-  readonly paragraphs: readonly string[];
-  readonly highlights: readonly string[];
 }
 
 export interface SkillsContent {
   readonly title: string;
   readonly featuredLabel: string;
-  readonly featuredTitle: string;
-  readonly groupsTitle: string;
-  readonly featuredTechnologies: readonly FeaturedTechnology[];
   readonly learning: LearningContent;
   readonly groups: readonly SkillGroup[];
 }
@@ -113,12 +84,6 @@ export interface LearningMetricLabels {
   readonly experience: string;
   readonly technicalAreas: string;
   readonly listedTechnologies: string;
-}
-
-export interface FeaturedTechnology {
-  readonly name: string;
-  readonly category: string;
-  readonly iconKind: TechnologyIconKind;
 }
 
 export interface SkillGroup {

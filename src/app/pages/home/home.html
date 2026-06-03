@@ -179,7 +179,7 @@
         <ul class="skill-chip-list">
           @for (item of group.items; track item) {
             @let iconKind = technologyIconKind(item);
-            <li class="skill-chip" [class.skill-chip--with-icon]="iconKind !== null">
+            <li class="skill-chip">
               @if (iconKind) {
                 <span class="tech-icon" aria-hidden="true">
                   <app-portfolio-icon [kind]="iconKind" />
@@ -222,7 +222,7 @@
           <ul class="skill-chip-list">
             @for (item of group.items; track item) {
               @let iconKind = technologyIconKind(item);
-              <li class="skill-chip" [class.skill-chip--with-icon]="iconKind !== null">
+              <li class="skill-chip">
                 @if (iconKind) {
                   <span class="tech-icon" aria-hidden="true">
                     <app-portfolio-icon [kind]="iconKind" />
