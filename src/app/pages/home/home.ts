@@ -1,54 +1,27 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, computed, effect, inject, signal } from '@angular/core';
+import { Component, HostListener, effect, inject, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
-import { EXTERNAL_LINKS } from '../../core/constants/external-links';
 import { LanguageService } from '../../core/i18n/language.service';
-import type { TechnologyIconKind } from '../../core/models/portfolio-content.model';
-import { ExperienceCard } from '../../shared/components/experience-card/experience-card';
-import { PortfolioIcon } from '../../shared/components/portfolio-icon/portfolio-icon';
-
-const TECHNOLOGY_ICON_BY_NAME = new Map<string, TechnologyIconKind>([
-  ['angular', 'angular'],
-  ['angular 2+', 'angular'],
-  ['apis rest', 'cicd'],
-  ['argo cd', 'argo'],
-  ['aws dynamodb', 'aws'],
-  ['aws s3', 'aws'],
-  ['aws sqs', 'aws'],
-  ['bancos relacionais', 'postgresql'],
-  ['ci/cd', 'cicd'],
-  ['docker', 'docker'],
-  ['git', 'git'],
-  ['hibernate', 'postgresql'],
-  ['java', 'java'],
-  ['java 8+', 'java'],
-  ['javascript', 'javascript'],
-  ['jenkins', 'jenkins'],
-  ['jpa', 'postgresql'],
-  ['junit', 'junit'],
-  ['kafka', 'kafka'],
-  ['kubernetes', 'kubernetes'],
-  ['microservices', 'quarkus'],
-  ['microsserviços', 'quarkus'],
-  ['mysql', 'mysql'],
-  ['oracle', 'oracle'],
-  ['postgresql', 'postgresql'],
-  ['quarkus', 'quarkus'],
-  ['rancher', 'rancher'],
-  ['relational databases', 'postgresql'],
-  ['rest apis', 'cicd'],
-  ['spring', 'spring'],
-  ['spring boot', 'spring'],
-  ['tdd', 'junit'],
-  ['testes automatizados', 'junit'],
-  ['automated tests', 'junit'],
-  ['typescript', 'typescript'],
-]);
+import { ContactSection } from './components/contact-section/contact-section';
+import { EducationSection } from './components/education-section/education-section';
+import { ExperienceSection } from './components/experience-section/experience-section';
+import { HeroSection } from './components/hero-section/hero-section';
+import { ProfilePhotoModal } from './components/profile-photo-modal/profile-photo-modal';
+import { ProjectsSection } from './components/projects-section/projects-section';
+import { SkillsSection } from './components/skills-section/skills-section';
 
 @Component({
   selector: 'app-home',
-  imports: [ExperienceCard, PortfolioIcon],
+  imports: [
+    ContactSection,
+    EducationSection,
+    ExperienceSection,
+    HeroSection,
+    ProfilePhotoModal,
+    ProjectsSection,
+    SkillsSection,
+  ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -59,28 +32,6 @@ export class Home {
   private readonly meta = inject(Meta);
 
   readonly content = this.languageService.content;
-  readonly externalLinks = EXTERNAL_LINKS;
-  readonly featuredExperience = computed(() =>
-    this.content().experience.items.filter((item) => item.isFeatured),
-  );
-  readonly olderExperience = computed(() =>
-    this.content().experience.items.filter((item) => !item.isFeatured),
-  );
-  readonly featuredSkillGroup = computed(() => this.content().skills.groups[0]);
-  readonly supportingSkillGroups = computed(() => this.content().skills.groups.slice(1));
-  readonly learningMetrics = computed(() => {
-    const skillGroups = this.content().skills.groups;
-    const metricLabels = this.content().skills.learning.metricLabels;
-
-    return [
-      { value: '8+', label: metricLabels.experience },
-      { value: String(skillGroups.length), label: metricLabels.technicalAreas },
-      {
-        value: String(skillGroups.reduce((total, group) => total + group.items.length, 0)),
-        label: metricLabels.listedTechnologies,
-      },
-    ];
-  });
   readonly isProfilePreviewOpen = signal(false);
 
   constructor() {
@@ -103,10 +54,6 @@ export class Home {
 
   closeProfilePreview(): void {
     this.isProfilePreviewOpen.set(false);
-  }
-
-  technologyIconKind(item: string): TechnologyIconKind | null {
-    return TECHNOLOGY_ICON_BY_NAME.get(item.toLowerCase()) ?? null;
   }
 
   @HostListener('document:keydown.escape')

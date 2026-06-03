@@ -1,0 +1,21 @@
+<section class="section" aria-labelledby="courses-title">
+  <div class="section__header">
+    <h2 id="courses-title">{{ content().courses.title }}</h2>
+  </div>
+  <details class="compact-disclosure">
+    <summary>{{ content().courses.detailsLabel }}</summary>
+    <ul class="course-list">
+      @for (course of content().courses.items; track course.label) {
+        <li>
+          @if (course.url) {
+            <a [href]="course.url" rel="noopener noreferrer" target="_blank">
+              {{ course.label }}
+            </a>
+          } @else {
+            {{ course.label }}
+          }
+        </li>
+      }
+    </ul>
+  </details>
+</section>

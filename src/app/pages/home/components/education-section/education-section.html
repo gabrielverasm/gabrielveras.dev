@@ -1,0 +1,49 @@
+<section id="education" class="section" aria-labelledby="education-title">
+  <div class="section__header">
+    <h2 id="education-title">{{ content().education.title }}</h2>
+  </div>
+  <div class="grid-list">
+    @for (item of content().education.items; track item.title) {
+      <article class="info-block education-card">
+        <span
+          class="education-card__logo"
+          [class.education-card__logo--full-cycle]="item.logoKind === 'full-cycle'"
+          [class.education-card__logo--estacio]="item.logoKind === 'estacio'"
+          aria-hidden="true"
+        >
+          @if (item.logoKind === 'full-cycle') {
+            <svg viewBox="0 0 40 40" focusable="false">
+              <path d="M20 4a16 16 0 1 1-14.4 9" />
+              <path d="M7 6v7h7" />
+            </svg>
+            <strong>{{ item.logoLabel }}</strong>
+          } @else {
+            <svg viewBox="0 0 40 40" focusable="false">
+              <path d="m20 8 15 8-15 8-15-8 15-8Z" />
+              <path d="M11 20v7c4.8 3 13.2 3 18 0v-7" />
+            </svg>
+            <strong>{{ item.logoLabel }}</strong>
+          }
+        </span>
+        <div>
+          <h3>
+            @if (item.url) {
+              <a [href]="item.url" rel="noopener noreferrer" target="_blank">
+                {{ item.title }}
+              </a>
+            } @else {
+              {{ item.title }}
+            }
+          </h3>
+          @if (item.institution) {
+            <p>{{ item.institution }}</p>
+          }
+          <p>{{ item.statusOrYear }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<app-courses-section />
+<app-languages-section />

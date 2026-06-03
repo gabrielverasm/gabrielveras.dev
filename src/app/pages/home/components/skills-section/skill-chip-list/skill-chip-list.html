@@ -1,0 +1,13 @@
+<ul class="skill-chip-list">
+  @for (item of items(); track item) {
+    @let iconKind = technologyIconKind(item);
+    <li class="skill-chip">
+      @if (iconKind) {
+        <span class="tech-icon" aria-hidden="true">
+          <app-portfolio-icon [kind]="iconKind" />
+        </span>
+      }
+      <span>{{ item }}</span>
+    </li>
+  }
+</ul>
