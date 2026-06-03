@@ -14,17 +14,6 @@
   text-align: center;
 }
 
-.site-footer__brand {
-  display: grid;
-  gap: 0.15rem;
-}
-
-.site-footer__brand strong {
-  color: var(--color-text);
-  font-size: calc(0.92rem * var(--font-scale));
-}
-
-.site-footer__brand p,
 .site-footer__copyright {
   margin: 0;
   color: var(--color-muted);

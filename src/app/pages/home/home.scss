@@ -94,8 +94,7 @@ h3 {
   font-weight: 700;
 }
 
-.hero__summary,
-.prose {
+.hero__summary {
   max-width: 48rem;
   color: var(--color-muted);
 }
@@ -107,7 +106,6 @@ h3 {
 }
 
 .hero__summary p,
-.prose p,
 .section__header p,
 .info-block p,
 .experience-card p {
@@ -268,19 +266,6 @@ h3 {
   gap: var(--space-4);
 }
 
-.simple-list {
-  max-width: 46rem;
-}
-
-.simple-list--compact {
-  columns: 1;
-}
-
-.compact-disclosure .simple-list {
-  margin: 0;
-  padding: 0 var(--space-6) var(--space-4);
-}
-
 .section--projects {
   padding-top: var(--space-8);
 }
@@ -335,11 +320,6 @@ h3 {
     padding-top: var(--space-5);
   }
 
-  .hero__metrics {
-    grid-column: 1 / -1;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .contact-panel {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
@@ -368,11 +348,6 @@ h3 {
   .grid-list--compact {
     max-width: 46rem;
   }
-
-  .simple-list--compact {
-    columns: 2;
-    column-gap: var(--space-8);
-  }
 }
 
 @media (min-width: 64rem) {
@@ -382,10 +357,6 @@ h3 {
     padding-left: var(--space-6);
   }
 
-  .hero__metrics {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .skill-showcase {
     grid-template-columns: minmax(0, 0.82fr) minmax(0, 0.98fr);
     align-items: stretch;
@@ -393,14 +364,6 @@ h3 {
 }
 
 @media (max-width: 30rem) {
-  .hero__metrics {
-    grid-template-columns: 1fr;
-  }
-
-  .hero__metrics li {
-    min-height: 4.85rem;
-  }
-
   .experience-list {
     --timeline-line-left: 1.15rem;
     padding-right: var(--space-3);
