@@ -1,5 +1,5 @@
 .experience-card {
-  padding: var(--space-5) var(--space-4);
+  padding: var(--space-4);
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -47,7 +47,7 @@ h3 {
 
 .experience-card__summary {
   max-width: 48rem;
-  line-height: 1.65;
+  line-height: 1.58;
 }
 
 .experience-card__meta p {
@@ -59,7 +59,7 @@ h3 {
 .clean-list {
   margin: var(--space-3) 0 0;
   padding-left: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .clean-list li::marker {
@@ -71,7 +71,7 @@ h3 {
 }
 
 .experience-card__details {
-  margin-top: var(--space-4);
+  margin-top: var(--space-3);
 }
 
 .experience-card__details summary {
@@ -111,6 +111,12 @@ h3 {
   color: var(--color-text);
   font-size: calc(0.86rem * var(--font-scale));
   font-weight: 700;
+}
+
+:host-context([data-contrast='high']) .experience-card {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  box-shadow: none;
 }
 
 @media (min-width: 44rem) {

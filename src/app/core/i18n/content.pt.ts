@@ -42,7 +42,6 @@ export const CONTENT_PT: PortfolioContent = {
       'Gabriel Veras é Analista de Sistemas Sênior Java com mais de 8 anos de experiência em APIs REST, microsserviços, Spring Boot, Quarkus, AWS, Kafka e sistemas críticos.',
   },
   navigation: [
-    { label: 'Resumo', href: '#summary' },
     { label: 'Experiência', href: '#experience' },
     { label: 'Habilidades', href: '#skills' },
     { label: 'Formação', href: '#education' },
@@ -54,24 +53,23 @@ export const CONTENT_PT: PortfolioContent = {
     role: 'Analista de Sistemas Sênior Java',
     location: 'Fortaleza, Ceará, Brasil',
     summary: [
-      'Mais de 8 anos de experiência em desenvolvimento backend com Java, Spring Boot e Quarkus.',
-      'Atuação em APIs REST, microsserviços, integrações legadas, AWS, mensageria, CI/CD e sistemas críticos.',
+      'Analista de Sistemas especializado em desenvolvimento e manutenção de APIs Java, com experiência em Quarkus, Spring, Angular 2+, TDD, JPA, Hibernate e bancos relacionais.',
+      'Experiência em ambientes ágeis, sistemas corporativos, integração entre sistemas, qualidade de código, testes automatizados, desempenho e estabilidade em produção.',
     ],
     metrics: [
-      { value: '8+', label: 'anos de experiência', iconKind: 'experience' },
-      { value: 'Java', label: 'Spring Boot e Quarkus', iconKind: 'java' },
-      { value: 'Microsserviços', label: 'APIs REST e integrações', iconKind: 'microservices' },
-      { value: 'AWS', label: 'cloud e mensageria', iconKind: 'aws' },
+      { value: '8+ anos', label: 'Backend Java', iconKind: 'experience' },
+      { value: 'Java & Spring', label: 'APIs corporativas', iconKind: 'java' },
+      { value: 'Quarkus', label: 'Microsserviços', iconKind: 'quarkus' },
+      { value: 'AWS & Mensageria', label: 'Integrações cloud', iconKind: 'aws' },
+      { value: 'Qualidade', label: 'TDD, JUnit e CI/CD', iconKind: 'delivery' },
+      { value: 'Sistemas críticos', label: 'Legado e produção', iconKind: 'backend' },
     ],
     primaryActionLabel: 'Ver experiência',
     secondaryActionLabel: 'Baixar currículo',
   },
   about: {
-    title: 'Resumo',
-    paragraphs: [
-      'Analista de Sistemas especializado em desenvolvimento e manutenção de APIs Java, com experiência em Quarkus, Spring, Angular 2+, TDD, JPA, Hibernate e bancos relacionais.',
-      'Experiência em ambientes ágeis, sistemas corporativos, integração entre sistemas, qualidade de código, testes automatizados, desempenho e estabilidade em produção.',
-    ],
+    title: 'Pontos fortes',
+    paragraphs: [],
     highlights: [
       'Arquitetura limpa e SOLID',
       'APIs RESTful e microsserviços',
@@ -81,6 +79,7 @@ export const CONTENT_PT: PortfolioContent = {
   },
   skills: {
     title: 'Habilidades técnicas',
+    featuredLabel: 'Destaque',
     featuredTitle: 'Stack principal',
     groupsTitle: 'Competências por área',
     featuredTechnologies: [
@@ -94,10 +93,20 @@ export const CONTENT_PT: PortfolioContent = {
       { name: 'PostgreSQL', category: 'Dados', iconKind: 'postgresql' },
       { name: 'Angular', category: 'Frontend', iconKind: 'angular' },
     ],
+    learning: {
+      title: 'Sempre aprendendo',
+      text: 'Evolução contínua, prática técnica e compartilhamento de conhecimento.',
+      metricLabels: {
+        experience: 'anos de experiência',
+        technicalAreas: 'áreas técnicas',
+        listedTechnologies: 'tecnologias listadas',
+      },
+    },
     groups: [
       {
         title: 'Backend',
-        description: 'APIs, serviços e arquitetura backend para sistemas corporativos.',
+        description:
+          'APIs, serviços e arquitetura backend para sistemas corporativos escaláveis, seguros e de alta performance.',
         iconKind: 'backend',
         items: [
           'Java 8+',
@@ -414,11 +423,20 @@ export const CONTENT_PT: PortfolioContent = {
     items: [
       { label: 'Curso.dev - Felipe Deschamps', url: 'https://curso.dev/' },
       { label: 'Full Cycle 3.0', url: 'https://fullcycle.com.br/' },
-      { label: 'Confraria Dev' },
-      { label: 'DevOps Ninja: Docker, Kubernetes e Rancher - Udemy' },
-      { label: 'Desenvolvimento Web com Quarkus - Básico' },
-      { label: 'Angular 9 - Essencial' },
-      { label: 'Angular 9 + Spring Boot 2.2: Fullstack Completo e Atualizado' },
+      { label: 'Confraria Dev', url: 'https://confrariadev.com/cdv/' },
+      {
+        label: 'DevOps Ninja: Docker, Kubernetes e Rancher - Udemy',
+        url: 'https://www.udemy.com/course/devops-mao-na-massa-docker-kubernetes-rancher/?srsltid=AfmBOooZeN1ud8FqRha0akipF-SlE7Bp0oI4T7K4ktAX6LZOzuhb8WPD&couponCode=MT260602G3',
+      },
+      {
+        label: 'Desenvolvimento Web com Quarkus - Básico',
+        url: 'https://www.udemy.com/course/des-web-quarkus-basico/?src=sac&kw=Desenvolvimento+Web+com+Quarkus+-+B%C3%A1sico',
+      },
+      { label: 'Angular 9 - Essencial', url: 'https://www.udemy.com/course/angular-9-essencial/' },
+      {
+        label: 'Angular 9 + Spring Boot 2.2: Fullstack Completo e Atualizado',
+        url: 'https://www.udemy.com/course/full-stack-angular9-spring-boot/?couponCode=MT260602G3',
+      },
       { label: 'TDD - Automated Testing with Java - TriadWorks' },
       { label: 'Java Programmer Training - Evolution Institute' },
     ],
