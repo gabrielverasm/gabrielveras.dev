@@ -206,12 +206,6 @@ select {
     color 0.16s ease;
 }
 
-.icon-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
 .icon {
   width: calc(1rem * var(--font-scale));
   height: calc(1rem * var(--font-scale));
@@ -366,69 +360,6 @@ select {
   box-shadow: var(--shadow-soft);
 }
 
-/* ===== Hero metrics ===== */
-
-.hero__metrics {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-2);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hero__metrics li {
-  min-height: 4.85rem;
-  min-width: 0;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: var(--space-2);
-  align-items: center;
-  padding: var(--space-3);
-  border: 1px solid color-mix(in srgb, var(--color-primary) 14%, var(--color-border));
-  border-radius: 0.85rem;
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 7%, transparent), transparent),
-    color-mix(in srgb, var(--color-surface) 86%, transparent);
-  cursor: default;
-}
-
-.hero__metrics li:hover {
-  border-color: color-mix(in srgb, var(--color-primary) 14%, var(--color-border));
-}
-
-.hero__metric-icon {
-  width: calc(2.15rem * var(--font-scale));
-  height: calc(2.15rem * var(--font-scale));
-  display: grid;
-  place-items: center;
-  border: 1px solid color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
-  border-radius: 0.72rem;
-  background: color-mix(in srgb, var(--color-elevated) 84%, transparent);
-  font-size: calc(1.12rem * var(--font-scale));
-}
-
-.hero__metrics strong,
-.hero__metrics li > span:not(.hero__metric-icon) {
-  min-width: 0;
-  display: block;
-}
-
-.hero__metrics strong {
-  color: var(--color-heading);
-  font-size: calc(0.98rem * var(--font-scale));
-  line-height: 1.18;
-  overflow-wrap: anywhere;
-}
-
-.hero__metrics li > span:not(.hero__metric-icon) > span {
-  margin-top: var(--space-1);
-  color: var(--color-muted);
-  font-size: calc(0.78rem * var(--font-scale));
-  font-weight: 700;
-  line-height: 1.35;
-}
-
 /* ===== Contact ===== */
 
 .contact-panel {
@@ -523,98 +454,6 @@ select {
     0 0 1.2rem color-mix(in srgb, var(--color-primary) 12%, transparent);
 }
 
-.language-flag--br {
-  background: #009b3a;
-}
-
-.language-flag--br::before {
-  content: '';
-  position: absolute;
-  inset: 18% 15%;
-  background: #ffdf00;
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-}
-
-.language-flag--br::after {
-  content: '';
-  position: absolute;
-  top: 29%;
-  left: 50%;
-  width: 28%;
-  aspect-ratio: 1;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      circle at 49% 25%,
-      #ffffff 0 var(--star-size),
-      transparent calc(var(--star-size) + 0.025rem)
-    ),
-    radial-gradient(
-      circle at 38% 41%,
-      #ffffff 0 var(--star-size),
-      transparent calc(var(--star-size) + 0.025rem)
-    ),
-    radial-gradient(
-      circle at 58% 42%,
-      #ffffff 0 var(--star-size),
-      transparent calc(var(--star-size) + 0.025rem)
-    ),
-    radial-gradient(
-      circle at 44% 58%,
-      #ffffff 0 var(--star-size),
-      transparent calc(var(--star-size) + 0.025rem)
-    ),
-    radial-gradient(
-      circle at 63% 64%,
-      #ffffff 0 var(--star-size),
-      transparent calc(var(--star-size) + 0.025rem)
-    ),
-    linear-gradient(14deg, transparent 0 40%, #ffffff 40% 48%, transparent 48% 100%), #002776;
-}
-
-.language-flag--us {
-  background: linear-gradient(
-    to bottom,
-    #b22234 0 7.7%,
-    #ffffff 7.7% 15.4%,
-    #b22234 15.4% 23.1%,
-    #ffffff 23.1% 30.8%,
-    #b22234 30.8% 38.5%,
-    #ffffff 38.5% 46.2%,
-    #b22234 46.2% 53.9%,
-    #ffffff 53.9% 61.6%,
-    #b22234 61.6% 69.3%,
-    #ffffff 69.3% 77%,
-    #b22234 77% 84.7%,
-    #ffffff 84.7% 92.4%,
-    #b22234 92.4% 100%
-  );
-}
-
-.language-flag--us::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 43%;
-  height: 53.9%;
-  background:
-    radial-gradient(circle, #ffffff 0 18%, transparent 19%) 9% 15% / 32% 26%,
-    radial-gradient(circle, #ffffff 0 18%, transparent 19%) 24% 32% / 32% 26%,
-    #3c3b6e;
-}
-
-.language-flag--us::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, transparent 43%, rgb(255 255 255 / 0.18), transparent 45%),
-    linear-gradient(180deg, transparent 53.9%, rgb(255 255 255 / 0.12), transparent 56%);
-  pointer-events: none;
-}
-
 .language-card h3,
 .language-card p {
   margin: 0;
@@ -622,37 +461,6 @@ select {
 
 .language-card p {
   margin-top: var(--space-1);
-}
-
-.clean-list,
-.simple-list {
-  margin: var(--space-4) 0 0;
-  padding-left: 1.25rem;
-  color: var(--color-muted);
-}
-
-.clean-list li + li,
-.simple-list li + li {
-  margin-top: var(--space-2);
-}
-
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin: var(--space-4) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.tag-list li {
-  padding: 0.42rem 0.68rem;
-  border: 1px solid color-mix(in srgb, var(--color-primary) 24%, var(--color-border));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
-  color: var(--color-text);
-  font-size: calc(0.88rem * var(--font-scale));
-  font-weight: 750;
 }
 
 .course-list {

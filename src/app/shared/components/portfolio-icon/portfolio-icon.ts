@@ -1,12 +1,11 @@
 import { Component, input } from '@angular/core';
 
 import type {
-  HeroMetricIconKind,
   SkillGroupIconKind,
   TechnologyIconKind,
 } from '../../../core/models/portfolio-content.model';
 
-export type PortfolioIconKind = HeroMetricIconKind | SkillGroupIconKind | TechnologyIconKind;
+export type PortfolioIconKind = SkillGroupIconKind | TechnologyIconKind;
 
 @Component({
   selector: 'app-portfolio-icon',
