@@ -1,6 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 
 import { LanguageService } from '../../core/i18n/language.service';
+import { CONTENT_EN } from '../../core/i18n/content.en';
+import { CONTENT_PT } from '../../core/i18n/content.pt';
 
 @Component({
   selector: 'app-language-switcher',
@@ -13,12 +15,13 @@ export class LanguageSwitcher {
 
   readonly currentLanguage = this.languageService.currentLanguage;
   readonly content = this.languageService.content;
+  readonly tooltipLabel = computed(() =>
+    this.currentLanguage() === 'en'
+      ? CONTENT_PT.accessibility.languageSwitcherLabel
+      : CONTENT_EN.accessibility.languageSwitcherLabel,
+  );
 
-  setPortuguese(): void {
-    this.languageService.setLanguage('pt-BR');
-  }
-
-  setEnglish(): void {
-    this.languageService.setLanguage('en');
+  toggleLanguage(): void {
+    this.languageService.setLanguage(this.currentLanguage() === 'pt-BR' ? 'en' : 'pt-BR');
   }
 }
