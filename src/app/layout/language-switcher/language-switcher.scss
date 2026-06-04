@@ -23,6 +23,7 @@
   top: calc(100% + 0.45rem);
   left: 50%;
   z-index: 40;
+  display: none;
   max-width: min(12rem, calc(100vw - 1rem));
   padding: 0.28rem 0.45rem;
   border: 1px solid var(--color-border);
@@ -42,9 +43,12 @@
   white-space: nowrap;
 }
 
-.language-switcher__toggle:is(:hover, :focus-visible)::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+@media (hover: hover) and (pointer: fine) {
+  .language-switcher__toggle:is(:hover, :focus-visible)::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .language-switcher .language-flag {
