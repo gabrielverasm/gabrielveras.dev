@@ -35,9 +35,9 @@ export const CONTENT_EN: PortfolioContent = {
     backToTopLabel: 'Back to top',
   },
   seo: {
-    title: 'Gabriel Veras | Senior Java Backend Engineer',
+    title: 'Gabriel Veras Miranda | Senior Java Backend Engineer',
     description:
-      'Gabriel Veras is a Senior Software Engineer with 8+ years of Java backend experience in REST APIs, microservices, Spring Boot, Quarkus, AWS, Kafka and enterprise systems.',
+      'Senior Java Backend Engineer with 8+ years of experience in Spring Boot, Quarkus, AWS, microservices, REST APIs, Kafka, automated testing and mission-critical systems.',
   },
   navigation: [
     { label: 'Experience', href: '#experience' },
@@ -47,14 +47,25 @@ export const CONTENT_EN: PortfolioContent = {
   ],
   hero: {
     eyebrow: 'Professional portfolio',
-    name: 'Gabriel Veras',
+    name: 'Gabriel Veras Miranda',
     role: 'Senior Java Backend Engineer',
+    stackSubtitle: 'Java | Spring Boot | Quarkus | AWS | Microservices',
     location: 'Fortaleza, Ceará, Brazil',
     summary: [
-      'Senior Software Engineer specialized in Java backend development, Spring Boot, Quarkus, microservices architectures and legacy system integration.',
-      'Hands-on experience with AWS SQS, DynamoDB and S3, containerized environments using Docker, agile teams and reliable production-critical systems.',
+      'Senior Java Backend Engineer with 8+ years of experience building and maintaining scalable APIs, microservices and enterprise-grade systems.',
+      'Strong background in Java, Spring Boot, Quarkus, AWS, messaging, relational databases, automated testing, legacy system integration and production stability.',
     ],
     primaryActionLabel: 'View experience',
+  },
+  contribution: {
+    title: 'What I bring',
+    items: [
+      'Backend development and maintenance for mission-critical Java systems',
+      'Legacy system integration and complex enterprise environments',
+      'Asynchronous communication with Kafka and AWS SQS',
+      'Code quality, automated testing and production stability improvements',
+      'Collaboration with QA, business, architecture and infrastructure teams',
+    ],
   },
   skills: {
     title: 'Technical skills',
@@ -74,41 +85,61 @@ export const CONTENT_EN: PortfolioContent = {
         description:
           'APIs, services and backend architecture for scalable, secure and high-performance enterprise systems.',
         iconKind: 'backend',
-        items: ['Java 8+', 'Spring', 'Spring Boot', 'Quarkus', 'JSF', 'REST APIs', 'Microservices'],
+        items: [
+          'Java 8+',
+          'Spring Boot',
+          'Quarkus',
+          'REST APIs',
+          'Microservices',
+          'JPA',
+          'Hibernate',
+          'Design Patterns',
+          'SOLID',
+        ],
       },
       {
-        title: 'Cloud and messaging',
+        title: 'Cloud & Messaging',
         description: 'Messaging, cloud and integrations for distributed systems.',
         iconKind: 'cloud',
-        items: ['Kafka', 'AWS SQS', 'AWS S3', 'AWS DynamoDB'],
+        items: [
+          'AWS',
+          'AWS SQS',
+          'AWS S3',
+          'AWS DynamoDB',
+          'Kafka',
+          'Messaging',
+          'Event-driven Architecture',
+        ],
       },
       {
         title: 'Data',
         description: 'Persistence, ORM and relational databases in critical systems.',
         iconKind: 'data',
-        items: ['JPA', 'Hibernate', 'PostgreSQL', 'MySQL', 'Oracle', 'Relational Databases'],
+        items: ['SQL', 'Oracle', 'PostgreSQL', 'MySQL', 'Relational Databases'],
       },
       {
-        title: 'Quality and delivery',
+        title: 'Quality & Delivery',
         description: 'Testing, automation and practices for continuous delivery.',
         iconKind: 'delivery',
         items: [
           'Automated Tests',
           'JUnit',
+          'Mockito',
           'TDD',
           'Docker',
-          'Rancher',
           'Kubernetes',
+          'Rancher',
           'CI/CD',
           'Jenkins',
           'Argo CD',
+          'Git',
         ],
       },
       {
-        title: 'Frontend and tools',
-        description: 'Interfaces, technical collaboration and day-to-day tools.',
+        title: 'Frontend & Collaboration',
+        description: 'Interfaces and technical collaboration in cross-functional teams.',
         iconKind: 'frontend',
-        items: ['Angular 2+', 'Angular', 'TypeScript', 'JavaScript', 'SASS', 'Git', 'Scrum'],
+        items: ['Angular', 'TypeScript', 'JavaScript', 'Scrum', 'Code Review'],
       },
     ],
   },
@@ -125,16 +156,16 @@ export const CONTENT_EN: PortfolioContent = {
         location: 'Fortaleza, Ceará, Brazil',
         isFeatured: true,
         shortSummary:
-          'Designed and maintained scalable backend APIs using Spring Boot for mission-critical systems.',
+          'Designed and maintained Java backend APIs using Spring Boot for mission-critical systems.',
         highlights: [
-          'Developed RESTful services and integrated complex legacy systems.',
+          'Integrated legacy/mainframe platforms.',
+          'Focused on security, stability and production performance.',
           'Applied TDD practices and automated tests with JUnit.',
-          'Collaborated with QA teams during SIT and UAT phases.',
         ],
         details: [
-          'Built enterprise-grade backend APIs with focus on reliability, security and high availability.',
+          'Designed and maintained Java backend APIs using Spring Boot for mission-critical systems, integrating legacy/mainframe platforms with focus on security, stability and production performance.',
           'Optimized database operations using JPA and advanced SQL with IBM DB2 and Oracle.',
-          'Worked in agile Scrum environments, contributing to high-impact solution delivery.',
+          'Collaborated with QA teams during SIT and UAT phases and worked in agile Scrum environments.',
         ],
         technologies: [
           'Java',
@@ -155,14 +186,14 @@ export const CONTENT_EN: PortfolioContent = {
         period: 'October 2023 - March 2024',
         location: 'Fortaleza, Ceará, Brazil',
         isFeatured: true,
-        shortSummary:
-          'Designed and maintained backend APIs using Quarkus in a microservices architecture.',
+        shortSummary: 'Developed Java backend APIs using Quarkus in a microservices architecture.',
         highlights: [
           'Integrated AWS services such as SQS, DynamoDB and S3.',
           'Implemented TDD and automated tests using JUnit.',
           'Built and ran containerized development environments using Docker.',
         ],
         details: [
+          'Developed Java backend APIs using Quarkus in a microservices architecture, integrating AWS services such as SQS, DynamoDB and S3.',
           'Managed messaging and queue-based workflows with AWS SQS.',
           'Participated in code reviews, monitoring and troubleshooting in production-like environments.',
           'Worked in agile teams using Scrum and collaborated with cross-functional stakeholders.',
@@ -187,14 +218,14 @@ export const CONTENT_EN: PortfolioContent = {
         location: 'Brasília, Distrito Federal, Brazil',
         isFeatured: true,
         shortSummary:
-          'Designed and maintained enterprise-grade Java backend systems with microservices and Kafka.',
+          'Worked on enterprise Java backend systems using microservices, Kafka and CI/CD.',
         highlights: [
+          'Worked on enterprise Java backend systems.',
           'Integrated services using Apache Kafka for asynchronous and resilient communication.',
-          'Implemented automated tests with JUnit.',
-          'Contributed to CI/CD pipelines using Jenkins, Argo CD and Rancher.',
+          'Used automated tests and CI/CD pipelines.',
         ],
         details: [
-          'Worked on enterprise systems with focus on reliability, maintainability and code quality.',
+          'Worked on enterprise Java backend systems using microservices, Kafka, JPA/Hibernate, automated tests and CI/CD pipelines.',
           'Used JPA and Hibernate as persistence solutions in complex enterprise systems.',
           'Participated in code reviews and technical discussions to improve architecture and maintainability.',
         ],
@@ -377,9 +408,12 @@ export const CONTENT_EN: PortfolioContent = {
     ],
   },
   courses: {
-    title: 'Courses',
-    detailsLabel: 'View courses',
+    title: 'Courses & Continuous Learning',
+    detailsLabel: 'View courses and studies',
     items: [
+      { label: 'Full Cycle 3.0', url: 'https://fullcycle.com.br/' },
+      { label: 'Curso.dev', url: 'https://curso.dev/' },
+      { label: 'Confraria Dev', url: 'https://confrariadev.com/cdv/' },
       {
         label: 'DevOps Ninja: Docker, Kubernetes and Rancher - Udemy',
         url: 'https://www.udemy.com/course/devops-mao-na-massa-docker-kubernetes-rancher/?srsltid=AfmBOooZeN1ud8FqRha0akipF-SlE7Bp0oI4T7K4ktAX6LZOzuhb8WPD&couponCode=MT260602G3',
@@ -401,37 +435,38 @@ export const CONTENT_EN: PortfolioContent = {
     title: 'Languages',
     items: [
       { name: 'Portuguese', level: 'Native or Bilingual' },
-      { name: 'English', level: 'Professional Working' },
+      { name: 'English', level: 'Intermediate, focused on technical conversations' },
     ],
   },
   projects: {
-    title: 'Projects coming soon',
+    title: 'Practical studies in progress',
     intro:
-      'Public projects will be added when they are ready to demonstrate code quality, architecture and technical decision-making.',
+      'I am structuring public projects to demonstrate technical decisions in REST APIs, messaging, automated testing, cloud and backend architecture.',
     items: [
       {
-        title: 'Java backend API',
-        statusLabel: 'Planned',
+        title: 'REST APIs and automated testing',
+        statusLabel: 'In progress',
         description:
-          'Planned project to demonstrate REST APIs, automated tests and backend practices.',
+          'Practical study focused on backend architecture decisions, code quality and test scenarios.',
       },
       {
-        title: 'Cloud integration',
-        statusLabel: 'Planned',
+        title: 'Messaging and cloud',
+        statusLabel: 'In progress',
         description:
-          'Planned project to demonstrate messaging workflows and AWS service integration.',
+          'Practical study to demonstrate asynchronous communication, cloud services and backend integrations.',
       },
     ],
   },
   contact: {
     title: 'Contact',
-    intro: 'Available for professional conversations about remote Java backend opportunities.',
+    intro:
+      'Open to remote opportunities in Java backend engineering, focused on APIs, microservices, AWS, messaging and mission-critical enterprise systems.',
     footerText:
       'Professional portfolio focused on Java backend engineering, architecture and scalable systems.',
     emailLabel: 'Send email',
     linkedinLabel: 'View LinkedIn',
     githubLabel: 'View GitHub',
-    resumePtLabel: 'Portuguese resume currently unavailable',
-    resumeEnLabel: 'English resume currently unavailable',
+    resumePtLabel: 'Download resume',
+    resumeEnLabel: 'Download resume',
   },
 } as const;
