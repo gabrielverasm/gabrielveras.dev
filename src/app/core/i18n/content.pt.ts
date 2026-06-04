@@ -43,8 +43,8 @@ export const CONTENT_PT: PortfolioContent = {
     stackSubtitle: 'Java | Spring Boot | Quarkus | AWS | Microsserviços',
     location: 'Fortaleza, Ceará, Brasil',
     summary: [
-      'Engenheiro backend Java sênior com 8+ anos de experiência no desenvolvimento e sustentação de APIs escaláveis, microsserviços e sistemas corporativos críticos.',
-      'Forte atuação com Java, Spring Boot, Quarkus, AWS, mensageria, bancos relacionais, testes automatizados, integração com sistemas legados e estabilidade em produção.',
+      'Engenheiro backend Java sênior com 8+ anos de experiência em APIs, microsserviços e sistemas corporativos críticos, com foco em estabilidade, integração entre sistemas e sustentação em produção.',
+      'Atuação forte com Java, Spring Boot, Quarkus, AWS, bancos relacionais, mensageria, testes automatizados e integração com sistemas legados/mainframe.',
     ],
     linkedinActionLabel: 'LinkedIn',
     githubActionLabel: 'GitHub',
@@ -142,9 +142,9 @@ export const CONTENT_PT: PortfolioContent = {
         shortSummary:
           'Desenvolvimento e sustentação de APIs Java com Spring Boot para sistemas críticos.',
         highlights: [
-          'Integração com sistemas legados/mainframe.',
-          'Foco em segurança, estabilidade e performance em produção.',
-          'Aplicação de TDD e testes automatizados com JUnit.',
+          'Integração com sistemas legados/mainframe em ambiente corporativo.',
+          'Atuação em segurança, estabilidade, performance e suporte à produção.',
+          'Aplicação de testes automatizados com JUnit e práticas de TDD.',
         ],
         details: [
           'Desenvolvimento e sustentação de APIs Java com Spring Boot para sistemas críticos, com integração a sistemas legados/mainframe, foco em segurança, estabilidade e performance em produção.',
@@ -442,7 +442,7 @@ export const CONTENT_PT: PortfolioContent = {
   contact: {
     title: 'Contato',
     intro:
-      'Disponível para oportunidades remotas em engenharia backend Java, com foco em APIs, microsserviços, AWS, mensageria e sistemas corporativos críticos.',
+      'Disponível para conversas sobre oportunidades backend Java sênior, arquitetura de APIs, microsserviços e sistemas corporativos.',
     footerText: 'Portfólio profissional focado em backend Java, arquitetura e sistemas escaláveis.',
     emailLabel: 'Enviar e-mail',
     linkedinLabel: 'Ver LinkedIn',
