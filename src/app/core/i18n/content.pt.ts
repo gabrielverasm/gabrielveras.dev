@@ -35,9 +35,9 @@ export const CONTENT_PT: PortfolioContent = {
     backToTopLabel: 'Voltar ao topo',
   },
   seo: {
-    title: 'Gabriel Veras | Analista de Sistemas Sênior Java',
+    title: 'Gabriel Veras Miranda | Engenheiro Backend Java Sênior',
     description:
-      'Gabriel Veras é Analista de Sistemas Sênior Java com mais de 8 anos de experiência em APIs REST, microsserviços, Spring Boot, Quarkus, AWS, Kafka e sistemas críticos.',
+      'Engenheiro Backend Java Sênior com 8+ anos de experiência em Spring Boot, Quarkus, AWS, microsserviços, APIs REST, Kafka, testes automatizados e sistemas críticos.',
   },
   navigation: [
     { label: 'Experiência', href: '#experience' },
@@ -48,13 +48,24 @@ export const CONTENT_PT: PortfolioContent = {
   hero: {
     eyebrow: 'Portfólio profissional',
     name: 'Gabriel Veras Miranda',
-    role: 'Analista de Sistemas Sênior Java',
+    role: 'Engenheiro Backend Java Sênior',
+    stackSubtitle: 'Java | Spring Boot | Quarkus | AWS | Microsserviços',
     location: 'Fortaleza, Ceará, Brasil',
     summary: [
-      'Analista de Sistemas especializado em desenvolvimento e manutenção de APIs Java, com experiência em Quarkus, Spring, Angular 2+, TDD, JPA, Hibernate e bancos relacionais.',
-      'Experiência em ambientes ágeis, sistemas corporativos, integração entre sistemas, qualidade de código, testes automatizados, desempenho e estabilidade em produção.',
+      'Engenheiro backend Java sênior com 8+ anos de experiência no desenvolvimento e sustentação de APIs escaláveis, microsserviços e sistemas corporativos críticos.',
+      'Forte atuação com Java, Spring Boot, Quarkus, AWS, mensageria, bancos relacionais, testes automatizados, integração com sistemas legados e estabilidade em produção.',
     ],
     primaryActionLabel: 'Ver experiência',
+  },
+  contribution: {
+    title: 'Como eu contribuo',
+    items: [
+      'Desenvolvimento e sustentação de APIs Java em sistemas críticos',
+      'Integração com sistemas legados e ambientes corporativos complexos',
+      'Comunicação assíncrona com Kafka e AWS SQS',
+      'Melhoria de qualidade, testes automatizados e estabilidade em produção',
+      'Colaboração com times de QA, negócio, arquitetura e infraestrutura',
+    ],
   },
   skills: {
     title: 'Habilidades técnicas',
@@ -76,25 +87,35 @@ export const CONTENT_PT: PortfolioContent = {
         iconKind: 'backend',
         items: [
           'Java 8+',
-          'Spring',
           'Spring Boot',
           'Quarkus',
-          'JSF',
           'APIs REST',
           'Microsserviços',
+          'JPA',
+          'Hibernate',
+          'Design Patterns',
+          'SOLID',
         ],
       },
       {
         title: 'Cloud e mensageria',
         description: 'Mensageria, cloud e integrações para sistemas distribuídos.',
         iconKind: 'cloud',
-        items: ['Kafka', 'AWS SQS', 'AWS S3', 'AWS DynamoDB'],
+        items: [
+          'AWS',
+          'AWS SQS',
+          'AWS S3',
+          'AWS DynamoDB',
+          'Kafka',
+          'Mensageria',
+          'Arquitetura orientada a eventos',
+        ],
       },
       {
         title: 'Dados',
         description: 'Persistência, ORM e bancos relacionais em sistemas críticos.',
         iconKind: 'data',
-        items: ['JPA', 'Hibernate', 'PostgreSQL', 'MySQL', 'Oracle', 'Bancos relacionais'],
+        items: ['SQL', 'Oracle', 'PostgreSQL', 'MySQL', 'Bancos relacionais'],
       },
       {
         title: 'Qualidade e entrega',
@@ -103,20 +124,22 @@ export const CONTENT_PT: PortfolioContent = {
         items: [
           'Testes automatizados',
           'JUnit',
+          'Mockito',
           'TDD',
           'Docker',
-          'Rancher',
           'Kubernetes',
+          'Rancher',
           'CI/CD',
           'Jenkins',
           'Argo CD',
+          'Git',
         ],
       },
       {
-        title: 'Frontend e ferramentas',
-        description: 'Interfaces, colaboração técnica e ferramentas do dia a dia.',
+        title: 'Frontend e colaboração',
+        description: 'Interfaces e colaboração técnica em times multidisciplinares.',
         iconKind: 'frontend',
-        items: ['Angular 2+', 'Angular', 'TypeScript', 'JavaScript', 'SASS', 'Git', 'Scrum'],
+        items: ['Angular', 'TypeScript', 'JavaScript', 'Scrum', 'Code Review'],
       },
     ],
   },
@@ -133,16 +156,16 @@ export const CONTENT_PT: PortfolioContent = {
         location: 'Fortaleza, Ceará, Brasil',
         isFeatured: true,
         shortSummary:
-          'Desenvolvimento e manutenção de APIs Java com Spring Boot para sistemas críticos.',
+          'Desenvolvimento e sustentação de APIs Java com Spring Boot para sistemas críticos.',
         highlights: [
-          'Criação de APIs RESTful e integração com sistemas legados.',
+          'Integração com sistemas legados/mainframe.',
+          'Foco em segurança, estabilidade e performance em produção.',
           'Aplicação de TDD e testes automatizados com JUnit.',
-          'Colaboração com QA em ciclos de SIT e UAT.',
         ],
         details: [
-          'Atuação em soluções escaláveis e seguras com foco em confiabilidade, segurança e alta disponibilidade.',
+          'Desenvolvimento e sustentação de APIs Java com Spring Boot para sistemas críticos, com integração a sistemas legados/mainframe, foco em segurança, estabilidade e performance em produção.',
           'Otimização de operações de banco de dados com JPA, SQL avançado, IBM DB2 e Oracle.',
-          'Participação em ambientes ágeis com Scrum, contribuindo para entregas de alto impacto.',
+          'Colaboração com QA em ciclos de SIT e UAT e participação em ambientes ágeis com Scrum.',
         ],
         technologies: [
           'Java',
@@ -163,16 +186,15 @@ export const CONTENT_PT: PortfolioContent = {
         period: 'Outubro/2023 - Março/2024',
         location: 'Fortaleza, Ceará, Brasil',
         isFeatured: true,
-        shortSummary:
-          'Desenvolvimento de APIs com Quarkus em arquitetura de microsserviços e integração com AWS.',
+        shortSummary: 'Desenvolvimento de APIs Java com Quarkus em arquitetura de microsserviços.',
         highlights: [
           'Integração com AWS SQS, DynamoDB e S3.',
           'Implementação de TDD e testes automatizados com JUnit.',
           'Uso de Docker para ambientes de desenvolvimento.',
         ],
         details: [
+          'Desenvolvimento de APIs Java com Quarkus em arquitetura de microsserviços, com integração a serviços AWS como SQS, DynamoDB e S3.',
           'Gerenciamento de filas e mensagens com AWS SQS para suporte a fluxos assíncronos.',
-          'Configuração e deploy de serviços localmente e na nuvem.',
           'Participação em code reviews, monitoramento, troubleshooting e cerimônias Scrum.',
         ],
         technologies: [
@@ -198,13 +220,13 @@ export const CONTENT_PT: PortfolioContent = {
         shortSummary:
           'Desenvolvimento backend Java em sistemas corporativos, com microsserviços, Kafka e CI/CD.',
         highlights: [
-          'Liderança técnica em desenvolvimento backend Java.',
+          'Atuação em sistemas backend Java corporativos.',
           'Integração de microsserviços com Apache Kafka.',
-          'Manutenção de pipelines com Jenkins, Argo CD e Rancher.',
+          'Testes automatizados e pipelines CI/CD.',
         ],
         details: [
+          'Atuação em sistemas backend Java corporativos, com microsserviços, Kafka, JPA/Hibernate, testes automatizados e pipelines CI/CD.',
           'Atuação em projetos para Banco do Brasil e CASSI, com foco em qualidade, arquitetura e manutenibilidade.',
-          'Uso de JUnit para validação contínua de requisitos técnicos e de negócio.',
           'Uso de JPA e Hibernate para persistência em sistemas corporativos complexos.',
         ],
         technologies: [
@@ -384,8 +406,8 @@ export const CONTENT_PT: PortfolioContent = {
     ],
   },
   courses: {
-    title: 'Cursos',
-    detailsLabel: 'Ver cursos',
+    title: 'Cursos e estudos contínuos',
+    detailsLabel: 'Ver cursos e estudos',
     items: [
       { label: 'Curso.dev - Felipe Deschamps', url: 'https://curso.dev/' },
       { label: 'Full Cycle 3.0', url: 'https://fullcycle.com.br/' },
@@ -411,36 +433,37 @@ export const CONTENT_PT: PortfolioContent = {
     title: 'Idiomas',
     items: [
       { name: 'Português', level: 'Nativo ou bilíngue' },
-      { name: 'Inglês', level: 'Profissional' },
+      { name: 'Inglês', level: 'Intermediário, com foco em conversação técnica' },
     ],
   },
   projects: {
-    title: 'Projetos em breve',
+    title: 'Estudos práticos em andamento',
     intro:
-      'Projetos públicos serão adicionados quando estiverem prontos para demonstrar código, arquitetura e decisão técnica com qualidade.',
+      'Estou estruturando projetos públicos para demonstrar decisões técnicas em APIs REST, mensageria, testes automatizados, cloud e arquitetura backend.',
     items: [
       {
-        title: 'API backend Java',
-        statusLabel: 'Planejado',
+        title: 'APIs REST e testes automatizados',
+        statusLabel: 'Em estruturação',
         description:
-          'Projeto planejado para demonstrar APIs REST, testes automatizados e práticas backend.',
+          'Estudo prático voltado a decisões de arquitetura backend, qualidade de código e cenários de teste.',
       },
       {
-        title: 'Integração cloud',
-        statusLabel: 'Planejado',
-        description: 'Projeto planejado para demonstrar integração com mensageria e serviços AWS.',
+        title: 'Mensageria e cloud',
+        statusLabel: 'Em estruturação',
+        description:
+          'Estudo prático para demonstrar comunicação assíncrona, serviços cloud e integrações backend.',
       },
     ],
   },
   contact: {
     title: 'Contato',
     intro:
-      'Disponível para conversas profissionais sobre oportunidades em engenharia backend Java.',
+      'Disponível para oportunidades remotas em engenharia backend Java, com foco em APIs, microsserviços, AWS, mensageria e sistemas corporativos críticos.',
     footerText: 'Portfólio profissional focado em backend Java, arquitetura e sistemas escaláveis.',
     emailLabel: 'Enviar e-mail',
     linkedinLabel: 'Ver LinkedIn',
     githubLabel: 'Ver GitHub',
-    resumePtLabel: 'Currículo em português indisponível no momento',
-    resumeEnLabel: 'Currículo em inglês indisponível no momento',
+    resumePtLabel: 'Baixar currículo',
+    resumeEnLabel: 'Baixar currículo',
   },
 } as const;
