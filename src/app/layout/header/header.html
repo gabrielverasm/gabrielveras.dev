@@ -1,14 +1,41 @@
 <header>
   <div class="wrap">
     <div class="menu-row">
-      <nav [attr.aria-label]="content().accessibility.primaryNavigationLabel">
+      <button
+        type="button"
+        class="menu-button"
+        [attr.aria-label]="
+          isMobileMenuOpen()
+            ? content().accessibility.closeMenuLabel
+            : content().accessibility.openMenuLabel
+        "
+        [attr.aria-expanded]="isMobileMenuOpen()"
+        aria-controls="mobile-menu"
+        (click)="toggleMobileMenu()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="desktop-nav" [attr.aria-label]="content().accessibility.primaryNavigationLabel">
         @for (item of content().navigation; track item.href) {
           <a class="link" [href]="item.href">{{ item.label }}</a>
         }
       </nav>
+
+      <app-language-switcher class="mobile-language" />
     </div>
     <div class="controls-strip">
-      <app-language-switcher />
+      <app-language-switcher class="desktop-language" />
+      <app-accessibility-controls />
+    </div>
+    <div id="mobile-menu" class="mobile-panel" [class.mobile-panel--open]="isMobileMenuOpen()">
+      <nav [attr.aria-label]="content().accessibility.primaryNavigationLabel">
+        @for (item of content().navigation; track item.href) {
+          <a class="link" [href]="item.href" (click)="closeMobileMenu()">{{ item.label }}</a>
+        }
+      </nav>
       <app-accessibility-controls />
     </div>
   </div>
