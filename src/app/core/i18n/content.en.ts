@@ -43,8 +43,8 @@ export const CONTENT_EN: PortfolioContent = {
     stackSubtitle: 'Java | Spring Boot | Quarkus | AWS | Microservices',
     location: 'Fortaleza, Ceará, Brazil',
     summary: [
-      'Senior Java Backend Engineer with 8+ years of experience building and maintaining scalable APIs, microservices and enterprise-grade systems.',
-      'Strong background in Java, Spring Boot, Quarkus, AWS, messaging, relational databases, automated testing, legacy system integration and production stability.',
+      'Senior Java Backend Engineer with 8+ years of experience in APIs, microservices and mission-critical enterprise systems, focused on stability, system integration and production reliability.',
+      'Strong background in Java, Spring Boot, Quarkus, AWS, relational databases, messaging, automated testing and legacy/mainframe system integration.',
     ],
     linkedinActionLabel: 'LinkedIn',
     githubActionLabel: 'GitHub',
@@ -142,9 +142,9 @@ export const CONTENT_EN: PortfolioContent = {
         shortSummary:
           'Designed and maintained Java backend APIs using Spring Boot for mission-critical systems.',
         highlights: [
-          'Integrated legacy/mainframe platforms.',
-          'Focused on security, stability and production performance.',
-          'Applied TDD practices and automated tests with JUnit.',
+          'Integrated enterprise systems with legacy/mainframe platforms.',
+          'Worked on security, stability, performance and production support.',
+          'Applied automated testing with JUnit and TDD practices.',
         ],
         details: [
           'Designed and maintained Java backend APIs using Spring Boot for mission-critical systems, integrating legacy/mainframe platforms with focus on security, stability and production performance.',
@@ -444,7 +444,7 @@ export const CONTENT_EN: PortfolioContent = {
   contact: {
     title: 'Contact',
     intro:
-      'Open to remote opportunities in Java backend engineering, focused on APIs, microservices, AWS, messaging and mission-critical enterprise systems.',
+      'Open to conversations about senior Java backend opportunities, API architecture, microservices and enterprise systems.',
     footerText:
       'Professional portfolio focused on Java backend engineering, architecture and scalable systems.',
     emailLabel: 'Send email',
