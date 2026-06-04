@@ -6,6 +6,7 @@ export interface PortfolioContent {
   readonly seo: SeoContent;
   readonly navigation: readonly NavigationItem[];
   readonly hero: HeroContent;
+  readonly contribution: ContributionContent;
   readonly skills: SkillsContent;
   readonly experience: ExperienceContent;
   readonly education: EducationContent;
@@ -62,9 +63,15 @@ export interface HeroContent {
   readonly eyebrow: string;
   readonly name: string;
   readonly role: string;
+  readonly stackSubtitle: string;
   readonly location: string;
   readonly summary: readonly string[];
   readonly primaryActionLabel: string;
+}
+
+export interface ContributionContent {
+  readonly title: string;
+  readonly items: readonly string[];
 }
 
 export interface SkillsContent {

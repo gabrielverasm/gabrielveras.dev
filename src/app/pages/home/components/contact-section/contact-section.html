@@ -13,6 +13,14 @@
         </svg>
         <span>{{ content().contact.emailLabel }}</span>
       </a>
+      @if (resumeHref(); as href) {
+        <a class="contact-link" [href]="href">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+          </svg>
+          <span>{{ resumeLabel() }}</span>
+        </a>
+      }
       <a
         class="contact-link"
         [href]="externalLinks.linkedin.href"
@@ -42,22 +50,6 @@
             <path d="M7 18c-2.8.8-2.8-1.4-4-1.8" />
           </svg>
           <span>{{ content().contact.githubLabel }}</span>
-        </a>
-      }
-      @if (externalLinks.resumes.ptBr.href; as resumePtHref) {
-        <a class="contact-link" [href]="resumePtHref">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
-          </svg>
-          <span>{{ content().contact.resumePtLabel }}</span>
-        </a>
-      }
-      @if (externalLinks.resumes.en.href; as resumeEnHref) {
-        <a class="contact-link" [href]="resumeEnHref">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
-          </svg>
-          <span>{{ content().contact.resumeEnLabel }}</span>
         </a>
       }
     </address>
