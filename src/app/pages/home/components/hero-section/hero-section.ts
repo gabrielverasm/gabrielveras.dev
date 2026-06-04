@@ -21,9 +21,5 @@ export class HeroSection {
       ? resumes.ptBr.href || resumes.en.href
       : resumes.en.href || resumes.ptBr.href;
   });
-  readonly resumeLabel = computed(() =>
-    this.content().language === 'pt-BR'
-      ? this.content().contact.resumePtLabel
-      : this.content().contact.resumeEnLabel,
-  );
+  readonly resumeLabel = computed(() => this.content().hero.resumeActionLabel);
 }

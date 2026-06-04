@@ -6,7 +6,6 @@ export interface PortfolioContent {
   readonly seo: SeoContent;
   readonly navigation: readonly NavigationItem[];
   readonly hero: HeroContent;
-  readonly contribution: ContributionContent;
   readonly skills: SkillsContent;
   readonly experience: ExperienceContent;
   readonly education: EducationContent;
@@ -20,29 +19,18 @@ export interface AccessibilityContent {
   readonly skipLinkLabel: string;
   readonly primaryNavigationLabel: string;
   readonly languageSwitcherLabel: string;
-  readonly languageSwitcherVisibleLabel: string;
-  readonly portugueseLanguageLabel: string;
-  readonly portugueseLanguageShortLabel: string;
-  readonly englishLanguageLabel: string;
-  readonly englishLanguageShortLabel: string;
-  readonly settingsLabel: string;
-  readonly settingsButtonLabel: string;
-  readonly settingsPanelLabel: string;
   readonly profilePhotoAlt: string;
   readonly openProfilePhotoLabel: string;
   readonly closeProfilePhotoLabel: string;
   readonly accessibilityControlsLabel: string;
   readonly themeToggleLabel: string;
-  readonly enableLightThemeLabel: string;
-  readonly enableDarkThemeLabel: string;
-  readonly darkThemeShortLabel: string;
-  readonly lightThemeShortLabel: string;
+  readonly enableLightModeLabel: string;
+  readonly enableDarkModeLabel: string;
   readonly decreaseFontSizeLabel: string;
   readonly decreaseFontSizeShortLabel: string;
   readonly increaseFontSizeLabel: string;
   readonly increaseFontSizeShortLabel: string;
   readonly resetFontSizeLabel: string;
-  readonly resetFontSizeShortLabel: string;
   readonly highContrastLabel: string;
   readonly enableHighContrastLabel: string;
   readonly disableHighContrastLabel: string;
@@ -66,12 +54,9 @@ export interface HeroContent {
   readonly stackSubtitle: string;
   readonly location: string;
   readonly summary: readonly string[];
-  readonly primaryActionLabel: string;
-}
-
-export interface ContributionContent {
-  readonly title: string;
-  readonly items: readonly string[];
+  readonly linkedinActionLabel: string;
+  readonly githubActionLabel: string;
+  readonly resumeActionLabel: string;
 }
 
 export interface SkillsContent {

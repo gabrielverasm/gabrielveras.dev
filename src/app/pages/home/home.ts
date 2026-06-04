@@ -4,7 +4,6 @@ import { Meta, Title } from '@angular/platform-browser';
 
 import { LanguageService } from '../../core/i18n/language.service';
 import { ContactSection } from './components/contact-section/contact-section';
-import { ContributionSection } from './components/contribution-section/contribution-section';
 import { EducationSection } from './components/education-section/education-section';
 import { ExperienceSection } from './components/experience-section/experience-section';
 import { HeroSection } from './components/hero-section/hero-section';
@@ -16,7 +15,6 @@ import { SkillsSection } from './components/skills-section/skills-section';
   selector: 'app-home',
   imports: [
     ContactSection,
-    ContributionSection,
     EducationSection,
     ExperienceSection,
     HeroSection,
