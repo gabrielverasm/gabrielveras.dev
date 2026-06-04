@@ -1,59 +1,116 @@
-# GabrielverasDev
+# gabrielveras.dev
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+Bilingual professional portfolio and online resume for Gabriel Veras, Senior Java Backend Engineer.
 
-## Development server
+Live site: [https://gabrielverasm.github.io/gabrielveras.dev/](https://gabrielverasm.github.io/gabrielveras.dev/)
 
-To start a local development server, run:
+## Purpose
 
-```bash
-ng serve
-```
+This project presents Gabriel Veras's professional background, technical focus and contact channels for backend engineering opportunities in Brazil and internationally.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The portfolio is built to be clear, accessible, responsive and maintainable, with content available in Portuguese and English.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Bilingual content in Portuguese and English.
+- Responsive portfolio layout for mobile, tablet and desktop screens.
+- Professional experience, skills, education, projects and contact sections.
+- Accessibility controls for theme, high contrast and font size.
+- Theme switch.
+- High contrast mode.
+- Font size controls.
+- Profile photo modal.
+- SEO metadata.
+- Open Graph and Twitter social preview metadata.
+- `sitemap.xml` and `robots.txt` files.
+- Visible app version in the footer.
 
-```bash
-ng generate component component-name
-```
+## Tech Stack
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Angular 21
+- TypeScript
+- Standalone Components
+- Angular Router
+- SCSS
+- npm
+- ESLint
+- Prettier
+- Husky
+- lint-staged
+- GitHub Pages
 
-```bash
-ng generate --help
-```
+## Quality Workflow
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+The project includes npm scripts for local development, formatting, linting, testing and production builds:
 
 ```bash
-ng e2e
+npm run start
+npm run lint
+npm run format
+npm run format:check
+npm run build
+npm run quality
+npm run test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+`npm run quality` runs linting, formatting checks and a production build.
 
-## Additional Resources
+## Local Development
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Install dependencies:
+
+```bash
+npm ci
+```
+
+Start the development server:
+
+```bash
+npm run start
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Run the full local quality check:
+
+```bash
+npm run quality
+```
+
+## Versioning
+
+`package.json` is the source of truth for the app version.
+
+The `scripts/sync-version.mjs` script generates and syncs `src/app/core/constants/app-version.ts`. The `prestart`, `prebuild` and `prequality` scripts run this sync automatically before the related commands.
+
+The synced app version is displayed in the site footer.
+
+## Deployment
+
+The site is hosted with GitHub Pages.
+
+Current public URL:
+
+[https://gabrielverasm.github.io/gabrielveras.dev/](https://gabrielverasm.github.io/gabrielveras.dev/)
+
+The production build for GitHub Pages uses the base href `/gabrielveras.dev/`.
+
+The custom domain `gabrielveras.dev` is planned, but it is still pending availability. Until then, the GitHub Pages URL is the active public URL.
+
+## Repository Metadata Suggestions
+
+Suggested GitHub repository description:
+
+```text
+Bilingual Angular portfolio and online resume for Gabriel Veras, Senior Java Backend Engineer.
+```
+
+Suggested topics:
+
+```text
+angular, typescript, scss, portfolio, resume, github-pages, accessibility, i18n, seo, java, spring-boot, quarkus, backend-engineer
+```
