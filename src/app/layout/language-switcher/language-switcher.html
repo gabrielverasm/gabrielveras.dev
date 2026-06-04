@@ -14,7 +14,14 @@
     [attr.aria-pressed]="currentLanguage() === 'pt-BR'"
     (click)="setPortuguese()"
   >
-    <img class="language-flag" src="images/flags/br.svg" width="25" height="16" alt="" />
+    <img
+      class="language-flag"
+      src="images/flags/br.svg"
+      width="25"
+      height="16"
+      alt=""
+      decoding="async"
+    />
     <span>{{ content().accessibility.portugueseLanguageShortLabel }}</span>
   </button>
 
@@ -26,7 +33,14 @@
     [attr.aria-pressed]="currentLanguage() === 'en'"
     (click)="setEnglish()"
   >
-    <img class="language-flag" src="images/flags/us.svg" width="25" height="16" alt="" />
+    <img
+      class="language-flag"
+      src="images/flags/us.svg"
+      width="25"
+      height="16"
+      alt=""
+      decoding="async"
+    />
     <span>{{ content().accessibility.englishLanguageShortLabel }}</span>
   </button>
 </div>
