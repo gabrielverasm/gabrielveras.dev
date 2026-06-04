@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+
+.skill-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.58rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-chip {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.36rem 0.58rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
+  border-radius: 0.45rem;
+  background: color-mix(in srgb, var(--color-elevated) 58%, transparent);
+  color: var(--color-text);
+  font-size: calc(0.82rem * var(--font-scale));
+  font-weight: 760;
+  line-height: 1.3;
+}
+
+.tech-icon {
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+  font-size: calc(0.86rem * var(--font-scale));
+}

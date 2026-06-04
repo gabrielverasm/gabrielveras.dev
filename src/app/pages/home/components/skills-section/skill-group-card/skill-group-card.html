@@ -1,0 +1,14 @@
+<article class="skill-card skill-card--{{ accent() }}">
+  <div class="skill-card__header">
+    <span class="skill-card__icon" aria-hidden="true">
+      <app-portfolio-icon [kind]="group().iconKind ?? 'frontend'" />
+    </span>
+    <div>
+      <h3>{{ group().title }}</h3>
+      @if (group().description) {
+        <p>{{ group().description }}</p>
+      }
+    </div>
+  </div>
+  <app-skill-chip-list [items]="group().items" />
+</article>

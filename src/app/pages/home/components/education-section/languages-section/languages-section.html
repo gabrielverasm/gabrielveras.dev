@@ -1,0 +1,28 @@
+<section class="section" aria-labelledby="languages-title">
+  <div class="section__header">
+    <h2 id="languages-title">{{ content().languages.title }}</h2>
+  </div>
+  <div class="grid-list grid-list--compact">
+    @for (language of content().languages.items; track language.name) {
+      <article class="info-block language-card">
+        <img
+          class="language-flag"
+          [src]="
+            language.name === 'Português' || language.name === 'Portuguese'
+              ? 'images/flags/br.svg'
+              : 'images/flags/us.svg'
+          "
+          width="61"
+          height="40"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+        <div>
+          <h3>{{ language.name }}</h3>
+          <p>{{ language.level }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>
