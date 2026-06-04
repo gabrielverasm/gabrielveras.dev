@@ -14,6 +14,12 @@ header {
   padding: 0.45rem var(--space-4) 0.4rem;
 }
 
+.menu-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -42,12 +48,15 @@ nav {
 
 .link:is(:hover, :focus-visible) {
   border-color: color-mix(in srgb, var(--color-primary) 34%, var(--color-border));
-}
-
-.link:is(:hover, :focus-visible) {
   background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
   color: var(--color-link);
   box-shadow: 0 0 0 0.14rem color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+
+.menu-button,
+.mobile-language,
+.mobile-panel {
+  display: none;
 }
 
 .controls-strip {
@@ -62,22 +71,98 @@ nav {
   max-width: min(36rem, calc(100vw - (var(--space-4) * 2)));
 }
 
-@media (max-width: 57.99rem) {
-  nav {
-    justify-content: flex-start;
+@media (max-width: 57.99rem), (max-width: 80rem) and (hover: none) and (pointer: coarse) {
+  header {
+    --mobile-header-inset: clamp(0.75rem, 3vw, 1.5rem);
+
+    position: fixed;
+    top: clamp(0.9rem, 2.5vw, 1.35rem);
+    right: var(--mobile-header-inset);
+    left: auto;
+    width: auto;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
+    pointer-events: none;
   }
 
+  .wrap {
+    width: auto;
+    padding: 0;
+    pointer-events: auto;
+  }
+
+  .menu-row {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+  }
+
+  .desktop-nav,
   .controls-strip {
-    right: auto;
-    left: var(--space-4);
-    justify-content: flex-start;
+    display: none;
+  }
+
+  .menu-button,
+  .mobile-language {
+    display: inline-flex;
+  }
+
+  .menu-button {
+    width: 2.55rem;
+    min-height: 2.35rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.26rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    color: var(--color-link);
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    width: 1.05rem;
+    height: 0.12rem;
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  .mobile-panel--open {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    right: 0;
+    display: grid;
+    gap: var(--space-3);
+    width: min(17rem, calc(100vw - (var(--mobile-header-inset) * 2)));
+    max-height: calc(100vh - 5.5rem);
+    padding: var(--space-3);
+    overflow: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .mobile-panel nav {
+    display: grid;
+    gap: 0.2rem;
+    justify-content: stretch;
+  }
+
+  .mobile-panel .link {
+    justify-content: center;
   }
 }
 
 @media (max-width: 24rem) {
-  .controls-strip {
-    max-width: calc(100vw - 1rem);
-    left: 0.5rem;
+  header {
+    --mobile-header-inset: 0.75rem;
+  }
+
+  .mobile-panel--open {
+    width: calc(100vw - 1.5rem);
   }
 }
 

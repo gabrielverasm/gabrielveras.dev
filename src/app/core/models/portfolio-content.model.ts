@@ -19,6 +19,8 @@ export interface AccessibilityContent {
   readonly skipLinkLabel: string;
   readonly primaryNavigationLabel: string;
   readonly languageSwitcherLabel: string;
+  readonly openMenuLabel: string;
+  readonly closeMenuLabel: string;
   readonly profilePhotoAlt: string;
   readonly openProfilePhotoLabel: string;
   readonly closeProfilePhotoLabel: string;
@@ -57,6 +59,7 @@ export interface HeroContent {
   readonly linkedinActionLabel: string;
   readonly githubActionLabel: string;
   readonly resumeActionLabel: string;
+  readonly experienceActionLabel: string;
 }
 
 export interface SkillsContent {

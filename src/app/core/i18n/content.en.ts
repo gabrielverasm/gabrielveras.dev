@@ -6,6 +6,8 @@ export const CONTENT_EN: PortfolioContent = {
     skipLinkLabel: 'Skip to main content',
     primaryNavigationLabel: 'Primary navigation',
     languageSwitcherLabel: 'Change language',
+    openMenuLabel: 'Open menu',
+    closeMenuLabel: 'Close menu',
     profilePhotoAlt: 'Professional photo of Gabriel Veras',
     openProfilePhotoLabel: 'Open larger professional photo',
     closeProfilePhotoLabel: 'Close photo preview',
@@ -47,6 +49,7 @@ export const CONTENT_EN: PortfolioContent = {
     linkedinActionLabel: 'LinkedIn',
     githubActionLabel: 'GitHub',
     resumeActionLabel: 'Resume',
+    experienceActionLabel: 'View experience',
   },
   skills: {
     title: 'Technical skills',
