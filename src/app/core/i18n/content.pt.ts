@@ -55,17 +55,9 @@ export const CONTENT_PT: PortfolioContent = {
       'Engenheiro backend Java sênior com 8+ anos de experiência no desenvolvimento e sustentação de APIs escaláveis, microsserviços e sistemas corporativos críticos.',
       'Forte atuação com Java, Spring Boot, Quarkus, AWS, mensageria, bancos relacionais, testes automatizados, integração com sistemas legados e estabilidade em produção.',
     ],
-    primaryActionLabel: 'Ver experiência',
-  },
-  contribution: {
-    title: 'Como eu contribuo',
-    items: [
-      'Desenvolvimento e sustentação de APIs Java em sistemas críticos',
-      'Integração com sistemas legados e ambientes corporativos complexos',
-      'Comunicação assíncrona com Kafka e AWS SQS',
-      'Melhoria de qualidade, testes automatizados e estabilidade em produção',
-      'Colaboração com times de QA, negócio, arquitetura e infraestrutura',
-    ],
+    linkedinActionLabel: 'LinkedIn',
+    githubActionLabel: 'GitHub',
+    resumeActionLabel: 'Currículo',
   },
   skills: {
     title: 'Habilidades técnicas',

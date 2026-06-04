@@ -55,17 +55,9 @@ export const CONTENT_EN: PortfolioContent = {
       'Senior Java Backend Engineer with 8+ years of experience building and maintaining scalable APIs, microservices and enterprise-grade systems.',
       'Strong background in Java, Spring Boot, Quarkus, AWS, messaging, relational databases, automated testing, legacy system integration and production stability.',
     ],
-    primaryActionLabel: 'View experience',
-  },
-  contribution: {
-    title: 'What I bring',
-    items: [
-      'Backend development and maintenance for mission-critical Java systems',
-      'Legacy system integration and complex enterprise environments',
-      'Asynchronous communication with Kafka and AWS SQS',
-      'Code quality, automated testing and production stability improvements',
-      'Collaboration with QA, business, architecture and infrastructure teams',
-    ],
+    linkedinActionLabel: 'LinkedIn',
+    githubActionLabel: 'GitHub',
+    resumeActionLabel: 'Resume',
   },
   skills: {
     title: 'Technical skills',
