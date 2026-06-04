@@ -1,4 +1,4 @@
-.site-header {
+header {
   position: sticky;
   top: 0;
   z-index: 30;
@@ -7,21 +7,20 @@
   backdrop-filter: blur(16px);
 }
 
-.site-header__inner {
-  display: grid;
+.wrap {
   width: min(100%, var(--container-max-width));
   margin: 0 auto;
   padding: 0.55rem var(--space-4);
 }
 
-.site-header__top-row {
+.row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: var(--space-3);
   align-items: center;
 }
 
-.site-header__brand {
+.brand {
   min-width: 13rem;
   display: grid;
   grid-template-columns: 2.5rem minmax(0, 1fr);
@@ -33,17 +32,17 @@
   pointer-events: none;
   transform: translateY(-0.25rem);
   transition:
-    opacity 160ms ease,
-    transform 160ms ease;
+    opacity 0.16s ease,
+    transform 0.16s ease;
 }
 
-.site-header--compact .site-header__brand {
+header.compact .brand {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-.site-header__avatar {
+.pic {
   grid-row: span 2;
   width: 2.5rem;
   height: 2.5rem;
@@ -54,88 +53,87 @@
   object-fit: cover;
 }
 
-.site-header__name {
+.title {
   min-width: 0;
   font-size: calc(1rem * var(--font-scale));
   font-weight: 800;
-  line-height: 1.2;
 }
 
-.site-header__role {
+.subtitle {
   color: var(--color-muted);
   font-size: calc(0.8rem * var(--font-scale));
+}
+
+.title,
+.subtitle {
   line-height: 1.2;
 }
 
-.site-header__nav {
+nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
   justify-content: center;
 }
 
-.site-header__link {
-  min-height: calc(2.1rem * var(--font-scale));
+.link,
+.settings button {
   display: inline-flex;
   align-items: center;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.link {
+  min-height: calc(2.1rem * var(--font-scale));
   padding: calc(0.3rem * var(--font-scale)) calc(0.6rem * var(--font-scale));
   border: 1px solid transparent;
-  border-radius: 999px;
   color: var(--color-muted);
   font-size: calc(0.88rem * var(--font-scale));
   font-weight: 700;
   text-decoration: none;
-  transition:
-    background 0.16s ease,
-    border-color 0.16s ease,
-    color 0.16s ease,
-    box-shadow 0.16s ease;
 }
 
-.site-header__link:hover,
-.site-header__link:focus-visible {
+.link:is(:hover, :focus-visible) {
   border-color: color-mix(in srgb, var(--color-primary) 34%, var(--color-border));
+}
+
+:is(
+  .link:is(:hover, :focus-visible),
+  .settings button:is(:hover, :focus-visible, [aria-expanded='true'])
+) {
   background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
   color: var(--color-link);
   box-shadow: 0 0 0 0.14rem color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
-.site-header__settings {
+.settings {
   position: relative;
   justify-self: end;
 }
 
-.site-header__settings-button {
+.settings button {
   min-height: calc(2.15rem * var(--font-scale));
-  display: inline-flex;
-  align-items: center;
   gap: 0.35rem;
   padding: calc(0.3rem * var(--font-scale)) calc(0.65rem * var(--font-scale));
   border: 1px solid var(--color-border);
-  border-radius: 999px;
   background: var(--color-surface);
   color: var(--color-text);
-  cursor: pointer;
   font-size: calc(0.82rem * var(--font-scale));
   font-weight: 800;
   line-height: 1;
-  transition:
-    background 0.16s ease,
-    border-color 0.16s ease,
-    color 0.16s ease,
-    box-shadow 0.16s ease;
 }
 
-.site-header__settings-button:hover,
-.site-header__settings-button:focus-visible,
-.site-header__settings-button[aria-expanded='true'] {
+.settings button:is(:hover, :focus-visible, [aria-expanded='true']) {
   border-color: color-mix(in srgb, var(--color-primary) 68%, white);
-  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
-  color: var(--color-link);
-  box-shadow: 0 0 0 0.14rem color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
-.site-header__settings-icon {
+.settings svg {
   width: calc(1rem * var(--font-scale));
   height: calc(1rem * var(--font-scale));
   flex: 0 0 auto;
@@ -146,7 +144,7 @@
   stroke-width: 1.8;
 }
 
-.site-header__settings-panel {
+.panel {
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
@@ -162,64 +160,57 @@
 }
 
 @media (max-width: 57.99rem) {
-  .site-header__top-row {
+  .row {
     align-items: flex-start;
     grid-template-columns: 1fr auto;
   }
 
-  .site-header:not(.site-header--compact) .site-header__brand {
+  header:not(.compact) .brand {
     display: none;
   }
 
-  .site-header__brand {
+  .brand {
     grid-column: 1 / -1;
   }
 
-  .site-header__nav {
+  nav {
     justify-content: flex-start;
   }
 }
 
 @media (max-width: 36rem) {
-  .site-header__settings {
-    align-self: start;
-  }
-
-  .site-header__settings-text {
+  .text {
     position: absolute;
     width: 1px;
     height: 1px;
-    padding: 0;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
     white-space: nowrap;
-    border: 0;
   }
 }
 
-:host-context([data-contrast='high']) .site-header {
+:host-context([data-contrast='high']) header {
   border-bottom-color: var(--color-text);
   background: var(--color-surface);
 }
 
-:host-context([data-contrast='high']) .site-header__link {
+:host-context([data-contrast='high']) .link {
   color: var(--color-text);
 }
 
-:host-context([data-contrast='high']) .site-header__link:hover,
-:host-context([data-contrast='high']) .site-header__link:focus-visible {
+:host-context([data-contrast='high']) .link:is(:hover, :focus-visible) {
   background: var(--color-text);
   color: var(--color-surface);
 }
 
-:host-context([data-contrast='high']) .site-header__settings-button,
-:host-context([data-contrast='high']) .site-header__settings-panel {
+:host-context([data-contrast='high']) .settings button,
+:host-context([data-contrast='high']) .panel {
   border-color: var(--color-text);
 }
 
-:host-context([data-contrast='high']) .site-header__settings-button:hover,
-:host-context([data-contrast='high']) .site-header__settings-button:focus-visible,
-:host-context([data-contrast='high']) .site-header__settings-button[aria-expanded='true'] {
+:host-context([data-contrast='high'])
+  .settings
+  button:is(:hover, :focus-visible, [aria-expanded='true']) {
   border-color: #fde047;
   background: #111827;
   color: #fde047;
