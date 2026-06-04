@@ -257,3 +257,106 @@ Follow responsive web principles:
 Prefer responsive websites over unnecessary native-app-like complexity.
 
 The site must feel like a professional web experience, not a desktop layout forced into mobile.
+
+## AI/Codex Development Rules
+
+Codex must work as a careful engineering assistant, not as an automatic bulk editor.
+
+Before changing files:
+
+- Read this `AGENTS.md`.
+- Understand the user's latest request and any explicit constraints.
+- Inspect only the files needed for the task.
+- Identify whether the task is a feature, bugfix, performance change, content change or documentation change.
+- Keep the plan small and scoped to the requested outcome.
+- Ask before expanding scope.
+
+Scope rules:
+
+- Prefer small, reviewable changes.
+- Do not combine unrelated feature, bugfix, performance, content and tooling changes unless the user explicitly asks for that combination.
+- Do not refactor unrelated code while solving a narrow task.
+- Preserve existing architecture, content model, visual direction and Senior Java Backend Engineer positioning unless the task explicitly changes them.
+- When a task touches PT/EN content, update both languages consistently.
+
+Command execution rules:
+
+- Do not run `npm`, `git`, build, test, lint, format, audit, Lighthouse, dev server or deployment commands unless the user explicitly asks for them.
+- If validation commands are required but not authorized, report the exact commands the user should run manually.
+- Never perform destructive git operations unless explicitly requested.
+
+Performance and bundle rules:
+
+- Treat performance as a first-class requirement.
+- Avoid increasing the initial bundle without a clear reason.
+- Prefer HTML/CSS/browser-native improvements before adding JavaScript.
+- Do not add dependencies unless clearly justified and approved by the user.
+- For LCP images, prefer explicit dimensions, stable paths, appropriate loading behavior, preload/fetch priority when justified and no unnecessary lazy loading above the fold.
+- Preserve component style budgets; reduce local CSS before moving or globalizing styles.
+
+CSS and styling rules:
+
+- Keep styles component-scoped by default.
+- Do not move CSS to `src/styles.scss` just to silence component style budget warnings.
+- Avoid global CSS changes unless the root cause is genuinely global.
+- Do not use `overflow-x: hidden` globally to hide layout bugs.
+- Fix the element causing overflow instead of masking the scrollbar.
+- Maintain the existing visual system and avoid redesigning unless requested.
+
+Responsive rules:
+
+- Check responsive behavior mentally and, when authorized, with real viewport validation.
+- Protect common widths such as `320px`, `360px`, `375px`, `390px`, `414px`, `768px`, `820px`, `912px`, `1024px`, `1280px` and desktop widths.
+- Ensure floating, fixed and absolute elements remain inside the viewport.
+- Use flexible grid/flex sizing and `min-width: 0` where needed to prevent overflow.
+- Do not force desktop layouts onto tablet/mobile screens.
+- Do not force mobile layouts onto desktop/mouse environments unless the viewport truly requires it.
+
+Accessibility rules for AI changes:
+
+- Keep semantic elements and accessible names.
+- Do not remove visible focus states.
+- Do not make icon-only controls depend on visuals alone.
+- Ensure keyboard users can reach and operate new controls.
+- Preserve `aria-label`, `aria-expanded`, `aria-controls`, language labels and download link behavior when relevant.
+- Tooltips may enhance usability but must not be required for accessibility.
+
+Versioning rules before commit or publication:
+
+- Confirm the project version in both:
+  - `package.json`
+  - `src/app/core/constants/app-version.ts`
+- Do not change versions unless explicitly requested.
+- Do not rely on generated version sync unless the user asked to run it.
+
+Validation checklist:
+
+- Confirm files changed match the requested scope.
+- Confirm no unrelated content, SEO metadata, URLs, assets, deploy files or workflows were changed.
+- Confirm PT/EN content remains aligned when content is touched.
+- Confirm responsive behavior is not obviously broken.
+- Confirm accessibility behavior is preserved.
+- Confirm performance-sensitive changes do not increase initial bundle without justification.
+- If commands were authorized, report exact command results.
+- If commands were not authorized, list the exact commands the user should run.
+
+Final report rules:
+
+- Start with what changed and why.
+- List files changed.
+- Separate requested changes from incidental or pre-existing changes.
+- Mention validation performed and validation still needed.
+- Report any known risks.
+- Explicitly state whether commands were run.
+
+## Do Not Do
+
+- Do not use global `overflow-x: hidden` to hide a layout problem.
+- Do not move CSS to `styles.scss` just to silence a component style budget warning.
+- Do not mix feature, bugfix and performance work without telling the user.
+- Do not partially update PT/EN text.
+- Do not increase the initial bundle without justification.
+- Do not remove accessibility behavior, labels or focus states.
+- Do not execute `npm`, `git`, build, test, lint, format, audit or deployment commands without authorization.
+- Do not alter package version or `app-version.ts` unless explicitly requested.
+- Do not change README, workflows, deploy files, SEO metadata, public assets, URLs, robots or sitemap unless the task explicitly asks for it.
