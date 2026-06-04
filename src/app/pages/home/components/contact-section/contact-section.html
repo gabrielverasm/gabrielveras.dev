@@ -14,7 +14,7 @@
         <span>{{ content().contact.emailLabel }}</span>
       </a>
       @if (resumeHref(); as href) {
-        <a class="contact-link" [href]="href">
+        <a class="contact-link" [href]="href" download>
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
           </svg>

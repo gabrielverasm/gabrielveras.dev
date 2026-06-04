@@ -1,62 +1,42 @@
-<header [class.compact]="isCompact()">
+<header>
   <div class="wrap">
-    <div class="row">
-      <a
-        class="brand"
-        href="#main-content"
-        aria-label="Gabriel Veras"
-        [attr.aria-hidden]="isCompact() ? null : 'true'"
-        [attr.tabindex]="isCompact() ? null : -1"
+    <div class="menu-row">
+      <button
+        type="button"
+        class="menu-button"
+        [attr.aria-label]="
+          isMobileMenuOpen()
+            ? content().accessibility.closeMenuLabel
+            : content().accessibility.openMenuLabel
+        "
+        [attr.aria-expanded]="isMobileMenuOpen()"
+        aria-controls="mobile-menu"
+        (click)="toggleMobileMenu()"
       >
-        <img
-          class="pic"
-          src="images/profile-avatar.webp"
-          width="40"
-          height="40"
-          decoding="async"
-          [alt]="content().accessibility.profilePhotoAlt"
-        />
-        <span class="title">{{ content().hero.name }}</span>
-        <span class="subtitle">{{ content().hero.role }}</span>
-      </a>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <nav [attr.aria-label]="content().accessibility.primaryNavigationLabel">
+      <nav class="desktop-nav" [attr.aria-label]="content().accessibility.primaryNavigationLabel">
         @for (item of content().navigation; track item.href) {
           <a class="link" [href]="item.href">{{ item.label }}</a>
         }
       </nav>
 
-      <div class="settings">
-        <button
-          type="button"
-          aria-controls="header-settings-panel"
-          [attr.aria-expanded]="isSettingsOpen()"
-          [attr.aria-label]="content().accessibility.settingsButtonLabel"
-          (click)="toggleSettings()"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="12" r="3.1" />
-            <path
-              d="M9.7 4.15a2.35 2.35 0 0 1 4.6 0 2.35 2.35 0 0 0 3.34 1.93 2.35 2.35 0 0 1 2.3 3.98 2.35 2.35 0 0 0 0 3.88 2.35 2.35 0 0 1-2.3 3.98 2.35 2.35 0 0 0-3.34 1.93 2.35 2.35 0 0 1-4.6 0 2.35 2.35 0 0 0-3.34-1.93 2.35 2.35 0 0 1-2.3-3.98 2.35 2.35 0 0 0 0-3.88 2.35 2.35 0 0 1 2.3-3.98A2.35 2.35 0 0 0 9.7 4.15Z"
-            />
-          </svg>
-          <span class="text">
-            {{ content().accessibility.settingsLabel }}
-          </span>
-        </button>
-
-        @if (isSettingsOpen()) {
-          <div
-            id="header-settings-panel"
-            class="panel"
-            role="dialog"
-            [attr.aria-label]="content().accessibility.settingsPanelLabel"
-          >
-            <app-accessibility-controls />
-            <app-language-switcher />
-          </div>
+      <app-language-switcher class="mobile-language" />
+    </div>
+    <div class="controls-strip">
+      <app-language-switcher class="desktop-language" />
+      <app-accessibility-controls />
+    </div>
+    <div id="mobile-menu" class="mobile-panel" [class.mobile-panel--open]="isMobileMenuOpen()">
+      <nav [attr.aria-label]="content().accessibility.primaryNavigationLabel">
+        @for (item of content().navigation; track item.href) {
+          <a class="link" [href]="item.href" (click)="closeMobileMenu()">{{ item.label }}</a>
         }
-      </div>
+      </nav>
+      <app-accessibility-controls />
     </div>
   </div>
 </header>

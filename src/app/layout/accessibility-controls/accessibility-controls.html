@@ -5,36 +5,39 @@
 >
   <button
     type="button"
-    class="accessibility-controls__button accessibility-controls__button--theme"
-    [attr.aria-label]="
-      currentTheme() === 'dark'
-        ? content().accessibility.enableLightThemeLabel
-        : content().accessibility.enableDarkThemeLabel
-    "
+    class="theme-switch"
+    [class.theme-switch--light]="currentTheme() === 'light'"
+    [attr.aria-label]="content().accessibility.themeToggleLabel"
     [attr.aria-pressed]="currentTheme() === 'dark'"
+    [attr.data-tooltip]="
+      currentTheme() === 'dark'
+        ? content().accessibility.enableLightModeLabel
+        : content().accessibility.enableDarkModeLabel
+    "
     (click)="toggleTheme()"
   >
-    @if (currentTheme() === 'dark') {
+    <span class="theme-switch__side theme-switch__side--left">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M20 14.4A7.6 7.6 0 0 1 9.6 4 8.4 8.4 0 1 0 20 14.4Z" />
+      </svg>
+    </span>
+    <span class="theme-switch__side theme-switch__side--right">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path
           d="M12 3.25V5.5M12 18.5v2.25M5.8 5.8l1.6 1.6m9.2 9.2 1.6 1.6M3.25 12H5.5m13 0h2.25M5.8 18.2l1.6-1.6m9.2-9.2 1.6-1.6"
         />
         <circle cx="12" cy="12" r="4.2" />
       </svg>
-      <span>{{ content().accessibility.lightThemeShortLabel }}</span>
-    } @else {
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M20 14.4A7.6 7.6 0 0 1 9.6 4 8.4 8.4 0 1 0 20 14.4Z" />
-      </svg>
-      <span>{{ content().accessibility.darkThemeShortLabel }}</span>
-    }
+    </span>
+    <span class="theme-switch__thumb"></span>
   </button>
 
-  <span class="accessibility-controls__font-group">
+  <span class="font">
     <button
       type="button"
-      class="accessibility-controls__button accessibility-controls__button--font"
+      class="ctrl"
       [attr.aria-label]="content().accessibility.decreaseFontSizeLabel"
+      [attr.data-tooltip]="content().accessibility.decreaseFontSizeLabel"
       [disabled]="!canDecreaseFontSize()"
       (click)="decreaseFontSize()"
     >
@@ -42,17 +45,24 @@
     </button>
     <button
       type="button"
-      class="accessibility-controls__button accessibility-controls__button--font-reset"
+      class="ctrl"
       [attr.aria-label]="content().accessibility.resetFontSizeLabel"
+      [attr.data-tooltip]="content().accessibility.resetFontSizeLabel"
       [disabled]="!canResetFontSize()"
       (click)="resetFontSize()"
     >
-      {{ content().accessibility.resetFontSizeShortLabel }}
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7.5 8.5A6 6 0 0 1 18 11.8" />
+        <path d="M7.5 4.8v3.7h3.7" />
+        <path d="M16.5 15.5A6 6 0 0 1 6 12.2" />
+        <path d="M16.5 19.2v-3.7h-3.7" />
+      </svg>
     </button>
     <button
       type="button"
-      class="accessibility-controls__button accessibility-controls__button--font"
+      class="ctrl"
       [attr.aria-label]="content().accessibility.increaseFontSizeLabel"
+      [attr.data-tooltip]="content().accessibility.increaseFontSizeLabel"
       [disabled]="!canIncreaseFontSize()"
       (click)="increaseFontSize()"
     >
@@ -61,9 +71,14 @@
   </span>
   <button
     type="button"
-    class="accessibility-controls__button accessibility-controls__button--contrast"
-    [class.accessibility-controls__button--active]="isHighContrast()"
+    class="ctrl contrast"
+    [class.active]="isHighContrast()"
     [attr.aria-label]="
+      isHighContrast()
+        ? content().accessibility.disableHighContrastLabel
+        : content().accessibility.enableHighContrastLabel
+    "
+    [attr.data-tooltip]="
       isHighContrast()
         ? content().accessibility.disableHighContrastLabel
         : content().accessibility.enableHighContrastLabel

@@ -11,6 +11,10 @@
   padding: var(--space-10) var(--space-4) var(--space-6);
 }
 
+.hero > * {
+  min-width: 0;
+}
+
 .hero__content {
   max-width: 54rem;
 }
@@ -54,15 +58,52 @@ h1 {
   font-weight: 800;
 }
 
-.hero__location {
-  width: fit-content;
+.hero__meta,
+.hero__meta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero__meta {
+  gap: var(--space-2) var(--space-3);
   margin: var(--space-2) 0 0;
-  padding: 0.45rem 0.75rem;
+}
+
+.hero__location {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: calc(0.94rem * var(--font-scale));
+  font-weight: 700;
+}
+
+.hero__meta-actions {
+  gap: var(--space-2);
+}
+
+.hero__meta-link {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.55rem;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
-  color: var(--color-muted);
-  font-weight: 700;
+  background: color-mix(in srgb, var(--color-surface) 76%, transparent);
+  color: var(--color-link);
+  font-size: calc(0.88rem * var(--font-scale));
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.hero__meta-link:is(:hover, :focus-visible) {
+  border-color: color-mix(in srgb, var(--color-primary) 58%, var(--color-border));
+  background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
+}
+
+.hero__meta-link:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
 }
 
 .hero__summary {
@@ -75,13 +116,6 @@ h1 {
 
 .hero__summary p {
   margin: var(--space-2) 0 0;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-top: var(--space-5);
 }
 
 .hero__media {
@@ -97,12 +131,11 @@ h1 {
   content: '';
   position: absolute;
   z-index: -2;
-  pointer-events: none;
 }
 
 .hero__media::before {
-  width: min(18rem, 72vw);
-  height: min(18rem, 72vw);
+  width: min(18rem, 100%);
+  height: min(18rem, 100%);
   border-radius: 34% 66% 54% 46% / 45% 38% 62% 55%;
   background:
     radial-gradient(
@@ -120,8 +153,8 @@ h1 {
 }
 
 .hero__media::after {
-  width: min(19rem, 76vw);
-  height: min(19rem, 76vw);
+  width: min(19rem, 100%);
+  height: min(19rem, 100%);
   border: 1px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
   border-radius: 50%;
   opacity: 0.18;
@@ -129,8 +162,6 @@ h1 {
 }
 
 .hero__photo-button {
-  position: relative;
-  display: block;
   width: min(330px, 100%);
   aspect-ratio: 1 / 1;
   padding: 0;
@@ -184,6 +215,12 @@ h1 {
   .hero {
     padding-right: var(--space-6);
     padding-left: var(--space-6);
+  }
+}
+
+@media (min-width: 34.01rem) {
+  .hero__experience-link {
+    display: none;
   }
 }
 

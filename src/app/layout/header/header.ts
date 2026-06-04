@@ -14,41 +14,27 @@ export class Header {
   private readonly host = inject(ElementRef<HTMLElement>);
 
   readonly content = inject(LanguageService).content;
-  readonly isSettingsOpen = signal(false);
-  readonly isCompact = signal(false);
+  readonly isMobileMenuOpen = signal(false);
 
-  constructor() {
-    this.updateHeaderState();
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen.update((isOpen) => !isOpen);
   }
 
-  toggleSettings(): void {
-    this.isSettingsOpen.update((isOpen) => !isOpen);
-  }
-
-  closeSettings(): void {
-    this.isSettingsOpen.set(false);
-  }
-
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent): void {
-    const target = event.target;
-
-    if (target instanceof Node && !this.host.nativeElement.contains(target)) {
-      this.closeSettings();
-    }
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen.set(false);
   }
 
   @HostListener('document:keydown.escape')
   onEscape(): void {
-    this.closeSettings();
+    this.closeMobileMenu();
   }
 
-  @HostListener('window:scroll')
-  onWindowScroll(): void {
-    this.updateHeaderState();
-  }
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as Node | null;
 
-  private updateHeaderState(): void {
-    this.isCompact.set(globalThis.scrollY > 96);
+    if (this.isMobileMenuOpen() && target && !this.host.nativeElement.contains(target)) {
+      this.closeMobileMenu();
+    }
   }
 }

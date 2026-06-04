@@ -3,44 +3,35 @@
   role="group"
   [attr.aria-label]="content().accessibility.languageSwitcherLabel"
 >
-  <span class="language-switcher__label">{{
-    content().accessibility.languageSwitcherVisibleLabel
-  }}</span>
   <button
     type="button"
-    class="language-switcher__button"
-    [class.language-switcher__button--active]="currentLanguage() === 'pt-BR'"
-    [attr.aria-label]="content().accessibility.portugueseLanguageLabel"
-    [attr.aria-pressed]="currentLanguage() === 'pt-BR'"
-    (click)="setPortuguese()"
-  >
-    <img
-      class="language-flag"
-      src="images/flags/br.svg"
-      width="25"
-      height="16"
-      alt=""
-      decoding="async"
-    />
-    <span>{{ content().accessibility.portugueseLanguageShortLabel }}</span>
-  </button>
-
-  <button
-    type="button"
-    class="language-switcher__button"
-    [class.language-switcher__button--active]="currentLanguage() === 'en'"
-    [attr.aria-label]="content().accessibility.englishLanguageLabel"
+    class="language-switcher__toggle"
+    [class.language-switcher__toggle--en]="currentLanguage() === 'en'"
+    [attr.aria-label]="content().accessibility.languageSwitcherLabel"
     [attr.aria-pressed]="currentLanguage() === 'en'"
-    (click)="setEnglish()"
+    [attr.data-tooltip]="tooltipLabel()"
+    (click)="toggleLanguage()"
   >
-    <img
-      class="language-flag"
-      src="images/flags/us.svg"
-      width="25"
-      height="16"
-      alt=""
-      decoding="async"
-    />
-    <span>{{ content().accessibility.englishLanguageShortLabel }}</span>
+    <span class="language-switcher__side language-switcher__side--left">
+      <img
+        class="language-flag"
+        src="images/flags/br.svg"
+        width="25"
+        height="16"
+        alt=""
+        decoding="async"
+      />
+    </span>
+    <span class="language-switcher__side language-switcher__side--right">
+      <img
+        class="language-flag"
+        src="images/flags/us.svg"
+        width="25"
+        height="16"
+        alt=""
+        decoding="async"
+      />
+    </span>
+    <span class="language-switcher__thumb"></span>
   </button>
 </div>
