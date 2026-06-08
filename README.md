@@ -2,7 +2,7 @@
 
 Bilingual professional portfolio and online resume for Gabriel Veras, Senior Java Backend Engineer.
 
-Live site: [https://gabrielverasm.github.io/gabrielveras.dev/](https://gabrielverasm.github.io/gabrielveras.dev/)
+Live site: [https://gabrielveras.dev/](https://gabrielveras.dev/)
 
 ## Purpose
 
@@ -95,11 +95,11 @@ The site is hosted with GitHub Pages.
 
 Current public URL:
 
-[https://gabrielverasm.github.io/gabrielveras.dev/](https://gabrielverasm.github.io/gabrielveras.dev/)
+[https://gabrielveras.dev/](https://gabrielveras.dev/)
 
-The production build for GitHub Pages uses the base href `/gabrielveras.dev/`.
+The production build for GitHub Pages uses the base href `/`.
 
-The custom domain `gabrielveras.dev` is planned, but it is still pending availability. Until then, the GitHub Pages URL is the active public URL.
+The custom domain `gabrielveras.dev` is the active public URL.
 
 ## Repository Metadata Suggestions
 
