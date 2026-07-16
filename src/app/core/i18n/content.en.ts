@@ -31,10 +31,11 @@ export const CONTENT_EN: PortfolioContent = {
       'Senior Java Backend Engineer with 8+ years of experience in Spring Boot, Quarkus, AWS, microservices, REST APIs, Kafka, automated testing and mission-critical systems.',
   },
   navigation: [
-    { label: 'Experience', href: '#experience' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Education', href: '#education' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Experience', href: '/#experience' },
+    { label: 'Skills', href: '/#skills' },
+    { label: 'Education', href: '/#education' },
+    { label: 'Projects', href: '/#projects' },
+    { label: 'Contact', href: '/#contact' },
   ],
   hero: {
     eyebrow: 'Professional portfolio',
@@ -374,20 +375,22 @@ export const CONTENT_EN: PortfolioContent = {
     title: 'Education',
     items: [
       {
+        id: 'full-cycle',
         title: 'MBA in Full Cycle Architecture',
         institution: 'Full Cycle',
         statusOrYear: '2024 - 2025',
         url: 'https://mba.fullcycle.com.br/mba/',
-        logoLabel: 'FC',
-        logoKind: 'full-cycle',
+        logoSrc: '/images/education/fctech-mark.webp',
+        logoAlt: 'Faculdade Full Cycle de Tecnologia logo',
       },
       {
+        id: 'estacio',
         title: 'Graduate Degree in Systems Analysis and Development',
         institution: 'Estácio University',
         statusOrYear: '2010 - 2015',
         url: 'https://estacio.br/a-estacio/sobre-a-estacio',
-        logoLabel: 'E',
-        logoKind: 'estacio',
+        logoSrc: '/images/education/estacio-mark.webp',
+        logoAlt: 'Estácio University logo',
       },
     ],
   },
@@ -423,23 +426,231 @@ export const CONTENT_EN: PortfolioContent = {
     ],
   },
   projects: {
-    title: 'Practical studies in progress',
+    title: 'Projects',
     intro:
-      'I am structuring public projects to demonstrate technical decisions in REST APIs, messaging, automated testing, cloud and backend architecture.',
+      'Production software and technical studies that demonstrate architecture decisions, backend development and continuous delivery.',
+    liveTitle: 'Live Projects',
+    liveIntro:
+      'Real solutions that are published and continuously operated, with technical ownership from product to infrastructure.',
+    liveProject: {
+      title: 'DescontoVivo',
+      statusLabel: 'Live in production',
+      subtitle: 'A promotion platform built around context, transparency, and trust signals.',
+      description:
+        'An application designed to gather offers from different stores and help users evaluate each opportunity with information about the store, seller, delivery, coupons, and community participation.',
+      ownership:
+        'Product ideation, architecture, and end-to-end delivery, with a primary focus on Java backend engineering and production operations.',
+      stack: ['Java', 'Quarkus', 'Angular', 'PostgreSQL', 'Keycloak', 'Cloudflare R2'],
+      imageAlt: 'Official DescontoVivo visual identity',
+      caseStudyLabel: 'View case study',
+      websiteLabel: 'Visit DescontoVivo',
+    },
+    labTitle: 'Technical Lab and Studies',
+    labIntro:
+      'Projects being structured to explore specific backend, quality, and cloud engineering decisions.',
     items: [
       {
+        id: 'rest-tests',
         title: 'REST APIs and automated testing',
         statusLabel: 'In progress',
         description:
           'Practical study focused on backend architecture decisions, code quality and test scenarios.',
       },
       {
+        id: 'messaging-cloud',
         title: 'Messaging and cloud',
         statusLabel: 'In progress',
         description:
           'Practical study to demonstrate asynchronous communication, cloud services and backend integrations.',
       },
     ],
+  },
+  descontoVivo: {
+    seo: {
+      title: 'DescontoVivo | Full Stack Project by Gabriel Veras',
+      description:
+        'DescontoVivo case study: a live promotion platform built with Java, Quarkus, Angular, PostgreSQL, Keycloak, and Cloudflare.',
+      imageAlt: 'DescontoVivo, a promotion platform created by Gabriel Veras',
+    },
+    backLabel: 'Back to portfolio',
+    statusLabel: 'Live in production',
+    title: 'DescontoVivo',
+    subtitle: 'A promotion platform built around context, transparency, and trust signals.',
+    summary:
+      'DescontoVivo gathers offers from different stores in one place and provides information that helps users evaluate each opportunity. It is a real application, live in production, and under continuous development.',
+    imageAlt: 'Official DescontoVivo visual identity',
+    websiteLabel: 'Visit DescontoVivo',
+    stackLabel: 'Core stack',
+    stack: [
+      'Java 25',
+      'Quarkus 3',
+      'Angular 21',
+      'PostgreSQL',
+      'Flyway',
+      'Hibernate/Panache',
+      'Keycloak',
+      'Docker',
+      'Cloudflare R2',
+      'GitHub Actions',
+      'REST',
+      'SSE',
+    ],
+    overview: {
+      title: 'Overview',
+      paragraphs: [
+        'A low price alone is not always enough to support a purchase decision. DescontoVivo complements each promotion with context about the offer, store, seller, delivery, and available coupons.',
+        'The platform serves people who want to discover and share promotions with greater transparency. Offers move through publishing and moderation workflows before becoming part of the public experience.',
+      ],
+    },
+    role: {
+      title: 'My role',
+      paragraphs: [
+        'I am responsible for the product ideation and end-to-end delivery of DescontoVivo, with a primary technical focus on backend engineering and secure production operations.',
+      ],
+      items: [
+        'Product decisions and software architecture',
+        'Java API and Angular interface development',
+        'Authentication, authorization, and moderation workflows',
+        'Persistence, storage, and image processing',
+        'Infrastructure, pipelines, SEO, analytics, and observability',
+        'Deployment, monitoring, and continuous production development',
+        'Marketplace importers and automation',
+      ],
+    },
+    architecture: {
+      title: 'Architecture',
+      intro:
+        'The solution separates the web experience, API, identity, persistence, and object storage. The backend is a modular monolith with pragmatic separation of responsibilities, not a microservices architecture.',
+      flowLabel: 'Simplified DescontoVivo architecture flow',
+      items: [
+        {
+          id: 'angular',
+          title: 'Angular interface',
+          description:
+            'Standalone Angular application with prerendered public pages, route-level SEO, accessibility, and authenticated areas.',
+        },
+        {
+          id: 'quarkus-api',
+          title: 'Java + Quarkus API',
+          description:
+            'REST API organized into promotion, engagement, store, moderation, account, notification, and upload modules.',
+        },
+        {
+          id: 'persistence',
+          title: 'PostgreSQL + Flyway',
+          description:
+            'Relational persistence with Hibernate ORM/Panache and versioned migrations applied during the application lifecycle.',
+        },
+        {
+          id: 'identity',
+          title: 'Keycloak',
+          description:
+            'OIDC authentication and role-based authorization for users, moderators, and administrators.',
+        },
+        {
+          id: 'object-storage',
+          title: 'Cloudflare R2',
+          description:
+            'S3-compatible storage for processed images, temporary uploads, and controlled publication.',
+        },
+        {
+          id: 'operations',
+          title: 'Automation and operations',
+          description:
+            'Docker and GitHub Actions support testing, application images, deployments, and production health checks.',
+        },
+      ],
+    },
+    capabilities: {
+      title: 'Core capabilities',
+      paragraphs: [
+        'The following workflows are implemented across the public DescontoVivo ecosystem.',
+      ],
+      items: [
+        'Promotion creation, publishing, search, and detail pages',
+        'Approval, rejection, editing, and removal through moderation workflows',
+        'OIDC authentication and role-based authorization',
+        'Votes, comments, and replies on promotions',
+        'Coupons and store, seller, and delivery context',
+        'Trust and curation signals displayed in the interface',
+        'Image upload, WebP processing, and object storage',
+        'Server-Sent Events updates for public and administrative areas',
+      ],
+    },
+    decisions: {
+      title: 'Technical decisions',
+      intro:
+        'The choices prioritize productivity, security, maintainability, and operations appropriate to the product’s current stage.',
+      items: [
+        {
+          id: 'java-quarkus',
+          title: 'Java + Quarkus',
+          description:
+            'A typed foundation for business rules and APIs, including validation, OIDC security, OpenAPI documentation, and health checks.',
+        },
+        {
+          id: 'modular-monolith',
+          title: 'Modular monolith',
+          description:
+            'Keeps clear domain boundaries without introducing distributed-service operational complexity before it is needed.',
+        },
+        {
+          id: 'postgres-flyway',
+          title: 'PostgreSQL + Flyway',
+          description:
+            'Combines relational persistence with explicit and reproducible database schema evolution.',
+        },
+        {
+          id: 'keycloak',
+          title: 'Keycloak',
+          description:
+            'Centralizes login and authorization while the API enforces JWT Bearer tokens and access roles on protected resources.',
+        },
+        {
+          id: 'rest-sse',
+          title: 'REST + SSE',
+          description:
+            'REST handles operations and queries; SSE delivers lightweight updates without requiring bidirectional connections.',
+        },
+        {
+          id: 'r2-images',
+          title: 'R2 + image processing',
+          description:
+            'Avoids image hotlinking and keeps storage under application control, with validation and WebP conversion.',
+        },
+      ],
+    },
+    operations: {
+      title: 'Production operations',
+      paragraphs: [
+        'The application is published and maintained as a real product, with separate processes for the interface, API, and automation.',
+      ],
+      items: [
+        'Automated builds and validation through GitHub Actions',
+        'Docker images and controlled API deployment',
+        'Production application health checks',
+        'Swagger UI and OpenAPI disabled in the production profile',
+        'Consent-aware analytics and product events in the interface',
+        'Metadata, sitemap, and structured data for public pages',
+        'Continuous development backed by automated tests for core workflows',
+      ],
+    },
+    currentStatus: {
+      title: 'Current status',
+      paragraphs: [
+        'DescontoVivo is live in production and continues to evolve. This case study describes only capabilities verified in the code and project configuration, without attributing unverified business metrics.',
+      ],
+    },
+    repositories: {
+      title: 'Public code',
+      intro:
+        'The application and its architecture are the focus of this case study. For additional technical review, the public backend and frontend repositories are available separately.',
+      backendLabel: 'View backend on GitHub',
+      frontendLabel: 'View frontend on GitHub',
+    },
+    finalCtaTitle: 'Explore the live application',
+    finalCtaText:
+      'Visit DescontoVivo or return to the portfolio to learn more about my experience with Java, backend architecture, and enterprise systems.',
   },
   contact: {
     title: 'Contact',

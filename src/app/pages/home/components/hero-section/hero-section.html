@@ -53,7 +53,7 @@
     </div>
 
     <div class="hero__summary">
-      @for (paragraph of content().hero.summary; track paragraph) {
+      @for (paragraph of content().hero.summary; track $index) {
         <p>{{ paragraph }}</p>
       }
     </div>

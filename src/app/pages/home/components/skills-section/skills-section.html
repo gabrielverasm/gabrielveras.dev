@@ -14,7 +14,7 @@
     }
 
     <div class="skill-showcase__secondary">
-      @for (group of supportingSkillGroups(); track group.title; let index = $index) {
+      @for (group of supportingSkillGroups(); track group.iconKind ?? $index; let index = $index) {
         <app-skill-group-card [group]="group" [accent]="skillCardAccent(index)" />
       }
     </div>

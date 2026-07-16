@@ -16,7 +16,7 @@
 
   @if (experience().highlights.length) {
     <ul class="clean-list">
-      @for (highlight of experience().highlights; track highlight) {
+      @for (highlight of experience().highlights; track $index) {
         <li>{{ highlight }}</li>
       }
     </ul>
@@ -27,7 +27,7 @@
     <div class="experience-card__details-content">
       @if (experience().details.length) {
         <ul class="clean-list">
-          @for (detail of experience().details; track detail) {
+          @for (detail of experience().details; track $index) {
             <li>{{ detail }}</li>
           }
         </ul>
@@ -38,7 +38,7 @@
           {{ technologiesLabel() }}
         </p>
         <ul class="tag-list">
-          @for (technology of technologies; track technology) {
+          @for (technology of technologies; track $index) {
             <li>{{ technology }}</li>
           }
         </ul>

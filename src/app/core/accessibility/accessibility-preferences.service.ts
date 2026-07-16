@@ -31,9 +31,9 @@ export class AccessibilityPreferencesService {
       const level = this.fontLevel();
       const contrast = this.highContrast();
 
-      this.document.documentElement.dataset['theme'] = theme;
-      this.document.documentElement.dataset['fontLevel'] = String(level);
-      this.document.documentElement.dataset['contrast'] = contrast ? 'high' : 'default';
+      this.document.documentElement.setAttribute('data-theme', theme);
+      this.document.documentElement.setAttribute('data-font-level', String(level));
+      this.document.documentElement.setAttribute('data-contrast', contrast ? 'high' : 'default');
       this.document.documentElement.style.colorScheme = contrast ? 'light' : theme;
       this.writeStorage(THEME_KEY, theme);
       this.writeStorage(FONT_SCALE_KEY, String(level));

@@ -1,0 +1,222 @@
+<article class="case-study">
+  <header class="case-hero">
+    <div class="case-hero__inner">
+      <div class="case-hero__copy">
+        <a class="back-link" routerLink="/">
+          <span aria-hidden="true">←</span>
+          {{ content().descontoVivo.backLabel }}
+        </a>
+
+        <p class="status-label">{{ content().descontoVivo.statusLabel }}</p>
+        <h1>{{ content().descontoVivo.title }}</h1>
+        <p class="case-hero__subtitle">{{ content().descontoVivo.subtitle }}</p>
+        <p class="case-hero__summary">{{ content().descontoVivo.summary }}</p>
+
+        <div class="case-hero__actions">
+          <a
+            class="button button--primary"
+            [href]="links.website.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ content().descontoVivo.websiteLabel }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="case-hero__visual">
+        <img
+          [src]="links.socialImage.localHref"
+          width="1200"
+          height="630"
+          [alt]="content().descontoVivo.imageAlt"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+    </div>
+
+    <div class="case-stack">
+      <h2>{{ content().descontoVivo.stackLabel }}</h2>
+      <ul>
+        @for (technology of content().descontoVivo.stack; track technology) {
+          <li>{{ technology }}</li>
+        }
+      </ul>
+    </div>
+  </header>
+
+  <div class="case-content">
+    <section class="case-section" aria-labelledby="overview-title">
+      <div class="case-section__heading">
+        <p class="section-number" aria-hidden="true">01</p>
+        <h2 id="overview-title">{{ content().descontoVivo.overview.title }}</h2>
+      </div>
+      <div class="case-section__body prose">
+        @for (paragraph of content().descontoVivo.overview.paragraphs; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="role-title">
+      <div class="case-section__heading">
+        <p class="section-number" aria-hidden="true">02</p>
+        <h2 id="role-title">{{ content().descontoVivo.role.title }}</h2>
+      </div>
+      <div class="case-section__body">
+        <div class="prose">
+          @for (paragraph of content().descontoVivo.role.paragraphs; track $index) {
+            <p>{{ paragraph }}</p>
+          }
+        </div>
+        <ul class="check-list">
+          @for (item of content().descontoVivo.role.items; track $index) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="case-section case-section--wide" aria-labelledby="architecture-title">
+      <div class="case-section__heading">
+        <p class="section-number" aria-hidden="true">03</p>
+        <h2 id="architecture-title">{{ content().descontoVivo.architecture.title }}</h2>
+      </div>
+      <div class="case-section__body">
+        <p class="section-intro">{{ content().descontoVivo.architecture.intro }}</p>
+        <ol
+          class="architecture-flow"
+          [attr.aria-label]="content().descontoVivo.architecture.flowLabel"
+        >
+          @for (node of content().descontoVivo.architecture.items; track node.id) {
+            <li>
+              <h3>{{ node.title }}</h3>
+              <p>{{ node.description }}</p>
+            </li>
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="capabilities-title">
+      <div class="case-section__heading">
+        <p class="section-number" aria-hidden="true">04</p>
+        <h2 id="capabilities-title">{{ content().descontoVivo.capabilities.title }}</h2>
+      </div>
+      <div class="case-section__body">
+        <div class="prose">
+          @for (paragraph of content().descontoVivo.capabilities.paragraphs; track $index) {
+            <p>{{ paragraph }}</p>
+          }
+        </div>
+        <ul class="check-list check-list--columns">
+          @for (item of content().descontoVivo.capabilities.items; track $index) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="case-section case-section--wide" aria-labelledby="decisions-title">
+      <div class="case-section__heading">
+        <p class="section-number" aria-hidden="true">05</p>
+        <h2 id="decisions-title">{{ content().descontoVivo.decisions.title }}</h2>
+      </div>
+      <div class="case-section__body">
+        <p class="section-intro">{{ content().descontoVivo.decisions.intro }}</p>
+        <div class="detail-grid">
+          @for (decision of content().descontoVivo.decisions.items; track decision.id) {
+            <article>
+              <h3>{{ decision.title }}</h3>
+              <p>{{ decision.description }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="operations-title">
+      <div class="case-section__heading">
+        <p class="section-number" aria-hidden="true">06</p>
+        <h2 id="operations-title">{{ content().descontoVivo.operations.title }}</h2>
+      </div>
+      <div class="case-section__body">
+        <div class="prose">
+          @for (paragraph of content().descontoVivo.operations.paragraphs; track $index) {
+            <p>{{ paragraph }}</p>
+          }
+        </div>
+        <ul class="check-list">
+          @for (item of content().descontoVivo.operations.items; track $index) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="status-title">
+      <div class="case-section__heading">
+        <p class="section-number" aria-hidden="true">07</p>
+        <h2 id="status-title">{{ content().descontoVivo.currentStatus.title }}</h2>
+      </div>
+      <div class="case-section__body prose">
+        @for (paragraph of content().descontoVivo.currentStatus.paragraphs; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+    </section>
+
+    <section class="case-section repository-section" aria-labelledby="repositories-title">
+      <div class="case-section__heading">
+        <p class="section-number" aria-hidden="true">08</p>
+        <h2 id="repositories-title">{{ content().descontoVivo.repositories.title }}</h2>
+      </div>
+      <div class="case-section__body">
+        <p class="section-intro">{{ content().descontoVivo.repositories.intro }}</p>
+        <div class="repository-links">
+          <a
+            class="button button--secondary"
+            [href]="links.backend.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ content().descontoVivo.repositories.backendLabel }}
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="button button--secondary"
+            [href]="links.frontend.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ content().descontoVivo.repositories.frontendLabel }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="case-cta">
+    <div>
+      <h2>{{ content().descontoVivo.finalCtaTitle }}</h2>
+      <p>{{ content().descontoVivo.finalCtaText }}</p>
+    </div>
+    <div class="case-cta__actions">
+      <a
+        class="button button--primary"
+        [href]="links.website.href"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ content().descontoVivo.websiteLabel }}
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a class="button button--secondary" routerLink="/">
+        {{ content().descontoVivo.backLabel }}
+      </a>
+    </div>
+  </footer>
+</article>

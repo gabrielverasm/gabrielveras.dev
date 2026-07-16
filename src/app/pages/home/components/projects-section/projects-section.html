@@ -1,15 +1,74 @@
-<section class="section section--projects" aria-labelledby="projects-title">
+<section id="projects" class="section section--projects" aria-labelledby="projects-title">
   <div class="section__header">
     <h2 id="projects-title">{{ content().projects.title }}</h2>
     <p>{{ content().projects.intro }}</p>
   </div>
-  <div class="grid-list grid-list--projects">
-    @for (project of content().projects.items; track project.title) {
-      <article class="info-block project-card">
-        <p class="status-label">{{ project.statusLabel }}</p>
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-      </article>
-    }
-  </div>
+
+  <section class="project-group" aria-labelledby="live-projects-title">
+    <div class="project-group__header">
+      <h3 id="live-projects-title">{{ content().projects.liveTitle }}</h3>
+      <p>{{ content().projects.liveIntro }}</p>
+    </div>
+
+    <article class="live-project">
+      <div class="live-project__visual">
+        <img
+          [src]="links.socialImage.localHref"
+          width="1200"
+          height="630"
+          [alt]="content().projects.liveProject.imageAlt"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="live-project__body">
+        <p class="status-label">{{ content().projects.liveProject.statusLabel }}</p>
+        <div>
+          <h4>{{ content().projects.liveProject.title }}</h4>
+          <p class="live-project__subtitle">{{ content().projects.liveProject.subtitle }}</p>
+        </div>
+        <p>{{ content().projects.liveProject.description }}</p>
+        <p class="live-project__ownership">{{ content().projects.liveProject.ownership }}</p>
+
+        <ul class="stack-list" [attr.aria-label]="content().descontoVivo.stackLabel">
+          @for (technology of content().projects.liveProject.stack; track technology) {
+            <li>{{ technology }}</li>
+          }
+        </ul>
+
+        <div class="live-project__actions">
+          <a class="button button--primary" routerLink="/projects/descontovivo">
+            {{ content().projects.liveProject.caseStudyLabel }}
+          </a>
+          <a
+            class="button button--secondary"
+            [href]="links.website.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ content().projects.liveProject.websiteLabel }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="project-group project-group--lab" aria-labelledby="lab-projects-title">
+    <div class="project-group__header">
+      <h3 id="lab-projects-title">{{ content().projects.labTitle }}</h3>
+      <p>{{ content().projects.labIntro }}</p>
+    </div>
+
+    <div class="grid-list grid-list--projects">
+      @for (project of content().projects.items; track project.id) {
+        <article class="info-block project-card">
+          <p class="status-label">{{ project.statusLabel }}</p>
+          <h4>{{ project.title }}</h4>
+          <p>{{ project.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
 </section>

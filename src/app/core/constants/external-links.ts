@@ -17,6 +17,14 @@ export interface ExternalLinks {
   readonly email: ExternalLink;
   readonly linkedin: ExternalLink;
   readonly github: OptionalExternalLink;
+  readonly descontoVivo: {
+    readonly website: ExternalLink;
+    readonly backend: ExternalLink;
+    readonly frontend: ExternalLink;
+    readonly socialImage: ExternalLink & {
+      readonly localHref: string;
+    };
+  };
   readonly resumes: ResumeLinks;
 }
 
@@ -32,6 +40,25 @@ export const EXTERNAL_LINKS: ExternalLinks = {
   github: {
     label: 'GitHub',
     href: 'https://github.com/gabrielverasm',
+  },
+  descontoVivo: {
+    website: {
+      label: 'DescontoVivo',
+      href: 'https://descontovivo.com',
+    },
+    backend: {
+      label: 'DescontoVivo API',
+      href: 'https://github.com/gabrielverasm/descontovivo-api',
+    },
+    frontend: {
+      label: 'DescontoVivo UI',
+      href: 'https://github.com/gabrielverasm/descontovivo-ui',
+    },
+    socialImage: {
+      label: 'DescontoVivo social image',
+      href: 'https://gabrielveras.dev/images/projects/descontovivo-og.jpg',
+      localHref: '/images/projects/descontovivo-og.jpg',
+    },
   },
   resumes: {
     ptBr: {
