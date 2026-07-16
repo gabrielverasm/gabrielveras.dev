@@ -119,6 +119,10 @@ user-requested retrieval crawlers.
 `llms.txt` is deliberately not included. The portfolio content, sitemap and structured data are the
 canonical sources, avoiding a second manually maintained content representation.
 
+Language-specific routes such as `/pt/`, `/en/`, `/pt/projects/descontovivo` and
+`/en/projects/descontovivo` are a possible future improvement. They are intentionally not implemented
+while Portuguese and English share the same canonical URLs.
+
 ## Repository Metadata Suggestions
 
 Suggested GitHub repository description:

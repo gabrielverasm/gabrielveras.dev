@@ -1,0 +1,9 @@
+<section class="not-found" aria-labelledby="not-found-title">
+  <p class="not-found__eyebrow">{{ content().notFound.eyebrow }}</p>
+  <h1 id="not-found-title">{{ content().notFound.title }}</h1>
+  <p>{{ content().notFound.message }}</p>
+  <a class="button button--primary" routerLink="/">
+    <span aria-hidden="true">←</span>
+    {{ content().notFound.homeLabel }}
+  </a>
+</section>

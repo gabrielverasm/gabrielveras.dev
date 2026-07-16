@@ -30,6 +30,16 @@ export const CONTENT_PT: PortfolioContent = {
     description:
       'Engenheiro Backend Java Sênior com 8+ anos de experiência em Spring Boot, Quarkus, AWS, microsserviços, APIs REST, Kafka, testes automatizados e sistemas críticos.',
   },
+  notFound: {
+    seoTitle: 'Página não encontrada | Gabriel Veras',
+    description:
+      'A página solicitada não foi encontrada no portfólio profissional de Gabriel Veras.',
+    eyebrow: 'Erro 404',
+    title: 'Página não encontrada',
+    message:
+      'O endereço informado não existe ou pode ter sido alterado. Volte ao portfólio para continuar navegando.',
+    homeLabel: 'Voltar ao portfólio',
+  },
   navigation: [
     { label: 'Experiência', href: '/#experience' },
     { label: 'Habilidades', href: '/#skills' },
@@ -465,7 +475,7 @@ export const CONTENT_PT: PortfolioContent = {
   },
   descontoVivo: {
     seo: {
-      title: 'DescontoVivo | Projeto Full Stack de Gabriel Veras',
+      title: 'DescontoVivo | Case Java Backend de Gabriel Veras',
       description:
         'Estudo de caso do DescontoVivo, plataforma em produção desenvolvida com Java, Quarkus, Angular, PostgreSQL, Keycloak e Cloudflare.',
       imageAlt: 'DescontoVivo, plataforma de promoções criada por Gabriel Veras',

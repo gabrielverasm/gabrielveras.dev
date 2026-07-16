@@ -1,10 +1,10 @@
 {
   "name": "gabrielveras.dev",
-  "version": "2.1.15",
+  "version": "2.1.16",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && node scripts/generate-github-pages-404.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",

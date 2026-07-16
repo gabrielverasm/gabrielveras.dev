@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 
@@ -35,5 +36,22 @@ describe('Home', () => {
     expect(project?.querySelector('img')?.getAttribute('src')).toBe(
       '/images/projects/descontovivo-og.jpg',
     );
+  });
+
+  it('should set indexable canonical metadata and profile JSON-LD', () => {
+    fixture.detectChanges();
+    const document = TestBed.inject(DOCUMENT);
+    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    const structuredData = JSON.parse(
+      document.getElementById('portfolio-structured-data')?.textContent ?? '',
+    ) as { '@graph': { '@type': string }[] };
+    const graphTypes = structuredData['@graph'].map((item) => item['@type']);
+
+    expect(document.title).toBe('Gabriel Veras Miranda | Engenheiro Backend Java Sênior');
+    expect(document.querySelectorAll('link[rel="canonical"]')).toHaveLength(1);
+    expect(canonical?.href).toBe('https://gabrielveras.dev/');
+    expect(robots?.content).toBe('index, follow');
+    expect(graphTypes).toEqual(expect.arrayContaining(['Person', 'WebSite', 'ProfilePage']));
   });
 });
