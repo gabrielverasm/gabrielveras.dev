@@ -15,6 +15,7 @@ The portfolio is built to be clear, accessible, responsive and maintainable, wit
 - Bilingual content in Portuguese and English.
 - Responsive portfolio layout for mobile, tablet and desktop screens.
 - Professional experience, skills, education, projects and contact sections.
+- DescontoVivo production project card and bilingual technical case study.
 - Accessibility controls for theme, high contrast and font size.
 - Theme switch.
 - High contrast mode.
@@ -23,6 +24,8 @@ The portfolio is built to be clear, accessible, responsive and maintainable, wit
 - SEO metadata.
 - Open Graph and Twitter social preview metadata.
 - `sitemap.xml` and `robots.txt` files.
+- Static prerendering for the home page and `/projects/descontovivo`.
+- JSON-LD for the professional profile and DescontoVivo case study.
 - Visible app version in the footer.
 
 ## Tech Stack
@@ -100,6 +103,21 @@ Current public URL:
 The production build for GitHub Pages uses the base href `/`.
 
 The custom domain `gabrielveras.dev` is the active public URL.
+
+Public routes are statically generated during the Angular production build so direct navigation
+returns useful HTML on GitHub Pages:
+
+- `/`
+- `/projects/descontovivo`
+
+## Search and AI Discoverability
+
+The site relies on crawlable semantic HTML, canonical URLs, route-specific metadata, a sitemap and
+structured data that matches visible content. The permissive `robots.txt` does not block search or
+user-requested retrieval crawlers.
+
+`llms.txt` is deliberately not included. The portfolio content, sitemap and structured data are the
+canonical sources, avoiding a second manually maintained content representation.
 
 ## Repository Metadata Suggestions
 

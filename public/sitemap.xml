@@ -4,4 +4,8 @@
     <loc>https://gabrielveras.dev/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://gabrielveras.dev/projects/descontovivo</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

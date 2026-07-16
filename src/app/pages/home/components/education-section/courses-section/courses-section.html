@@ -5,7 +5,7 @@
   <details class="compact-disclosure">
     <summary>{{ content().courses.detailsLabel }}</summary>
     <ul class="course-list">
-      @for (course of content().courses.items; track course.label) {
+      @for (course of content().courses.items; track course.url ?? $index) {
         <li>
           @if (course.url) {
             <a [href]="course.url" rel="noopener noreferrer" target="_blank">

@@ -12,6 +12,7 @@ export interface PortfolioContent {
   readonly courses: CoursesContent;
   readonly languages: LanguagesContent;
   readonly projects: ProjectsContent;
+  readonly descontoVivo: DescontoVivoContent;
   readonly contact: ContactContent;
 }
 
@@ -137,12 +138,13 @@ export interface EducationContent {
 }
 
 export interface EducationItem {
+  readonly id: 'full-cycle' | 'estacio';
   readonly title: string;
   readonly institution?: string;
   readonly statusOrYear: string;
   readonly url?: string;
-  readonly logoLabel?: string;
-  readonly logoKind?: 'full-cycle' | 'estacio';
+  readonly logoSrc: string;
+  readonly logoAlt: string;
 }
 
 export interface CoursesContent {
@@ -169,13 +171,92 @@ export interface LanguageItem {
 export interface ProjectsContent {
   readonly title: string;
   readonly intro: string;
+  readonly liveTitle: string;
+  readonly liveIntro: string;
+  readonly liveProject: LiveProjectItem;
+  readonly labTitle: string;
+  readonly labIntro: string;
   readonly items: readonly PlannedProjectItem[];
 }
 
+export interface LiveProjectItem {
+  readonly title: string;
+  readonly statusLabel: string;
+  readonly subtitle: string;
+  readonly description: string;
+  readonly ownership: string;
+  readonly stack: readonly string[];
+  readonly imageAlt: string;
+  readonly caseStudyLabel: string;
+  readonly websiteLabel: string;
+}
+
 export interface PlannedProjectItem {
+  readonly id: 'rest-tests' | 'messaging-cloud';
   readonly title: string;
   readonly statusLabel: string;
   readonly description: string;
+}
+
+export interface DescontoVivoContent {
+  readonly seo: DescontoVivoSeoContent;
+  readonly backLabel: string;
+  readonly statusLabel: string;
+  readonly title: string;
+  readonly subtitle: string;
+  readonly summary: string;
+  readonly imageAlt: string;
+  readonly websiteLabel: string;
+  readonly stackLabel: string;
+  readonly stack: readonly string[];
+  readonly overview: CaseSectionContent;
+  readonly role: CaseListSectionContent;
+  readonly architecture: ArchitectureSectionContent;
+  readonly capabilities: CaseListSectionContent;
+  readonly decisions: CaseDetailSectionContent;
+  readonly operations: CaseListSectionContent;
+  readonly currentStatus: CaseSectionContent;
+  readonly repositories: RepositorySectionContent;
+  readonly finalCtaTitle: string;
+  readonly finalCtaText: string;
+}
+
+export interface DescontoVivoSeoContent {
+  readonly title: string;
+  readonly description: string;
+  readonly imageAlt: string;
+}
+
+export interface CaseSectionContent {
+  readonly title: string;
+  readonly paragraphs: readonly string[];
+}
+
+export interface CaseListSectionContent extends CaseSectionContent {
+  readonly items: readonly string[];
+}
+
+export interface CaseDetailSectionContent {
+  readonly title: string;
+  readonly intro: string;
+  readonly items: readonly CaseDetailItem[];
+}
+
+export interface CaseDetailItem {
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+}
+
+export interface ArchitectureSectionContent extends CaseDetailSectionContent {
+  readonly flowLabel: string;
+}
+
+export interface RepositorySectionContent {
+  readonly title: string;
+  readonly intro: string;
+  readonly backendLabel: string;
+  readonly frontendLabel: string;
 }
 
 export interface ContactContent {

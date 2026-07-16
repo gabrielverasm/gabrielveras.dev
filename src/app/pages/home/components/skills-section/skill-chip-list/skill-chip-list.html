@@ -1,5 +1,5 @@
 <ul class="skill-chip-list">
-  @for (item of items(); track item) {
+  @for (item of items(); track $index) {
     @let iconKind = technologyIconKind(item);
     <li class="skill-chip">
       @if (iconKind) {
