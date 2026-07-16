@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+.not-found {
+  width: min(100%, 42rem);
+  min-height: 65vh;
+  display: grid;
+  place-content: center;
+  justify-items: start;
+  gap: var(--space-4);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-4);
+}
+
+.not-found__eyebrow {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: calc(0.85rem * var(--font-scale));
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.not-found h1 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: clamp(2rem, 1.55rem + 2vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.not-found p:not(.not-found__eyebrow) {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.not-found .button {
+  margin-top: var(--space-2);
+}

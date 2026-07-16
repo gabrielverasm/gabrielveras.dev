@@ -49,7 +49,7 @@ describe('DescontoVivo', () => {
 
     expect(compiled.textContent).toContain('Live in production');
     expect(compiled.textContent).toContain('Modular monolith');
-    expect(document.title).toBe('DescontoVivo | Full Stack Project by Gabriel Veras');
+    expect(document.title).toBe('DescontoVivo | Java Backend Case Study by Gabriel Veras');
     expect(description?.content).toContain('DescontoVivo case study');
     expect(document.documentElement.lang).toBe('en');
     expect(softwareApplication?.inLanguage).toBe('en');
@@ -62,10 +62,27 @@ describe('DescontoVivo', () => {
   it('should set canonical metadata and valid JSON-LD', () => {
     const document = TestBed.inject(DOCUMENT);
     const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const canonicals = document.querySelectorAll('link[rel="canonical"]');
+    const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
     const structuredData = document.getElementById('portfolio-structured-data');
+    const graph = JSON.parse(structuredData?.textContent ?? '') as {
+      '@graph': { '@type': string }[];
+    };
+    const graphTypes = graph['@graph'].map((item) => item['@type']);
 
     expect(canonical?.href).toBe('https://gabrielveras.dev/projects/descontovivo');
+    expect(canonicals).toHaveLength(1);
+    expect(robots?.content).toBe('index, follow');
     expect(structuredData?.textContent).toBeTruthy();
     expect(() => JSON.parse(structuredData?.textContent ?? '')).not.toThrow();
+    expect(graphTypes).toEqual(
+      expect.arrayContaining([
+        'Person',
+        'WebSite',
+        'SoftwareApplication',
+        'WebPage',
+        'BreadcrumbList',
+      ]),
+    );
   });
 });

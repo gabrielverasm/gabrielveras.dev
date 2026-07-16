@@ -30,6 +30,15 @@ export const CONTENT_EN: PortfolioContent = {
     description:
       'Senior Java Backend Engineer with 8+ years of experience in Spring Boot, Quarkus, AWS, microservices, REST APIs, Kafka, automated testing and mission-critical systems.',
   },
+  notFound: {
+    seoTitle: 'Page not found | Gabriel Veras',
+    description: 'The requested page was not found in Gabriel Veras’s professional portfolio.',
+    eyebrow: 'Error 404',
+    title: 'Page not found',
+    message:
+      'The address does not exist or may have changed. Return to the portfolio to continue browsing.',
+    homeLabel: 'Back to portfolio',
+  },
   navigation: [
     { label: 'Experience', href: '/#experience' },
     { label: 'Skills', href: '/#skills' },
@@ -467,7 +476,7 @@ export const CONTENT_EN: PortfolioContent = {
   },
   descontoVivo: {
     seo: {
-      title: 'DescontoVivo | Full Stack Project by Gabriel Veras',
+      title: 'DescontoVivo | Java Backend Case Study by Gabriel Veras',
       description:
         'DescontoVivo case study: a live promotion platform built with Java, Quarkus, Angular, PostgreSQL, Keycloak, and Cloudflare.',
       imageAlt: 'DescontoVivo, a promotion platform created by Gabriel Veras',

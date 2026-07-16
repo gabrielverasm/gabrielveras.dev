@@ -18,6 +18,12 @@ export interface SeoPage {
   readonly structuredData: object;
 }
 
+export interface NotFoundSeoPage {
+  readonly title: string;
+  readonly description: string;
+  readonly language: PortfolioLanguage;
+}
+
 @Injectable({ providedIn: 'root' })
 export class SeoService {
   private readonly document = inject(DOCUMENT);
@@ -53,6 +59,24 @@ export class SeoService {
 
     this.setCanonical(canonicalUrl);
     this.setStructuredData(page.structuredData);
+  }
+
+  setNotFoundPage(page: NotFoundSeoPage): void {
+    this.document.documentElement.lang = page.language;
+    this.title.setTitle(page.title);
+    this.meta.updateTag({ name: 'description', content: page.description });
+    this.meta.updateTag({ name: 'author', content: 'Gabriel Veras Miranda' });
+    this.meta.updateTag({ name: 'robots', content: 'noindex, follow' });
+
+    this.document.querySelectorAll('link[rel="canonical"]').forEach((canonical) => {
+      canonical.remove();
+    });
+    this.document
+      .querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')
+      .forEach((tag) => {
+        tag.remove();
+      });
+    this.document.getElementById('portfolio-structured-data')?.remove();
   }
 
   private setCanonical(url: string): void {

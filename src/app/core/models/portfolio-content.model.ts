@@ -4,6 +4,7 @@ export interface PortfolioContent {
   readonly language: PortfolioLanguage;
   readonly accessibility: AccessibilityContent;
   readonly seo: SeoContent;
+  readonly notFound: NotFoundContent;
   readonly navigation: readonly NavigationItem[];
   readonly hero: HeroContent;
   readonly skills: SkillsContent;
@@ -43,6 +44,15 @@ export interface AccessibilityContent {
 export interface SeoContent {
   readonly title: string;
   readonly description: string;
+}
+
+export interface NotFoundContent {
+  readonly seoTitle: string;
+  readonly description: string;
+  readonly eyebrow: string;
+  readonly title: string;
+  readonly message: string;
+  readonly homeLabel: string;
 }
 
 export interface NavigationItem {
