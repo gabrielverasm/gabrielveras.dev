@@ -63,11 +63,11 @@ export const EXTERNAL_LINKS: ExternalLinks = {
   resumes: {
     ptBr: {
       label: 'Currículo em português',
-      href: 'resume/Gabriel-Veras-Miranda-Curriculo-Java-Backend-Senior.pdf',
+      href: '/resume/Gabriel-Veras-Miranda-Curriculo-Java-Backend-Senior.pdf',
     },
     en: {
       label: 'Resume in English',
-      href: 'resume/Gabriel-Veras-Miranda-Senior-Java-Backend-Engineer-Resume.pdf',
+      href: '/resume/Gabriel-Veras-Miranda-Senior-Java-Backend-Engineer-Resume.pdf',
     },
   },
 } as const;

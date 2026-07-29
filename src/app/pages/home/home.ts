@@ -41,7 +41,10 @@ export class Home {
         path: '/',
         language: content.language,
         imageUrl: 'https://gabrielveras.dev/images/social/og-cover-square.webp',
-        imageAlt: 'Gabriel Veras Miranda - Senior Java Backend Engineer',
+        imageAlt:
+          content.language === 'pt-BR'
+            ? 'Gabriel Veras Miranda - Engenheiro de Software Backend Sênior Java'
+            : 'Gabriel Veras Miranda - Senior Backend Software Engineer Java',
         imageWidth: 1200,
         imageHeight: 1200,
         structuredData: this.buildStructuredData(content.language),
@@ -79,8 +82,8 @@ export class Home {
           image: 'https://gabrielveras.dev/images/profile.webp',
           jobTitle:
             language === 'pt-BR'
-              ? 'Engenheiro Backend Java Sênior'
-              : 'Senior Java Backend Engineer',
+              ? 'Engenheiro de Software Backend Sênior Java'
+              : 'Senior Backend Software Engineer (Java)',
           email: EXTERNAL_LINKS.email.href,
           sameAs: [EXTERNAL_LINKS.linkedin.href, EXTERNAL_LINKS.github.href],
           knowsAbout: [
@@ -113,8 +116,8 @@ export class Home {
           url: profileUrl,
           name:
             language === 'pt-BR'
-              ? 'Gabriel Veras Miranda | Engenheiro Backend Java Sênior'
-              : 'Gabriel Veras Miranda | Senior Java Backend Engineer',
+              ? 'Gabriel Veras Miranda | Engenheiro de Software Backend Sênior Java'
+              : 'Gabriel Veras Miranda | Senior Backend Software Engineer | Java',
           inLanguage: language,
           isPartOf: { '@id': websiteId },
           mainEntity: { '@id': personId },

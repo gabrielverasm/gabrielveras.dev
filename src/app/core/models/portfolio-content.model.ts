@@ -69,13 +69,15 @@ export interface HeroContent {
   readonly summary: readonly string[];
   readonly linkedinActionLabel: string;
   readonly githubActionLabel: string;
-  readonly resumeActionLabel: string;
+  readonly resumePtActionLabel: string;
+  readonly resumeEnActionLabel: string;
   readonly experienceActionLabel: string;
 }
 
 export interface SkillsContent {
   readonly title: string;
   readonly featuredLabel: string;
+  readonly experienceValue: string;
   readonly learning: LearningContent;
   readonly groups: readonly SkillGroup[];
 }
@@ -99,7 +101,13 @@ export interface SkillGroup {
   readonly items: readonly string[];
 }
 
-export type SkillGroupIconKind = 'backend' | 'cloud' | 'data' | 'delivery' | 'frontend';
+export type SkillGroupIconKind =
+  | 'backend'
+  | 'cloud'
+  | 'data'
+  | 'delivery'
+  | 'infrastructure'
+  | 'frontend';
 
 export type TechnologyIconKind =
   | 'angular'
@@ -192,9 +200,9 @@ export interface ProjectsContent {
 export interface LiveProjectItem {
   readonly title: string;
   readonly statusLabel: string;
-  readonly subtitle: string;
-  readonly description: string;
-  readonly ownership: string;
+  readonly descriptor: string;
+  readonly period: string;
+  readonly summary: readonly string[];
   readonly stack: readonly string[];
   readonly imageAlt: string;
   readonly caseStudyLabel: string;

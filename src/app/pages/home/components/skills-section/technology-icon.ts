@@ -3,6 +3,7 @@ import type { TechnologyIconKind } from '../../../../core/models/portfolio-conte
 const TECHNOLOGY_ICON_BY_NAME = new Map<string, TechnologyIconKind>([
   ['angular', 'angular'],
   ['angular 2+', 'angular'],
+  ['apache kafka', 'kafka'],
   ['apis rest', 'cicd'],
   ['arquitetura orientada a eventos', 'kafka'],
   ['argo cd', 'argo'],
@@ -19,7 +20,7 @@ const TECHNOLOGY_ICON_BY_NAME = new Map<string, TechnologyIconKind>([
   ['git', 'git'],
   ['hibernate', 'postgresql'],
   ['java', 'java'],
-  ['java 8+', 'java'],
+  ['java 8/11/17/21', 'java'],
   ['javascript', 'javascript'],
   ['jenkins', 'jenkins'],
   ['jpa', 'postgresql'],
