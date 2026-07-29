@@ -21,7 +21,7 @@ export class SkillsSection {
     const metricLabels = this.content().skills.learning.metricLabels;
 
     return [
-      { value: '8+', label: metricLabels.experience },
+      { value: this.content().skills.experienceValue, label: metricLabels.experience },
       { value: String(skillGroups.length), label: metricLabels.technicalAreas },
       {
         value: String(skillGroups.reduce((total, group) => total + group.items.length, 0)),

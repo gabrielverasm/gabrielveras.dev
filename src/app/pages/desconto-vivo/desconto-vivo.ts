@@ -53,8 +53,8 @@ export class DescontoVivo {
           url: portfolioUrl,
           jobTitle:
             language === 'pt-BR'
-              ? 'Engenheiro Backend Java Sênior'
-              : 'Senior Java Backend Engineer',
+              ? 'Engenheiro de Software Backend Sênior Java'
+              : 'Senior Backend Software Engineer (Java)',
           sameAs: [EXTERNAL_LINKS.linkedin.href, EXTERNAL_LINKS.github.href],
         },
         {

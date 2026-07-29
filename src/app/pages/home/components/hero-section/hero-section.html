@@ -38,12 +38,20 @@
             <span>{{ content().hero.githubActionLabel }}</span>
           </a>
         }
-        @if (resumeHref(); as href) {
-          <a class="hero__meta-link" [href]="href" download>
+        @if (externalLinks.resumes.ptBr.href; as href) {
+          <a class="hero__meta-link" [href]="href" type="application/pdf" download>
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
             </svg>
-            <span>{{ resumeLabel() }}</span>
+            <span>{{ content().hero.resumePtActionLabel }}</span>
+          </a>
+        }
+        @if (externalLinks.resumes.en.href; as href) {
+          <a class="hero__meta-link" [href]="href" type="application/pdf" download>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+            </svg>
+            <span>{{ content().hero.resumeEnActionLabel }}</span>
           </a>
         }
         <a class="hero__experience-link hero__meta-link" href="#experience">

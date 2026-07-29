@@ -1,6 +1,6 @@
 {
   "name": "gabrielveras.dev",
-  "version": "2.1.16",
+  "version": "2.1.17",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

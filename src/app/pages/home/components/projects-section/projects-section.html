@@ -26,10 +26,16 @@
         <p class="status-label">{{ content().projects.liveProject.statusLabel }}</p>
         <div>
           <h4>{{ content().projects.liveProject.title }}</h4>
-          <p class="live-project__subtitle">{{ content().projects.liveProject.subtitle }}</p>
+          <p class="live-project__subtitle">
+            {{ content().projects.liveProject.descriptor }} ·
+            {{ content().projects.liveProject.period }}
+          </p>
         </div>
-        <p>{{ content().projects.liveProject.description }}</p>
-        <p class="live-project__ownership">{{ content().projects.liveProject.ownership }}</p>
+        <ul class="live-project__summary">
+          @for (item of content().projects.liveProject.summary; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
 
         <ul class="stack-list" [attr.aria-label]="content().descontoVivo.stackLabel">
           @for (technology of content().projects.liveProject.stack; track technology) {
