@@ -51,7 +51,10 @@ describe('Home', () => {
     const graphTypes = structuredData['@graph'].map((item) => item['@type']);
     const person = structuredData['@graph'].find((item) => item['@type'] === 'Person');
     const profilePage = structuredData['@graph'].find((item) => item['@type'] === 'ProfilePage');
+    const socialImage = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
+    const socialImageAlt = document.querySelector<HTMLMetaElement>('meta[property="og:image:alt"]');
 
+    expect(document.documentElement.lang).toBe('pt-BR');
     expect(document.title).toBe(
       'Gabriel Veras Miranda | Engenheiro de Software Backend Sênior Java',
     );
@@ -62,6 +65,12 @@ describe('Home', () => {
     expect(person?.jobTitle).toBe('Engenheiro de Software Backend Sênior Java');
     expect(profilePage?.name).toBe(
       'Gabriel Veras Miranda | Engenheiro de Software Backend Sênior Java',
+    );
+    expect(socialImage?.content).toBe(
+      'https://gabrielveras.dev/images/social/og-cover-square.webp?v=2.1.18',
+    );
+    expect(socialImageAlt?.content).toBe(
+      'Gabriel Veras Miranda - Engenheiro de Software Backend Sênior Java',
     );
   });
 
@@ -79,6 +88,10 @@ describe('Home', () => {
     expect(compiled.textContent).toContain('9 anos de experiência');
     expect(compiled.textContent).toContain('Março/2024 - Agosto/2024');
     expect(compiled.textContent).toContain('Contrato PJ');
+    expect(compiled.textContent).toContain('Analista de Sistemas Sênior');
+    expect(compiled.textContent).toContain('Analista de Sistemas / Analista de Sistemas Sênior');
+    expect(compiled.textContent).not.toContain('Senior Backend Software Engineer (Java)');
+    expect(compiled.textContent).not.toContain('Independent Contractor');
     expect(compiled.textContent).not.toContain('Outubro/2023 - Março/2024');
     expect(compiled.textContent).toContain('Concluído | 600 horas | 2024–2025');
     expect(compiled.textContent).toContain('Concluído | 2015');
@@ -92,6 +105,7 @@ describe('Home', () => {
       '/resume/Gabriel-Veras-Miranda-Curriculo-Java-Backend-Senior.pdf',
       '/resume/Gabriel-Veras-Miranda-Senior-Java-Backend-Engineer-Resume.pdf',
     ]);
+    expect([...heroDownloads].every((link) => link.hasAttribute('download'))).toBe(true);
   });
 
   it('should render the updated English profile without removing either resume download', () => {
@@ -105,6 +119,8 @@ describe('Home', () => {
     const contactDownloads = compiled.querySelectorAll<HTMLAnchorElement>(
       '#contact a[type="application/pdf"][download]',
     );
+    const socialImage = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
+    const socialImageAlt = document.querySelector<HTMLMetaElement>('meta[property="og:image:alt"]');
 
     expect(document.documentElement.lang).toBe('en');
     expect(document.title).toBe('Gabriel Veras Miranda | Senior Backend Software Engineer | Java');
@@ -112,6 +128,15 @@ describe('Home', () => {
     expect(compiled.textContent).toContain('9 years of experience');
     expect(compiled.textContent).toContain('March 2024 - August 2024');
     expect(compiled.textContent).toContain('Independent Contractor');
+    expect(compiled.textContent).toContain('Senior Backend Software Engineer (Java)');
+    expect(compiled.textContent).toContain(
+      'Backend Software Engineer / Senior Backend Software Engineer (Java)',
+    );
+    expect(compiled.textContent).toContain('Backend Software Engineer (Java)');
+    expect(compiled.textContent).toContain('Software Engineer (Java / Angular)');
+    expect(compiled.textContent).toContain('Software Engineer (Java)');
+    expect(compiled.textContent).not.toContain('Senior Systems Analyst');
+    expect(compiled.textContent).not.toContain('Systems Analyst');
     expect(compiled.textContent).toContain('Founder and Full-Stack Developer');
     expect(compiled.textContent).toContain('2026 - Present');
     expect(heroDownloads).toHaveLength(2);
@@ -120,6 +145,12 @@ describe('Home', () => {
       'Download CV (PT-BR)',
       'Download resume (EN)',
     ]);
+    expect(socialImage?.content).toBe(
+      'https://gabrielveras.dev/images/social/og-cover-square.webp?v=2.1.18',
+    );
+    expect(socialImageAlt?.content).toBe(
+      'Gabriel Veras Miranda - Senior Backend Software Engineer Java',
+    );
   });
 
   it('should consolidate Capgemini and Coopersystem into one experience', () => {

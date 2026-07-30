@@ -40,7 +40,7 @@ export class Home {
         ...content.seo,
         path: '/',
         language: content.language,
-        imageUrl: 'https://gabrielveras.dev/images/social/og-cover-square.webp',
+        imageUrl: 'https://gabrielveras.dev/images/social/og-cover-square.webp?v=2.1.18',
         imageAlt:
           content.language === 'pt-BR'
             ? 'Gabriel Veras Miranda - Engenheiro de Software Backend Sênior Java'

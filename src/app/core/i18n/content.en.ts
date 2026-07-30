@@ -123,7 +123,7 @@ export const CONTENT_EN: PortfolioContent = {
     items: [
       {
         company: 'Stefanini',
-        role: 'Senior Systems Analyst',
+        role: 'Senior Backend Software Engineer (Java)',
         period: 'February 2024 - Present',
         location: 'Fortaleza, Ceará, Brazil',
         isFeatured: true,
@@ -190,18 +190,20 @@ export const CONTENT_EN: PortfolioContent = {
       },
       {
         company: 'Capgemini / Coopersystem',
-        role: 'Systems Analyst / Senior Systems Analyst',
+        role: 'Backend Software Engineer / Senior Backend Software Engineer (Java)',
         period: 'June 2021 - October 2023',
         location: 'Banco do Brasil Project | Brazil',
         isFeatured: true,
         shortSummary:
-          'Developed and supported Java APIs and microservices using Quarkus for Banco do Brasil enterprise systems.',
+          'Worked as a Software Engineer (Java) at Capgemini and as a Senior Software Engineer (Java) at Coopersystem on enterprise projects for Banco do Brasil and CASSI.',
         highlights: [
           'Implemented asynchronous service integration using Apache Kafka and developed automated tests with JUnit and Mockito.',
           'Served as a technical reference, supporting developers, conducting code reviews, validating commits, and resolving technical issues.',
           'Contributed to CI/CD processes, release preparation, and deployments across Kubernetes and OpenShift environments.',
         ],
         details: [
+          'Worked as a Software Engineer (Java) on an enterprise project for Banco do Brasil at Capgemini.',
+          'Worked as a Senior Software Engineer (Java) on enterprise projects for Banco do Brasil and later for CASSI at Coopersystem.',
           'Developed and supported Java APIs and microservices using Quarkus.',
           'Implemented asynchronous service integration using Apache Kafka and developed automated tests with JUnit and Mockito.',
           'Served as a technical reference, supporting developers, conducting code reviews, validating commits, and resolving technical issues.',
@@ -229,7 +231,7 @@ export const CONTENT_EN: PortfolioContent = {
       },
       {
         company: 'PicBuy',
-        role: 'Systems Analyst',
+        role: 'Backend Software Engineer (Java)',
         period: 'April 2021 - May 2021',
         location: 'Fortaleza, Ceará, Brazil',
         isFeatured: false,
@@ -256,7 +258,7 @@ export const CONTENT_EN: PortfolioContent = {
       },
       {
         company: 'Dell Lead',
-        role: 'Systems Analyst',
+        role: 'Software Engineer (Java / Angular)',
         period: 'May 2020 - February 2021',
         location: 'Fortaleza, Ceará, Brazil',
         isFeatured: false,
@@ -288,7 +290,7 @@ export const CONTENT_EN: PortfolioContent = {
       },
       {
         company: 'Pague Logo',
-        role: 'Systems Analyst',
+        role: 'Software Engineer (Java)',
         period: 'June 2019 - December 2020',
         location: 'Fortaleza region, Brazil',
         isFeatured: false,
@@ -306,7 +308,7 @@ export const CONTENT_EN: PortfolioContent = {
       },
       {
         company: 'Jardins Distribuidora de Cereais e Representações LTDA',
-        role: 'Systems Analyst',
+        role: 'Software Engineer (Java)',
         period: 'June 2018 - September 2019',
         location: 'Fortaleza region, Brazil',
         isFeatured: false,
@@ -324,7 +326,7 @@ export const CONTENT_EN: PortfolioContent = {
       },
       {
         company: 'Prefeitura Municipal de Fortaleza',
-        role: 'Systems Analyst',
+        role: 'Software Engineer (Java)',
         period: 'July 2017 - April 2018',
         location: 'HDEAM - Hospital Distrital Doutor Evandro Ayres de Moura',
         isFeatured: false,

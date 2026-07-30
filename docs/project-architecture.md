@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-O `gabrielveras.dev` é uma aplicação Angular bilíngue que funciona como portfólio profissional e currículo online de Gabriel Veras, com posicionamento de **Senior Java Backend Engineer / Engenheiro Backend Java Sênior**.
+O `gabrielveras.dev` é uma aplicação Angular bilíngue que funciona como portfólio profissional e currículo online de Gabriel Veras, com posicionamento de **Senior Backend Software Engineer | Java / Engenheiro de Software Backend Sênior | Java**.
 
 O objetivo do site é apresentar, de forma clara e profissional:
 
@@ -297,7 +297,7 @@ Recebe um `kind` tipado e renderiza o SVG correspondente. É usado principalment
 
 Lê a versão do `package.json` e atualiza:
 
-```ts
+```text
 src/app/core/constants/app-version.ts
 ```
 

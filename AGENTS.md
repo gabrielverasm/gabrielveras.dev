@@ -2,11 +2,11 @@
 
 ## Project Context
 
-This project is `gabrielveras.dev`, a bilingual professional portfolio and online resume for Gabriel Veras, a Senior Java Backend Engineer.
+This project is `gabrielveras.dev`, a bilingual professional portfolio and online resume for Gabriel Veras, a Senior Backend Software Engineer focused on Java.
 
 The goal is to present a clean, professional, maintainable and production-ready Angular application focused on:
 
-- Senior Java Backend Engineer positioning
+- Senior Backend Software Engineer | Java positioning
 - Portuguese and English content
 - Work experience
 - Technical skills
@@ -276,7 +276,7 @@ Scope rules:
 - Prefer small, reviewable changes.
 - Do not combine unrelated feature, bugfix, performance, content and tooling changes unless the user explicitly asks for that combination.
 - Do not refactor unrelated code while solving a narrow task.
-- Preserve existing architecture, content model, visual direction and Senior Java Backend Engineer positioning unless the task explicitly changes them.
+- Preserve existing architecture, content model, visual direction and Senior Backend Software Engineer | Java positioning unless the task explicitly changes them.
 - When a task touches PT/EN content, update both languages consistently.
 
 Command execution rules:
