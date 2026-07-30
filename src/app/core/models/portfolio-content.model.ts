@@ -102,12 +102,7 @@ export interface SkillGroup {
 }
 
 export type SkillGroupIconKind =
-  | 'backend'
-  | 'cloud'
-  | 'data'
-  | 'delivery'
-  | 'infrastructure'
-  | 'frontend';
+  'backend' | 'cloud' | 'data' | 'delivery' | 'infrastructure' | 'frontend';
 
 export type TechnologyIconKind =
   | 'angular'

@@ -1,6 +1,6 @@
 # gabrielveras.dev
 
-Bilingual professional portfolio and online resume for Gabriel Veras, Senior Java Backend Engineer.
+Bilingual professional portfolio and online resume for Gabriel Veras, Senior Backend Software Engineer | Java.
 
 Live site: [https://gabrielveras.dev/](https://gabrielveras.dev/)
 
@@ -128,7 +128,7 @@ while Portuguese and English share the same canonical URLs.
 Suggested GitHub repository description:
 
 ```text
-Bilingual Angular portfolio and online resume for Gabriel Veras, Senior Java Backend Engineer.
+Bilingual Angular portfolio and online resume for Gabriel Veras, Senior Backend Software Engineer | Java.
 ```
 
 Suggested topics:
