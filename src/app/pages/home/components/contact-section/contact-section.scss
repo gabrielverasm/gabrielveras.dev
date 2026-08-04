@@ -17,6 +17,7 @@
 .contact-panel {
   position: relative;
   display: grid;
+  min-width: 0;
   gap: var(--space-5);
   padding: var(--space-6);
   overflow: hidden;
@@ -38,6 +39,7 @@
 
 .contact-list {
   display: flex;
+  min-width: 0;
   flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: 0;
@@ -46,6 +48,7 @@
 
 .contact-panel .contact-link {
   min-height: calc(3rem * var(--font-scale));
+  white-space: nowrap;
   padding: calc(0.8rem * var(--font-scale)) calc(1.05rem * var(--font-scale));
 }
 
@@ -61,8 +64,12 @@
 
 @media (min-width: 44rem) {
   .contact-panel {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr);
     align-items: center;
+  }
+
+  .contact-panel .section__header {
+    min-width: 0;
   }
 
   .contact-list {
