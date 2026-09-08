@@ -31,6 +31,13 @@ module.exports = defineConfig([
           style: 'kebab-case',
         },
       ],
+      // Angular 22 changed the default change detection strategy for new components to
+      // OnPush; `ng update` reacted by adding `changeDetection: ChangeDetectionStrategy.Eager`
+      // to every existing component so their behavior doesn't silently change. This rule
+      // (new in angular-eslint 22) flags that very migration output. Adopting OnPush for real
+      // is a deliberate, per-component change that needs its own verification, not something
+      // to do blindly as a side effect of a dependency bump.
+      '@angular-eslint/prefer-on-push-component-change-detection': 'off',
     },
   },
   {

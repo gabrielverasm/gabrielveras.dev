@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import type {
   SkillGroupIconKind,
@@ -11,6 +11,7 @@ export type PortfolioIconKind = SkillGroupIconKind | TechnologyIconKind;
   selector: 'app-portfolio-icon',
   templateUrl: './portfolio-icon.html',
   styleUrl: './portfolio-icon.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     'aria-hidden': 'true',
   },

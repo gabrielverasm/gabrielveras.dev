@@ -1,4 +1,11 @@
-import { Component, HostListener, effect, inject, signal } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  effect,
+  inject,
+  signal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 import { EXTERNAL_LINKS } from '../../core/constants/external-links';
 import { LanguageService } from '../../core/i18n/language.service';
@@ -23,6 +30,7 @@ import { SkillsSection } from './components/skills-section/skills-section';
     SkillsSection,
   ],
   templateUrl: './home.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home.scss',
 })
 export class Home {

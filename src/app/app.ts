@@ -1,5 +1,12 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, inject, PLATFORM_ID, signal } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  inject,
+  PLATFORM_ID,
+  signal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { AccessibilityPreferencesService } from './core/accessibility/accessibility-preferences.service';
@@ -11,6 +18,7 @@ import { Header } from './layout/header/header';
   selector: 'app-root',
   imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
 })
 export class App {

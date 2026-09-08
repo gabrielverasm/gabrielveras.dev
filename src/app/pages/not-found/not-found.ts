@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, effect, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { LanguageService } from '../../core/i18n/language.service';
@@ -8,6 +8,7 @@ import { SeoService } from '../../core/seo/seo.service';
   selector: 'app-not-found',
   imports: [RouterLink],
   templateUrl: './not-found.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './not-found.scss',
 })
 export class NotFound {

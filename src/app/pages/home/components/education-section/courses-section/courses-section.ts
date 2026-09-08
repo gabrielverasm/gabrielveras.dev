@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { LanguageService } from '../../../../../core/i18n/language.service';
 
 @Component({
   selector: 'app-courses-section',
   templateUrl: './courses-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './courses-section.scss',
 })
 export class CoursesSection {

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { PortfolioIcon } from '../../../../../shared/components/portfolio-icon/portfolio-icon';
 import { technologyIconKind } from '../technology-icon';
@@ -7,6 +7,7 @@ import { technologyIconKind } from '../technology-icon';
   selector: 'app-skill-chip-list',
   imports: [PortfolioIcon],
   templateUrl: './skill-chip-list.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './skill-chip-list.scss',
 })
 export class SkillChipList {

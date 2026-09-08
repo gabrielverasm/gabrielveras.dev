@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { LanguageService } from '../../../../core/i18n/language.service';
 import { FeaturedSkillCard } from './featured-skill-card/featured-skill-card';
@@ -8,6 +8,7 @@ import { SkillCardAccent, SkillGroupCard } from './skill-group-card/skill-group-
   selector: 'app-skills-section',
   imports: [FeaturedSkillCard, SkillGroupCard],
   templateUrl: './skills-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './skills-section.scss',
 })
 export class SkillsSection {

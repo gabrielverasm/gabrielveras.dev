@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, effect, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { EXTERNAL_LINKS } from '../../core/constants/external-links';
@@ -10,6 +10,7 @@ import { SeoService } from '../../core/seo/seo.service';
   selector: 'app-desconto-vivo',
   imports: [RouterLink],
   templateUrl: './desconto-vivo.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './desconto-vivo.scss',
 })
 export class DescontoVivo {

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { EXTERNAL_LINKS } from '../../../../core/constants/external-links';
@@ -8,6 +8,7 @@ import { LanguageService } from '../../../../core/i18n/language.service';
   selector: 'app-projects-section',
   imports: [RouterLink],
   templateUrl: './projects-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './projects-section.scss',
 })
 export class ProjectsSection {
