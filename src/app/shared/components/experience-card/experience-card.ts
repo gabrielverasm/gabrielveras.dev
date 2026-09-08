@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { ExperienceItem } from '../../../core/models/portfolio-content.model';
 
@@ -6,6 +6,7 @@ import { ExperienceItem } from '../../../core/models/portfolio-content.model';
   selector: 'app-experience-card',
   imports: [],
   templateUrl: './experience-card.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './experience-card.scss',
 })
 export class ExperienceCard {

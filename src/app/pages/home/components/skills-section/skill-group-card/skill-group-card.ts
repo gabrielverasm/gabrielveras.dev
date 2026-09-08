@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import type { SkillGroup } from '../../../../../core/models/portfolio-content.model';
 import { PortfolioIcon } from '../../../../../shared/components/portfolio-icon/portfolio-icon';
@@ -10,6 +10,7 @@ export type SkillCardAccent = 'primary' | 'purple' | 'green' | 'yellow';
   selector: 'app-skill-group-card',
   imports: [PortfolioIcon, SkillChipList],
   templateUrl: './skill-group-card.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './skill-group-card.scss',
 })
 export class SkillGroupCard {

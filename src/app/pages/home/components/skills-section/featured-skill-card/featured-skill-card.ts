@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import type {
   LearningContent,
@@ -19,6 +19,7 @@ export interface SkillMetric {
   selector: 'app-featured-skill-card',
   imports: [PortfolioIcon, SkillChipList, SkillLearningPanel, SkillMetrics, SkillOrbitVisual],
   templateUrl: './featured-skill-card.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './featured-skill-card.scss',
 })
 export class FeaturedSkillCard {

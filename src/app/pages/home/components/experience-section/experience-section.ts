@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { LanguageService } from '../../../../core/i18n/language.service';
 import { ExperienceCard } from '../../../../shared/components/experience-card/experience-card';
@@ -7,6 +7,7 @@ import { ExperienceCard } from '../../../../shared/components/experience-card/ex
   selector: 'app-experience-section',
   imports: [ExperienceCard],
   templateUrl: './experience-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './experience-section.scss',
 })
 export class ExperienceSection {

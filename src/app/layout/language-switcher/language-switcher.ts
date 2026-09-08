@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { LanguageService } from '../../core/i18n/language.service';
 import { CONTENT_EN } from '../../core/i18n/content.en';
@@ -8,6 +8,7 @@ import { CONTENT_PT } from '../../core/i18n/content.pt';
   selector: 'app-language-switcher',
   imports: [],
   templateUrl: './language-switcher.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './language-switcher.scss',
 })
 export class LanguageSwitcher {

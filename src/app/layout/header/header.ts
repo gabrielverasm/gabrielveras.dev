@@ -1,4 +1,11 @@
-import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  inject,
+  signal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 import { LanguageService } from '../../core/i18n/language.service';
 import { AccessibilityControls } from '../accessibility-controls/accessibility-controls';
@@ -8,6 +15,7 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
   selector: 'app-header',
   imports: [AccessibilityControls, LanguageSwitcher],
   templateUrl: './header.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './header.scss',
 })
 export class Header {
